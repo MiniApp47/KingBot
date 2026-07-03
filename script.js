@@ -800,6 +800,97 @@ document.addEventListener('DOMContentLoaded', function () {
             image: 'CategWeed.png', // Ton image de catégorie Weed
 
             products: [
+                {
+                    id: 'Cherry runtz 🍒',
+                    flag: '🇺🇸',
+                    name: 'Cherry runtz 🍒',
+                    farm: '🌾 No Farm 🌾',
+                    promoEligible: true,
+                    type: 'Weed',
+                    image: 'ProductCHR.jpg', 
+                    images:['ProductCHRR.jpg'],
+                    video: '',
+                    description: '',                    
+                    tarifs: [
+                        { weight: '5g', price: 60.00 },
+                        { weight: '10g', price: 100.00 },
+                        { weight: '25g', price: 220.00 },
+                        { weight: '50g', price: 400.00 },
+                    ]
+                },
+                {
+                    id: 'Pech sherbet 🍨',
+                    flag: '🇺🇸',
+                    name: 'Pech sherbet 🍨',
+                    farm: '🌾 No Farm 🌾',
+                    promoEligible: true,
+                    type: 'Weed',
+                    image: 'ProductPS.jpg', 
+                    images:['ProductPSS.jpg'],
+                    video: '',
+                    description: '',                    
+                    tarifs: [
+                        { weight: '5g', price: 60.00 },
+                        { weight: '10g', price: 100.00 },
+                        { weight: '25g', price: 220.00 },
+                        { weight: '50g', price: 400.00 },
+                    ]
+                },
+                {
+                    id: 'GlueBerry 🧴',
+                    flag: '🇺🇸',
+                    name: 'GlueBerry 🧴',
+                    farm: '🌾 No Farm 🌾',
+                    promoEligible: true,
+                    type: 'Weed',
+                    image: 'ProductGL.jpg', 
+                    images:['ProductGLL.jpg'],
+                    video: '',
+                    description: '',                    
+                    tarifs: [
+                        { weight: '5g', price: 60.00 },
+                        { weight: '10g', price: 100.00 },
+                        { weight: '25g', price: 220.00 },
+                        { weight: '50g', price: 400.00 },
+                    ]
+                },
+                {
+                    id: 'ROCKET 🚀🔥',
+                    flag: '🇺🇸',
+                    name: 'ROCKET 🚀🔥',
+                    farm: '🌾 No Farm 🌾',
+                    promoEligible: true,
+                    type: 'Weed',
+                    image: 'ProductROCK.jpg', 
+                    images:['ProductROCKK.jpg'],
+                    video: '',
+                    description: 'Une strain qui porte parfaitement son nom. Rocket envoie une vraie montée puissante avec un profil moderne ultra terpy, mélangeant gaz, fruits sucrés et notes crémeuses pour une fumée lourde et premium.\n\n 👃 Aromatique :\n Dès l’ouverture, ça explose avec une odeur gazeuse bien forte ⛽️ accompagnée de touches fruitées et sucrées. On retrouve aussi un fond creamy/kush qui donne beaucoup de profondeur au profil.\n\n 👅 Goût :\n En bouche, c’est intense : mélange de candy fruité 🍬, gaz lourd et légère touche tropicale qui reste longtemps après la taffe. La fumée est épaisse, propre et ultra savoureuse.\n\n 💨 Effet :\n Montée rapide et puissante 🚀 avec un gros effet euphorique au début avant une détente physique bien lourde. Une vraie frappe pour les amateurs de strains qui tapent fort.\n\n 🌿 Buds bien résineux, full terpènes et qualité premium.',                    
+                    tarifs: [
+                        { weight: '5g', price: 60.00 },
+                        { weight: '10g', price: 100.00 },
+                        { weight: '25g', price: 220.00 },
+                        { weight: '50g', price: 400.00 },
+                    ]
+                },
+                {
+                    id: '⛽🔥 E85 ',
+                    flag: '🇺🇸',
+                    name: '⛽🔥 E85',
+                    farm: '🌾 No Farm 🌾',
+                    promoEligible: true,
+                    type: 'Weed',
+                    image: 'Product85.jpg', 
+                    images:['Product855.jpg'],
+                    video: '',
+                    description: 'Une strain au caractère brutal, inspirée par les profils fuel/gas modernes. La E85 est connue pour son mélange intense entre douceur sucrée et puissance “diesel”, avec une vraie identité lourde et marquante.\n\n 👃 Aromatique :\n Dès l’ouverture, t’as un gros hit gazeux ⛽, avec des notes diesel bien présentes. Derrière, ça s’équilibre avec une touche sucrée et crémeuse 🍬, parfois légèrement fruitée, qui rappelle certaines génétiques type Gelato/Runtz.\n Un fond terreux et kushy vient renforcer le côté profond et “sale”.\n\n 👅 Goût :\n En bouche, c’est puissant et complexe :\n * Attaque : gazeuse et intense ⛽\n * Milieu : mélange sucré/crémeux qui adoucit le profil 🤤\n * Finale : une lourde note diesel qui reste longtemps en bouche\n Le rendu est lourd, épais et très persistant, parfait pour ceux qui aiment les profils gas bien marqués.\n\n 👀 Aspect :\n Buds denses, bien compactes, avec une grosse couche de trichomes ✨, souvent avec des nuances vert foncé et parfois violettes.\n\n 💥 Effets :\n Puissants et rapides : une montée cérébrale forte, suivie d’un effet relaxant lourd, typique des strains bien gas.\n\n 🔥 Une strain pour les amateurs de fuel pur, entre douceur moderne et puissance brute.',                    
+                    tarifs: [
+                        { weight: '5g', price: 60.00 },
+                        { weight: '10g', price: 100.00 },
+                        { weight: '25g', price: 220.00 },
+                        { weight: '50g', price: 400.00 },
+                        { weight: '100g', price: 750.00 },
+                    ]
+                },
                  {
                     id: '🌴💣 SUPER BOMBE 💣🌴',
                     flag: '🇺🇸',
@@ -953,7 +1044,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '50g', price: 400.00 },
                     ]
                 },  */
-                {
+               /*  {
                     id: 'Lemon cherry 🇺🇸 🍋🔥',
                     flag: '🇺🇸',
                     name: 'Lemon cherry 🇺🇸 🍋🔥',
@@ -969,7 +1060,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '25g', price: 220.00 },
                         { weight: '50g', price: 400.00 },
                     ]
-                }, 
+                },  */
               /*   {
                     id: 'Larry bird 🍬⛽️🔥',
                     flag: '🇺🇸',
@@ -1283,6 +1374,22 @@ document.addEventListener('DOMContentLoaded', function () {
             image: 'CategFrozen.png', // Ton image de catégorie Weed
 
             products: [
+                {
+                    id: 'L\'Etoile ✨',
+                    flag: '🇺🇸',
+                    name: 'L\'Etoile ✨',
+                    farm: '🌾 No Farm 🌾',
+                    promoEligible: true,
+                    type: 'Weed',
+                    image: 'ProductEti.jpg', 
+                    video: '',
+                    description: '',
+                    tarifs: [
+                        { weight: '5G', price: 70.00 },
+                        { weight: '10G', price: 120.00 },
+                        { weight: '25G', price: 250.00 },
+                    ]
+                },
                  {
                     id: '🫒❄️🔥 OLIVE 🔥❄️🫒',
                     flag: '🇲🇦',
@@ -1960,6 +2067,23 @@ document.addEventListener('DOMContentLoaded', function () {
             image: 'CategHash.png', // Ton image de catégorie Weed
 
             products: [
+                {
+                    id: 'Wazabis 🈯',
+                    flag: '🇲🇦',
+                    name: 'Wazabis 🈯',
+                    farm: '🌾 No Farm 🌾',
+                    promoEligible: true,
+                    type: 'Weed',
+                    image: 'ProductWaza.jpg', 
+                    video: '',
+                    description: '',
+                    tarifs: [
+                        { weight: '10g', price: 60.00 },
+                        { weight: '20g', price: 100.00 },
+                        { weight: '50g', price: 200.00 },
+                        { weight: '100g', price: 330.00 },
+                    ]
+                },
                 {
                     id: 'Banana Candy 🍌',
                     flag: '🇲🇦',
