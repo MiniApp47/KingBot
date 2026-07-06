@@ -133,10 +133,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     video:'VideoCCH.mp4',
                       description: '🇺🇸 DRY SIFT PREMIUM • UPGRADE AROMATIQUE & PUISSANCE 🇺🇸 \n\n Le Mousseux Made in Los Angeles monte en gamme. Ce nouveau batch bénéficie d\'une technique "Dry Sift" optimisée : le goût Cali est beaucoup plus prononcé et la défonce frappe nettement plus fort que l\'ancienne version. \n\n  🍭 Candy Land : Euphorie percutante, profil ultra-sucré candy. \n\n 🍯 Texture : Jaune mousseux d’exception qui s\'effrite tout seul. Une frappe exclusive introuvable ailleurs. 🥵😱🍫',
                       tarifs: [
-                        { weight: '10G', price: 60.00 },
-                        { weight: '20G', price: 100.00 },
-                        { weight: '50G', price: 220.00 },
-                        { weight: '100G', price: 400.00 },
+                        { weight: '9G', price: 50.00 },
+                        { weight: '25G', price: 120.00 },
+                        { weight: '50G', price: 200.00 },
+                        { weight: '100G', price: 350.00 },
                     ]
                 },
                     {
@@ -150,10 +150,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     video:'VideoGel.mp4',
                       description: '🇺🇸 DRY SIFT PREMIUM • UPGRADE AROMATIQUE & PUISSANCE 🇺🇸 \n\n Le Mousseux Made in Los Angeles monte en gamme. Ce nouveau batch bénéficie d\'une technique "Dry Sift" optimisée : le goût Cali est beaucoup plus prononcé et la défonce frappe nettement plus fort que l\'ancienne version. \n\n 🎂 Gelato : Détente corporelle totale, goût fruité et gazeux.\n\n 🍯 Texture : Jaune mousseux d’exception qui s\'effrite tout seul. Une frappe exclusive introuvable ailleurs. 🥵😱🍫',
                       tarifs: [
-                        { weight: '10G', price: 60.00 },
-                        { weight: '20G', price: 100.00 },
-                        { weight: '50G', price: 220.00 },
-                        { weight: '100G', price: 400.00 },
+                        { weight: '9G', price: 50.00 },
+                        { weight: '25G', price: 120.00 },
+                        { weight: '50G', price: 200.00 },
+                        { weight: '100G', price: 350.00 },
                     ]
                 },
                 /*  {
@@ -272,9 +272,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     video: 'VideoForr.mp4',
                     description: '⚡🍇❄️ PLASMA STATIC ❄️🍇⚡ \n\n 💎 Type d’extraction\n Static Sift hautement purifié.\n Forte concentration en trichomes.\n Très peu de matière végétale résiduelle.\n Résine destinée aux amateurs de hash moderne premium.\n\n 🍇🍬 Profil aromatique\n Notes de fruits noirs et fruits rouges.\n Touches sucrées rappelant le bonbon et le raisin.\n Fond crémeux avec une légère pointe gassy.\n Odeur puissante et complexe dès l’ouverture.\n\n 🤤 Texture\n Souple et grasse.\n Aspect brillant et résineux.\n Se travaille facilement à température ambiante.\n Fusion lente et propre.\n\n 💨 Effets généralement recherchés\n Montée euphorique et relaxante.\n Sensation de bien-être assez rapide.\n Relaxation musculaire progressive.\n Effet équilibré entre détente mentale et physique.\n\n 🔥 Pourquoi les connaisseurs l’apprécient ?\n Terpènes très présents.\n Extraction particulièrement propre.\n Saveurs persistantes.\n Excellent compromis entre puissance et plaisir gustatif.\n\n ⚡💎 PLASMA STATIC FORBIDDEN – MOZART FARM 💎⚡\n ✨ Une résine moderne qui séduit par sa richesse aromatique et sa pureté. Son profil mêlant fruits noirs, notes sucrées et fond crémeux en fait un hash particulièrement apprécié des amateurs de Static recherchant une expérience terpénique intense. 🤤🍇❄️\n\n 👑 Destiné aux vrais connaisseurs de résines premium qui privilégient avant tout la qualité d’extraction, les saveurs et la richesse des terpènes. 👑🔥🍇',
                     tarifs: [
-                        { weight: '5G', price: 80.00 },
-                        { weight: '10G', price: 150.00},
-                        { weight: '25G', price: 320.00 },
+                        { weight: '3G', price: 50.00 },
+                        { weight: '10G', price: 140.00},
+                        { weight: '25G', price: 250.00 },
+                        { weight: '50G', price: 450.00 },
                     ]
                 },
                 {
@@ -288,10 +289,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     video: 'VideoCF.mp4',
                     description: '🍬🍓❄️ DOUBLE STATIC ❄️🍓🍬 \n\n Le Double Static Candy Fruit de Mozart Farm semble être une résine orientée sur un profil très fruité et sucré, dans l’esprit des variétés modernes inspirées des génétiques Candy, Runtz, Zkittlez ou Fruit Cocktail\n\n ✨ Ce qui le distingue :\n Double purification statique pour obtenir un hash très propre.\n Forte concentration en têtes de trichomes.\n Excellent niveau de préservation des terpènes.\n Résine destinée aux amateurs de qualité premium.  \n\n 🍭 Profil aromatique\n Bonbon fruité très prononcé.\n Notes de fruits rouges, fruits exotiques et agrumes sucrés.\n Fond crémeux rappelant parfois certaines génétiques type Runtz ou Candy.\n Odeur puissante dès l’ouverture.  \n\n 🤤 Texture\n Souple et grasse.\n Très malléable à température ambiante.\n Aspect brillant avec une belle richesse en résine.\n Fond généralement mieux qu’un dry sift classique.  \n\n 💨 Effets recherchés\n Euphorie légère et agréable au départ.\n Sensation de bien-être et de détente.\n Relaxation corporelle progressive.\n Effet souvent décrit comme équilibré entre plaisir gustatif et puissance.  \n\n 🔥 Pourquoi les connaisseurs l’apprécient ?\n aveurs très marquées.\n Longueur en bouche importante.\n Extraction particulièrement propre.\n Excellent compromis entre gourmandise et puissance.  \n\n 🍬💎 DOUBLE STATIC CANDY FRUIT – MOZART FARM 💎🍬\n ✨ Résine premium aux terpènes ultra gourmands, dominée par des notes de bonbons fruités et de fruits mûrs. Grâce à son extraction Double Static, elle offre une texture fondante, une grande pureté et une expression aromatique intense qui séduit particulièrement les amateurs de hash moderne haut de gamme. ❄️🤤🔥\n\n 🍓🍭 Un hash pensé pour les vrais connaisseurs qui recherchent avant tout le goût, les terpènes et une qualité d’extraction irréprochable. 🍭🍓',
                     tarifs: [
-                        { weight: '5G', price: 90.00 },
-                        { weight: '10G', price: 160.00},
-                        { weight: '25G', price: 380.00 },
-                        { weight: '50G', price: 800.00 },
+                        { weight: '5G', price: 80.00 },
+                        { weight: '10G', price: 150.00},
+                        { weight: '25G', price: 350.00 },
+                        { weight: '50G', price: 650.00 },
                     ]
                 },
                 {
@@ -305,10 +306,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     video: 'VideoMel.mp4',
                     description: '🍉❄️ DOUBLE STATIC ❄️🍉 \n\n 💎 Type d’extraction : Double Static Sift\n Le « Double Static » désigne une double purification des trichomes par électricité statique afin d’éliminer un maximum d’impuretés végétales. Le résultat est généralement plus pur, plus fondant et plus riche en terpènes qu’un hash classique.  \n\n 🍉 Profil aromatique\n Notes sucrées rappelant la pastèque mûre.\n Fond légèrement crémeux et terreux typique des résines premium.\n Odeur très expressive à froid, avec une belle intensité terpénique.  \n\n 🤤 Texture\n Souple et grasse.\n Facile à travailler à température ambiante.\n Tendance à devenir plus collante lorsqu’elle est conservée dans de bonnes conditions.  \n\n ✨ Effets généralement recherchés\n Sensation de détente progressive.\n Effet mental agréable sans être trop lourd au départ.\n Relaxation corporelle marquée en fin d’expérience.\n Souvent apprécié pour les moments calmes en soirée.  \n\n 🔥 Pourquoi les connaisseurs l’apprécient ?\n Très bonne conservation des terpènes.\n Pureté élevée grâce au double tri statique.\n Saveurs plus nettes et plus persistantes qu’une mousse ou un dry classique.\n Format recherché par les amateurs de résines premium modernes.  \n\n 🫒🍉💎 Le Double Static Watermelon de Mozart Farm s’adresse surtout aux amateurs de hash premium qui recherchent une résine propre, fondante et extrêmement parfumée, avec un profil sucré et frais rappelant la pastèque. 💎🍉🫒',
                     tarifs: [
-                        { weight: '5G', price: 90.00 },
-                        { weight: '10G', price: 160.00},
-                        { weight: '25G', price: 380.00 },
-                        { weight: '50G', price: 800.00 },
+                        { weight: '5G', price: 80.00 },
+                        { weight: '10G', price: 150.00},
+                        { weight: '25G', price: 350.00 },
+                        { weight: '50G', price: 650.00 },
                     ]
                 },
              /*   
@@ -1393,9 +1394,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     video: '',
                     description: '',
                     tarifs: [
-                        { weight: '5G', price: 60.00 },
-                        { weight: '10G', price: 110.00 },
+                        { weight: '5G', price: 50.00 },
+                        { weight: '10G', price: 90.00 },
                         { weight: '25G', price: 200.00 },
+                        { weight: '50G', price: 350.00 },
+                        { weight: '100G', price: 680.00 },
                     ]
                 },
                  {
@@ -1721,11 +1724,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     video: '',
                     description: '💨🔥 Une véritable gourmandise pour les amateurs de filtré premium 🔥💨\n 🍫🍪 120U – KitKat 🍪🍫\n\n ✨ Profil aromatique ✨\n Dès l’ouverture, KitKat dévoile un profil terpénique ultra-gourmand 💥🍫. Une vague de chocolat au lait envahit instantanément les sens, dominée par le cacao doux 🍫, le biscuit croquant 🍪 et une pointe de noisette torréfiée 🌰. En arrière-plan, des notes sucrées et lactées rappellent la célèbre barre chocolatée, accompagnées d’un fond terreux discret typique des bonnes résines 🌱✨.\n\n 😮‍💨🍫 Goût\n En bouche, c’est une véritable explosion chocolatée 💥🍫. L’attaque est douce et sucrée ⚡, rapidement équilibrée par une rondeur biscuitée rappelant une gaufrette croustillante 🍪🤤. La fumée est dense, propre et particulièrement savoureuse grâce à la triple filtration ☁️✨. La finale laisse une persistance longue et gourmande, avec des notes de cacao qui restent agréablement sur le palais 😋.\n\n ⚡🧠 Effets\n KitKat offre une montée chaleureuse et réconfortante 🚀✨.\n\n 😁 Sensation de bien-être immédiate\n 🌞 Effet positif et chill\n 🧠 Esprit apaisé et détendu\n ✨ Sensation de douceur mentale\n 😌 Relaxation progressive du corps\n 🌙 Parfait pour une fin de journée gourmande\n\n 🏆🍫 Le verdict\n KitKat s’impose comme une évidence pour les amateurs de profils chocolatés et de filtrés premium 🔥🍫. Son bouquet aromatique intense, sa fumée propre et son goût ultra-gourmand en font une variété qui marque les esprits dès les premières bouffées 💨✨.',
                     tarifs: [
-                        { weight: '5G', price: 50.00 },
-                        { weight: '10G', price: 80.00 },
-                        { weight: '20G', price: 140.00 },
-                        { weight: '50G', price: 250.00 },
-                        { weight: '100G', price: 400.00 },
+                        { weight: '10G', price: 60.00 },
+                        { weight: '25G', price: 130.00 },
+                        { weight: '50G', price: 230.00 },
+                        { weight: '100G', price: 420.00 },
                     ]
                 },
                 {
@@ -1748,7 +1750,7 @@ document.addEventListener('DOMContentLoaded', function () {
                  {
                     id: 'LEMON SORBET ❄️',
                     flag: '🇲🇦',
-                    name: 'LEMON SORBET ❄️',
+                    name: 'LEMON SORBET 🍋🍨',
                     farm: 'Est Side Cartel 🥷',
                     promoEligible: true,
                     type: '3xFiltre',
@@ -1756,11 +1758,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     video: 'VideoLemon.mp4',
                     description: '💨🔥 Une vraie grosse frappe pour les amateurs de filtré premium 🔥💨\n 🍋🍨 120U – Lemon Sorbet 🍨🍋\n\n ✨ Profil aromatique ✨\n Dès l’ouverture, Lemon Sorbet dévoile un profil terpénique explosif 💥🍋. Une vague d’agrumes ultra-fraîche envahit instantanément les sens, dominée par le citron jaune 🍋, le citron confit 🍬 et le zeste d’agrumes fraîchement râpé 🌿. En arrière-plan, des notes sucrées et crémeuses rappellent un sorbet citron artisanal 🍨, accompagnées d’une légère touche florale et d’un fond kush discret 🌱✨.\n\n 😮‍💨🍋 Goût\n En bouche, c’est une véritable explosion citronnée 💥🍋. L’attaque est vive et acidulée ⚡, rapidement équilibrée par une douceur crémeuse rappelant une glace au citron artisanale 🍨🤤. La fumée est dense, propre et particulièrement savoureuse grâce à la sélection 120U ☁️✨. La finale laisse une persistance longue et fraîche, avec des notes d’agrumes qui restent agréablement sur le palais 😋.\n\n ⚡🧠 Effets\n Lemon Sorbet offre une montée rapide et agréable 🚀✨.\n\n 😁 Sensation de bonne humeur immédiate\n 🌞 Effet positif et stimulant\n 🧠 Esprit léger et détendu\n ✨ Sensation de clarté mentale\n 😌 Relaxation progressive du corps\n 🌙 Équilibre idéal entre détente et plaisir gustatif\n\n 🏆🍋 Le verdict\n Lemon Sorbet s’impose comme une référence pour les amateurs de profils citronnés puissants et de filtrés premium 🔥🍋. Son bouquet aromatique intense, sa fumée propre et son goût gourmand en font une variété qui marque les esprits dès les premières bouffées 💨✨.',
                     tarifs: [
-                        { weight: '5G', price: 60.00 },
-                        { weight: '10G', price: 100.00 },
-                        { weight: '25G', price: 200.00 },
-                        { weight: '50G', price: 280.00 },
-                        { weight: '100G', price: 450.00 },
+                        { weight: '10G', price: 60.00 },
+                        { weight: '25G', price: 130.00 },
+                        { weight: '50G', price: 230.00 },
+                        { weight: '100G', price: 420.00 },
                     ]
                 },
                /*  {
@@ -2086,9 +2087,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     description: '',
                     tarifs: [
                         { weight: '10g', price: 50.00 },
-                        { weight: '20g', price: 90.00 },
-                        { weight: '50g', price: 200.00 },
-                        { weight: '100g', price: 330.00 },
+                        { weight: '25g', price: 110.00 },
+                        { weight: '50g', price: 180.00 },
+                        { weight: '100g', price: 310.00 },
                     ]
                 },
                 {
@@ -2153,10 +2154,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     video: 'VideoB7.mov',
                     description: '🌕 SUPER MOUSSEUX 🌕 \n\n Récolte 2026\n Une vraie pépite signée Berry W7\n Ce jaune super mousseux sur la strain envoie un profil ultra gourmand et fruité, avec une texture bien grasse et mousseuse comme les amateurs aiment 🔥\n\n 👃 Aromatique :\n À l’ouverture, ça dégage direct une grosse odeur , \n\n Derrière, t’as une légère touche creamy/gazeuse avec un fond un peu tropical qui reste longtemps au nez. Une strain connue pour son profil dessert fruité ultra propre.  \n\n 👅 Goût :\n En bouche c’est super doux et bien terpy 😮‍💨 mûr, fruits exotiques et candy sucré avec une finition légèrement crémeuse. La fumée est épaisse, propre et ultra savoureuse du début à la fin.\n\n 💨 Effets :\n Bonne grosse détente mentale et physique, montée euphorique puis relaxation bien lourde 🫠\n Parfait pour les amateurs de hash premium avec une vraie identité gustative.\n\n ✨ Texture mousseuse\n ✨ Full terpènes\n ✨ Très propre à la combustion\n ✨ Grosse frappe 2026\n\n Berry w7 produit tres demander = du très très lourd',
                     tarifs: [
-                        { weight: '10g', price: 60.00 },
-                        { weight: '20g', price: 100.00 },
-                        { weight: '50g', price: 200.00 },
-                        { weight: '100g', price: 330.00 },
+                        { weight: '10g', price: 50.00 },
+                        { weight: '25g', price: 110.00 },
+                        { weight: '50g', price: 180.00 },
+                        { weight: '100g', price: 310.00 },
                     ]
                 },
                 {
