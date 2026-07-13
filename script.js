@@ -830,10 +830,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     video: '',
                     description: '',                    
                     tarifs: [
-                        { weight: '5g', price: 60.00 },
-                        { weight: '10g', price: 100.00 },
-                        { weight: '25g', price: 220.00 },
-                        { weight: '50g', price: 400.00 },
+                        { weight: '5g', price: 50.00 },
+                        { weight: '10g', price: 90.00 },
+                        { weight: '25g', price: 200.00 },
+                        { weight: '50g', price: 350.00 },
                     ]
                 },
                  {
@@ -847,13 +847,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     video: 'VideoSB.mp4',
                     description: '✨ Cette génétique est appréciée pour son profil aromatique très expressif :\n 🍬 Notes sucrées et fruitées\n ⛽ Fond gazeux et légèrement diesel\n 🍋 Touches d’agrumes selon les phénotypes\n ❄️ Têtes très résineuses et visuellement attractives\n\n 💨 Effets généralement recherchés :\n 😁 Euphorie rapide\n 🚀 Sensation cérébrale puissante\n 😌 Relaxation progressive du corps\n 🎨 Peut favoriser la créativité et la bonne humeur\n\n 👃 Ce qui séduit les connaisseurs, c’est surtout son mélange entre douceur sucrée et caractère gassy, offrant une fumée riche en terpènes et une belle longueur en bouche.  \n\n 💎 Une variété moderne qui mise avant tout sur l’intensité aromatique, la résine et une expérience complète du premier nez jusqu’à la dernière bouffée. 🔥🌴💨',                    
                     tarifs: [
-                        { weight: '5g', price: 60.00 },
-                        { weight: '10g', price: 100.00 },
-                        { weight: '25g', price: 220.00 },
-                        { weight: '50g', price: 400.00 },
+                        { weight: '5g', price: 50.00 },
+                        { weight: '10g', price: 90.00 },
+                        { weight: '25g', price: 200.00 },
+                        { weight: '50g', price: 350.00 },
                     ]
                 }, 
-                 {
+               /*   {
                     id: '🍨🌿 GELATO #33 🌿🍨',
                     flag: '🇺🇸',
                     name: '🍨🌿 GELATO #33 🌿🍨',
@@ -864,12 +864,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     video: 'VideoG.mp4',
                     description: '💎🔥 Une des variétés les plus célèbres de la famille Gelato, réputée pour son équilibre entre puissance, saveurs gourmandes et effets agréables. 🔥💎\n\n ✨ Origines\n Gelato #33 est issue du croisement entre la variété Sunset Sherbet et Thin Mint GSC (Girl Scout Cookies). Cette génétique lui a permis de devenir une référence mondiale dans l’univers du cannabis.  \n\n 🌈 Aspect\n • Têtes denses et compactes 🟣🟢\n • Couleurs vert foncé à violettes ✨\n • Couvertes d’une épaisse couche de résine givrée ❄️\n • Pistils orange vif 🧡  \n\n 👃 Arômes & Saveurs\n 🍦 Crémeux et gourmand\n 🍓 Notes de fruits rouges et d’agrumes\n 🍪 Fond biscuité et légèrement mentholé\n 🍋 Touches sucrées et citronnées  \n\n ⚡ Effets recherchés\n 😄 Euphorie et bonne humeur\n 🧠 Sensation de bien-être mental\n 🎨 Créativité et sociabilité\n 😌 Relaxation corporelle sans forcément être assommante\n 🌙 À dose plus élevée, elle peut devenir très relaxante et favoriser le repos  \n\n 🎯 Profil général\n • Hybride équilibrée (légère dominance indica selon les phénotypes)\n • THC souvent situé entre 20 % et 29 % 🔥\n • Adaptée aussi bien pour se détendre que pour profiter d’une activité calme ou entre amis.  \n\n ⭐ En résumé\n Gelato #33 est souvent appréciée pour son mélange de détente physique et d’euphorie mentale. Elle procure généralement un effet heureux, relaxant et agréable, accompagné d’un profil aromatique crémeux et sucré qui a fait sa réputation. 🍨✨',                    
                     tarifs: [
-                        { weight: '5g', price: 60.00 },
-                        { weight: '10g', price: 100.00 },
-                        { weight: '25g', price: 220.00 },
-                        { weight: '50g', price: 400.00 },
+                        { weight: '5g', price: 50.00 },
+                        { weight: '10g', price: 90.00 },
+                        { weight: '25g', price: 200.00 },
+                        { weight: '50g', price: 350.00 },
                     ]
-                }, 
+                },  */
                 {
                     id: 'Pech sherbet 🍨',
                     flag: '🇺🇸',
@@ -882,10 +882,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     video: '',
                     description: '',                    
                     tarifs: [
-                        { weight: '5g', price: 60.00 },
-                        { weight: '10g', price: 100.00 },
-                        { weight: '25g', price: 220.00 },
-                        { weight: '50g', price: 400.00 },
+                        { weight: '5g', price: 50.00 },
+                        { weight: '10g', price: 90.00 },
+                        { weight: '25g', price: 200.00 },
+                        { weight: '50g', price: 350.00 },
                     ]
                 },
                 {
@@ -900,10 +900,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     video: '',
                     description: '',                    
                     tarifs: [
-                        { weight: '5g', price: 60.00 },
-                        { weight: '10g', price: 100.00 },
-                        { weight: '25g', price: 220.00 },
-                        { weight: '50g', price: 400.00 },
+                        { weight: '5g', price: 50.00 },
+                        { weight: '10g', price: 90.00 },
+                        { weight: '25g', price: 200.00 },
+                        { weight: '50g', price: 350.00 },
                     ]
                 },
                 {
@@ -918,10 +918,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     video: '',
                     description: 'Une strain qui porte parfaitement son nom. Rocket envoie une vraie montée puissante avec un profil moderne ultra terpy, mélangeant gaz, fruits sucrés et notes crémeuses pour une fumée lourde et premium.\n\n 👃 Aromatique :\n Dès l’ouverture, ça explose avec une odeur gazeuse bien forte ⛽️ accompagnée de touches fruitées et sucrées. On retrouve aussi un fond creamy/kush qui donne beaucoup de profondeur au profil.\n\n 👅 Goût :\n En bouche, c’est intense : mélange de candy fruité 🍬, gaz lourd et légère touche tropicale qui reste longtemps après la taffe. La fumée est épaisse, propre et ultra savoureuse.\n\n 💨 Effet :\n Montée rapide et puissante 🚀 avec un gros effet euphorique au début avant une détente physique bien lourde. Une vraie frappe pour les amateurs de strains qui tapent fort.\n\n 🌿 Buds bien résineux, full terpènes et qualité premium.',                    
                     tarifs: [
-                        { weight: '5g', price: 60.00 },
-                        { weight: '10g', price: 100.00 },
-                        { weight: '25g', price: 220.00 },
-                        { weight: '50g', price: 400.00 },
+                        { weight: '5g', price: 50.00 },
+                        { weight: '10g', price: 90.00 },
+                        { weight: '25g', price: 200.00 },
+                        { weight: '50g', price: 350.00 },
                     ]
                 },
             ]
