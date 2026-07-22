@@ -1,55 +1,53 @@
 // Attend que le DOM soit entièrement chargé pour exécuter le script
-document.addEventListener('DOMContentLoaded', function () {
-    const tg = window.Telegram.WebApp;
-    tg.ready();
-    tg.expand();
-    tg.setHeaderColor('#2c2c2e');
-    tg.setBackgroundColor('#1c1c1d');
+document.addEventListener("DOMContentLoaded", function () {
+  const tg = window.Telegram.WebApp;
+  tg.ready();
+  tg.expand();
+  tg.setHeaderColor("#2c2c2e");
+  tg.setBackgroundColor("#1c1c1d");
 
-    const progressBar = document.getElementById("myBar");
-    const loader = document.getElementById("page-loader");
+  const progressBar = document.getElementById("myBar");
+  const loader = document.getElementById("page-loader");
 
-    // 1. On lance l'animation de la barre après un tout petit délai
-    setTimeout(() => {
-        if (progressBar) {
-            progressBar.style.width = "100%";
-        }
-    }, 100);
+  // 1. On lance l'animation de la barre après un tout petit délai
+  setTimeout(() => {
+    if (progressBar) {
+      progressBar.style.width = "100%";
+    }
+  }, 100);
 
-    // 2. On attend la fin de l'animation (2.5 secondes ici) pour cacher le loader
-    setTimeout(() => {
-        if (loader) {
-            loader.style.opacity = "0"; // Effet de fondu
-            loader.style.transition = "opacity 0.5s ease";
+  // 2. On attend la fin de l'animation (2.5 secondes ici) pour cacher le loader
+  setTimeout(() => {
+    if (loader) {
+      loader.style.opacity = "0"; // Effet de fondu
+      loader.style.transition = "opacity 0.5s ease";
 
-            setTimeout(() => {
-                loader.style.display = "none";
-                loader.classList.remove('active');
-                // Affiche la page Home par défaut
-                document.getElementById('page-home').classList.add('active');
-            }, 500); // Attend la fin du fondu
-        }
-    }, 2600); // 2600ms = 2.5s d'animation + 0.1s de délai
+      setTimeout(() => {
+        loader.style.display = "none";
+        loader.classList.remove("active");
+        // Affiche la page Home par défaut
+        document.getElementById("page-home").classList.add("active");
+      }, 500); // Attend la fin du fondu
+    }
+  }, 2600); // 2600ms = 2.5s d'animation + 0.1s de délai
 
-
-
-    // --- CONFIGURATION DES LIENS DE CONTACT ---
-    const contactLinks = [
-        {
-            name: 'WHATSAPP 📞',
-            url: 'https://wa.me/33759412821',
-            id: 'whatsapp',
-            className: 'whatsapp', // Il faudra peut-être ajouter ce CSS (Jaune)
-            text: "WHATSAPP 📞"
-        },
-        {
-            name: 'TÉLÉGRAM 💙',
-            url: 'https://t.me/kings75',
-            id: 'telegram-main',
-            className: 'telegram', // Garde le style Bleu Telegram
-            text: "TÉLÉGRAM 💙"
-        },
-       /*  {
+  // --- CONFIGURATION DES LIENS DE CONTACT ---
+  const contactLinks = [
+    {
+      name: "WHATSAPP 📞",
+      url: "https://wa.me/33759412821",
+      id: "whatsapp",
+      className: "whatsapp", // Il faudra peut-être ajouter ce CSS (Jaune)
+      text: "WHATSAPP 📞",
+    },
+    {
+      name: "TÉLÉGRAM 💙",
+      url: "https://t.me/kings75",
+      id: "telegram-main",
+      className: "telegram", // Garde le style Bleu Telegram
+      text: "TÉLÉGRAM 💙",
+    },
+    /*  {
             name: 'POTATO / MENU 🥔',
             url: 'https://dympt.org/legacyog75',
             id: 'potato-main',
@@ -63,231 +61,262 @@ document.addEventListener('DOMContentLoaded', function () {
             className: 'instagram', // Style dégradé Insta
             text: "INSTAGRAM 📸"
         } */
-      
+  ];
 
-    ];
+  // --- DONNÉES DE L'APPLICATION (PISTACHIOBOT) ---
+  const appData = [
+    // ============================================================
+    // CATEGORIE 1 : HOLLANDE 🌿
+    // ============================================================
+    {
+      id: "WeedH",
+      name: "WEED HOLLANDE 🇳🇱🌷",
+      type: "WeedH",
+      quality: "WEED HOLLANDE 🇳🇱🌷",
+      image: "CategHo.png", // Ton image de catégorie Weed
 
-    // --- DONNÉES DE L'APPLICATION (PISTACHIOBOT) ---
-    const appData = [
-         // ============================================================
-        // CATEGORIE 1 : HOLLANDE 🌿
-        // ============================================================
+      products: [
         {
-            id: 'WeedH',
-            name: 'WEED HOLLANDE 🇳🇱🌷',
-            type: 'WeedH',
-            quality: 'WEED HOLLANDE 🇳🇱🌷',
-            image: 'CategHo.png', // Ton image de catégorie Weed
-
-            products: [
-                {
-                    id: '🧠🍀AMNESIA CORE CUT 🍀🧠',
-                    flag: '🇳🇱',
-                    name: '🧠🍀 AMNESIA CORE CUT 🍀🧠',
-                    farm: '🌾 No Farm 🌾',
-                    promoEligible: true,
-                    type: 'Weed',
-                    image: 'ProductCore.png', 
-                    video: 'VideoCore.mp4',
-                    description: '💎🔥 Considérée par de nombreux connaisseurs comme l’une des meilleures expressions de l’Amnesia, la Amnesia Core Cut est une sélection d’élite recherchée pour son profil terpénique puissant et son effet cérébral particulièrement intense. 🔥💎\n\n ✨ Les effets\n\n 🚀 Montée rapide et énergique\n 😄 Euphorie marquée\n 🧠 Stimulation mentale puissante\n 🎨 Créativité et concentration accrues\n 🗣️ Effet social apprécié des amateurs de sativas\n\n 👃 Les arômes\n\n 🍊 Agrumes frais et zestés\n 🌿 Notes Haze classiques\n 🌶️ Légères touches épicées et encensées\n\n 🌱 Pourquoi elle est si recherchée ? \n\n • Sélection réputée pour sa stabilité \n • Profil aromatique particulièrement intense \n • Forte production de résine ✨ \n • Expression fidèle de l’esprit Amnesia « old school » \n • Très appréciée des amateurs de Haze européennes\n\n 🏆 Pour les connaisseurs\n La Core Cut est souvent citée parmi les meilleures coupes d’Amnesia grâce à son équilibre entre puissance, saveurs citronnées explosives et effet mental clair. Beaucoup la considèrent comme une référence lorsqu’on parle de vraie Amnesia de haut niveau.\n\n ⭐ En résumé :\n Une Amnesia premium, ultra citronnée, résineuse et cérébrale, recherchée par les amateurs de Haze authentiques et les passionnés de génétiques européennes. 🔥⚡🧠💎🌿',                    
-                    tarifs: [
-                        { weight: '10g', price: 70.00 },
-                    ]
-                }, 
-              
-            ]
+          id: "🧠🍀AMNESIA CORE CUT 🍀🧠",
+          flag: "🇳🇱",
+          name: "🧠🍀 AMNESIA CORE CUT 🍀🧠",
+          farm: "🌾 No Farm 🌾",
+          promoEligible: true,
+          type: "Weed",
+          image: "ProductCore.png",
+          video: "VideoCore.mp4",
+          description:
+            "💎🔥 Considérée par de nombreux connaisseurs comme l’une des meilleures expressions de l’Amnesia, la Amnesia Core Cut est une sélection d’élite recherchée pour son profil terpénique puissant et son effet cérébral particulièrement intense. 🔥💎\n\n ✨ Les effets\n\n 🚀 Montée rapide et énergique\n 😄 Euphorie marquée\n 🧠 Stimulation mentale puissante\n 🎨 Créativité et concentration accrues\n 🗣️ Effet social apprécié des amateurs de sativas\n\n 👃 Les arômes\n\n 🍊 Agrumes frais et zestés\n 🌿 Notes Haze classiques\n 🌶️ Légères touches épicées et encensées\n\n 🌱 Pourquoi elle est si recherchée ? \n\n • Sélection réputée pour sa stabilité \n • Profil aromatique particulièrement intense \n • Forte production de résine ✨ \n • Expression fidèle de l’esprit Amnesia « old school » \n • Très appréciée des amateurs de Haze européennes\n\n 🏆 Pour les connaisseurs\n La Core Cut est souvent citée parmi les meilleures coupes d’Amnesia grâce à son équilibre entre puissance, saveurs citronnées explosives et effet mental clair. Beaucoup la considèrent comme une référence lorsqu’on parle de vraie Amnesia de haut niveau.\n\n ⭐ En résumé :\n Une Amnesia premium, ultra citronnée, résineuse et cérébrale, recherchée par les amateurs de Haze authentiques et les passionnés de génétiques européennes. 🔥⚡🧠💎🌿",
+          tarifs: [{ weight: "10g", price: 70.0 }],
         },
-           {
-            id: 'Jaune USA',
-            name: 'Jaune USA 🇺🇸',
-            type: 'Jaune USA',
-            quality: 'Jaune USA 🇺🇸',
-            image: 'CategJauneUsa.png', // Ton image de catégorie Weed
+      ],
+    },
+    {
+      id: "Jaune USA",
+      name: "Jaune USA 🇺🇸",
+      type: "Jaune USA",
+      quality: "Jaune USA 🇺🇸",
+      image: "CategJauneUsa.png", // Ton image de catégorie Weed
 
-            products: [
-                 {
-                    id: 'White truffle 🍄',
-                    flag: '🇺🇸',
-                    name: 'White truffle 🍄',
-                    farm: '🌾 WEST COAST MOUSSE',
-                    promoEligible: true,
-                    type: '3xFiltre',
-                    image: 'ProductWT.jpg',
-                    video:'VideoWT.mp4',
-                      description: '🍄🤍 WHITE TRUFFLE — WEST COAST MOUSSE 🤍🍄\n\n Une mousse premium au profil profond, crémeux et raffiné. White Truffle se distingue par son mélange de notes terreuses, boisées et légèrement gazeuses, accompagné d’une douceur gourmande qui apporte beaucoup de rondeur à l’ensemble. 🇺🇸🔥\n\n 👃 Profil aromatique :\n 🍄 Notes terreuses et boisées\n 🌰 Noisette et fruits à coque\n 🍦 Fond crémeux et vanillé\n 🌿 Légère touche végétale\n ⛽ Finition gazeuse discrète\n\n 👅 Goût :\n En bouche, l’attaque est ronde et crémeuse, avec des saveurs de noisette grillée et de sous-bois. Une douceur légèrement vanillée apparaît ensuite, avant de laisser place à une finale plus profonde, terreuse et gassy qui reste longtemps sur le palais. 😮‍💨🍄\n\n 💛 Texture & qualité :\n ☁️ Mousseuse et homogène\n 🤲 Souple et facile à travailler\n ✨ Profil aromatique riche\n 🔥 Fumée dense et savoureuse\n 💎 Finition premium West Coast\n\n 🏆 Le verdict :\n White Truffle est une sélection élégante et pleine de caractère, idéale pour les amateurs de profils crémeux, terreux et légèrement gazeux. Une mousse raffinée qui change des saveurs fruitées classiques. 🍄🤍⛽🔥',
-                      tarifs: [
-                        { weight: '9G', price: 50.00 },
-                        { weight: '25G', price: 120.00 },
-                        { weight: '50G', price: 200.00 },
-                        { weight: '100G', price: 350.00 },
-                    ]
-                },
-                 {
-                    id: 'Pink Lemonade 🥤',
-                    flag: '🇺🇸',
-                    name: 'Pink Lemonade 🥤',
-                    farm: '🌾 WEST COAST MOUSSE',
-                    promoEligible: true,
-                    type: '3xFiltre',
-                    image: 'ProductPK.jpg',
-                    video: 'VideoPK.mp4',
-                      description: '🍓🍋 PINK LEMONADE — WEST COAST MOUSSE 🥤💗\n\n Une mousse ultra fraîche et fruitée qui rappelle une limonade rose bien glacée. Pink Lemonade mélange des agrumes acidulés, des fruits rouges sucrés et une touche candy pour créer un profil vif, gourmand et particulièrement rafraîchissant. 🇺🇸🔥\n\n 👃 Profil aromatique :\n 🍋 Citron frais et zesté\n 🍓 Fraise et fruits rouges\n 🥤 Limonade sucrée\n 🍬 Bonbon acidulé\n 🌸 Petite touche florale\n\n 👅 Goût :\n Dès la première bouffée, une vague de citron sucré et de fruits rouges envahit le palais. L’acidité reste parfaitement équilibrée par une douceur candy et légèrement crémeuse. La finale est fraîche, fruitée et persistante, comme une limonade rose artisanale. 😮‍💨🍓🍋\n\n 💛 Texture & qualité :\n ☁️ Mousseuse et légère\n 🤲 Facile à travailler\n ✨ Arômes frais et expressifs\n 🔥 Fumée douce et parfumée\n 💎 Sélection premium West Coast\n\n 🏆 Le verdict :\n Pink Lemonade est parfaite pour les amateurs de profils citronnés, fruités et sucrés. Une mousse moderne, colorée et rafraîchissante qui ne passe pas inaperçue. 🥤💗🍓🔥',
-                      tarifs: [
-                        { weight: '9G', price: 50.00 },
-                        { weight: '25G', price: 120.00 },
-                        { weight: '50G', price: 200.00 },
-                        { weight: '100G', price: 350.00 },
-                    ]
-                },
-                 {
-                    id: 'BISCOTTI 🍪',
-                    flag: '🇺🇸',
-                    name: 'BISCOTTI 🍪',
-                    farm: '🌾 WEST COAST MOUSSE',
-                    promoEligible: true,
-                    type: '3xFiltre',
-                    image: 'ProductBisco.jpg',
-                    video:'VideoBisco.mp4',
-                      description: '🍪🔥 BISCOTTI — WEST COAST MOUSSE 🔥🍪\n\n Une mousse gourmande inspirée des meilleurs profils dessert américains. Biscotti développe un mélange riche de biscuit sucré, de crème vanillée et de notes légèrement épicées, accompagné d’un fond kush et gazeux qui lui apporte beaucoup de caractère. 🇺🇸💎\n\n 👃 Profil aromatique :\n 🍪 Biscuit chaud et pâte sucrée\n 🍦 Vanille et crème douce\n 🌰 Amande et noisette grillée\n 🌶️ Légères notes épicées\n ⛽ Fond kush et gazeux\n\n 👅 Goût :\n En bouche, l’attaque rappelle un biscuit tout juste sorti du four, avec des notes de vanille, de caramel et de fruits à coque. Le profil devient ensuite plus profond et légèrement épicé, avant une finale kush et gassy qui reste longtemps sur le palais. 😮‍💨🍪\n\n 💛 Texture & qualité :\n ☁️ Mousseuse et souple\n 🤲 Facile à effriter\n ✨ Profil gourmand très marqué\n 🔥 Fumée dense et crémeuse\n 💎 Finition premium West Coast\n\n 🏆 Le verdict :\n Biscotti est une valeur sûre pour les amateurs de profils pâtissiers, crémeux et gazeux. Une mousse riche et réconfortante avec une véritable identité Cali dessert. 🍪🍦⛽🔥',
-                      tarifs: [
-                        { weight: '9G', price: 50.00 },
-                        { weight: '25G', price: 120.00 },
-                        { weight: '50G', price: 200.00 },
-                        { weight: '100G', price: 350.00 },
-                    ]
-                },
-                 {
-                    id: 'Candy Crush 🍭',
-                    flag: '🇺🇸',
-                    name: 'Candy Crush 🍭',
-                    farm: '🌾 WEST COAST MOUSSE',
-                    promoEligible: true,
-                    type: '3xFiltre',
-                    image: 'ProductUsa3.jpg',
-                    video:'VideoCCH.mp4',
-                      description: '🇺🇸 DRY SIFT PREMIUM • UPGRADE AROMATIQUE & PUISSANCE 🇺🇸 \n\n Le Mousseux Made in Los Angeles monte en gamme. Ce nouveau batch bénéficie d\'une technique "Dry Sift" optimisée : le goût Cali est beaucoup plus prononcé et la défonce frappe nettement plus fort que l\'ancienne version. \n\n  🍭 Candy Land : Euphorie percutante, profil ultra-sucré candy. \n\n 🍯 Texture : Jaune mousseux d’exception qui s\'effrite tout seul. Une frappe exclusive introuvable ailleurs. 🥵😱🍫',
-                      tarifs: [
-                        { weight: '9G', price: 50.00 },
-                        { weight: '25G', price: 120.00 },
-                        { weight: '50G', price: 200.00 },
-                        { weight: '100G', price: 350.00 },
-                    ]
-                },
-                {
-                    id: 'ORANGE CREAMPOP 🔥💛',
-                    flag: '🇺🇸',
-                    name: 'ORANGE CREAMPOP 🔥💛',
-                    farm: '🌾 WEST COAST MOUSSE',
-                    promoEligible: true,
-                    type: 'JauneUsa',
-                    image: 'ProductOre.png', 
-                    video: 'VideoOre.mov',
-                    description: 'Un jaune mousseux ultra gourmand qui frappe direct dès l’ouverture du pochon 🍊💨\n La strain Orange Creampop ramène un profil ultra crémeux et fruité, avec une vraie identité cali premium 🇺🇸✨\n\n 👃 Profil aromatique :\n Une grosse odeur d’orange sucrée type bonbon crémeux, mélangée à des notes vanilla cream et une légère touche gazeuse bien propre 🍦🍊⛽️\n Le mousseux est gras, collant et hyper parfumé.\n\n 👅 Goût :\n En bouche c’est une vraie dinguerie 😮‍💨\n Tu retrouves un mélange parfait entre agrumes sucrés, crème vanillée et une petite finition légèrement candy qui reste longtemps sur le palais 🍬🍊\n Une fumée douce, lourde et ultra savoureuse.\n\n 💥 Effets :\n Bonne grosse défonce relaxante mais propre 🧠🔥\n Ça monte progressivement avec un effet lourd sur le corps tout en gardant un mood chill et agréable. Parfait pour se poser tranquillement le soir 😴💨\n ⭐️ Texture mousseuse\n ⭐️ Goût ultra prononcé\n ⭐️ Cali vibes\n ⭐️ Très gros niveau de qualité',
-                    tarifs: [
-                        { weight: '9G', price: 50.00 },
-                        { weight: '25G', price: 120.00 },
-                        { weight: '50G', price: 200.00 },
-                        { weight: '100G', price: 350.00 },
-                    ]
-                },
-                   {
-                    id: '🤯🚀 PERMANENT MARKER',
-                    flag: '🇺🇸',
-                    name: '🤯🚀 PERMANENT MARKER',
-                    farm: '🌾 WEST COAST MOUSSE',
-                    promoEligible: true,
-                    type: 'JauneUsa',
-                    image: 'ProductPerm.jpg', 
-                    video:'VideoPerm.mp4',
-                    description: '🔥 Une mousse réputée pour son caractère unique et sa puissance. Son profil est marqué par des notes de gaz, de crème et de marqueur, ce qui lui donne une identité immédiatement reconnaissable.\n\n 💨 Effets recherchés :\n 😌 Détente profonde\n 😊 Sensation de bien-être\n 🧠 Esprit apaisé\n 🛋️ Relaxation physique marquée\n 🌙 Peut devenir très relaxante en fin de session\n\n ⭐ Pourquoi les amateurs l’apprécient ?\n ✔️ Arômes puissants et originaux\n ✔️ Goût qui reste longtemps en bouche\n ✔️ Effets durables\n ✔️ Idéale pour se poser et profiter du moment\n\n 🇺🇸💎 Pour les vrais connaisseurs de mousse US, la Permanent Marker est souvent considérée comme une référence moderne grâce à son profil terpénique atypique, puissant et facilement identifiable. Une variété qui ne passe jamais inaperçue et qui a su se faire une place parmi les génétiques les plus appréciées de ces dernières années.\n 🏆 En bref : Une mousse de caractère, riche en saveurs et en sensations, pensée pour ceux qui recherchent une expérience authentique et typiquement West Coast. 🌊🔥🧱💨',
-                    tarifs: [
-                        { weight: '9G', price: 50.00 },
-                        { weight: '25G', price: 120.00 },
-                        { weight: '50G', price: 200.00 },
-                        { weight: '100G', price: 350.00 },
-                    ]
-                },
-                   {
-                    id: 'GELATO',
-                    flag: '🇺🇸',
-                    name: 'GELATO 🍦',
-                    farm: '👹 MONSTER CALI-MOUSSE 👹',
-                    promoEligible: true,
-                    type: 'JauneUsa',
-                    image: 'ProductGel.jpg', 
-                    description: '👹🍦 MONSTER CALI-MOUSSE — GELATO 🍦👹\n\n Une mousse jaune ultra gourmande qui met en avant tout le caractère crémeux et fruité de la célèbre Gelato. Dès l’ouverture, elle dévoile un parfum riche, sucré et moderne, avec une vraie identité Cali. 🇺🇸🔥\n\n 👃 Profil aromatique :\n 🍦 Crème glacée et vanille douce\n 🍓 Fruits rouges sucrés\n 🍊 Agrumes légèrement acidulés\n 🍬 Notes de bonbon\n ⛽ Fond gazeux discret\n\n 👅 Goût :\n En bouche, l’attaque est douce et crémeuse, accompagnée de saveurs fruitées rappelant les fruits rouges et les agrumes sucrés. La finale devient légèrement gazeuse et laisse un arrière-goût gourmand façon dessert. 😮‍💨🍦\n\n 💛 Texture :\n ☁️ Mousseuse et aérée\n 🤲 Facile à travailler\n ✨ Parfum intense dès l’ouverture\n 🔥 Combustion régulière\n\n 🏆 Le verdict :\n Une Cali-Mousse gourmande et équilibrée, idéale pour les amateurs de profils crémeux, fruités et légèrement gassy. Une valeur sûre signée Monster Cali-Mousse. 👹🍦🔥',
-                    tarifs: [
-                        { weight: '9G', price: 50.00 },
-                        { weight: '25G', price: 120.00 },
-                        { weight: '50G', price: 200.00 },
-                        { weight: '100G', price: 300.00, badge: 'PROMO ⚡️' },
-                    ]
-                },
-                {
-                    id: 'CHERRY PIE',
-                    flag: '🇺🇸',
-                    name: 'CHERRY PIE 🥧',
-                    farm: '👹 MONSTER CALI-MOUSSE 👹',
-                    promoEligible: true,
-                    type: 'JauneUsa',
-                    image: 'ProductCP.jpg', 
-                    description: '👹🍒 MONSTER CALI-MOUSSE — CHERRY PIE 🥧👹\n\n Une mousse jaune au profil dessert intense, dominée par la cerise sucrée et les notes pâtissières. Cherry Pie mélange gourmandise fruitée, douceur crémeuse et petite touche gazeuse pour une identité riche et reconnaissable. 🇺🇸🔥\n\n 👃 Profil aromatique :\n 🍒 Cerise mûre et fruits rouges\n 🥧 Pâte sucrée et biscuit\n 🍦 Crème douce et vanillée\n 🌿 Légère note terreuse\n ⛽ Fond gazeux subtil\n\n 👅 Goût :\n L’attaque rappelle une tarte à la cerise avec une belle douceur fruitée. Elle évolue ensuite vers des notes de pâte sucrée, de crème et de vanille, avant une finition légèrement terreuse et gassy qui reste longtemps en bouche. 😮‍💨🍒\n\n 💛 Texture :\n ☁️ Mousseuse et souple\n 🤲 Facile à effriter\n ✨ Riche en arômes\n 🔥 Fumée dense et savoureuse\n\n 🏆 Le verdict :\n Une Cali-Mousse très gourmande, pensée pour les amateurs de cerise, de profils pâtissiers et de saveurs dessert. Cherry Pie porte parfaitement la signature Monster Cali-Mousse. 👹🍒🥧🔥',
-                    tarifs: [
-                        { weight: '9G', price: 50.00 },
-                        { weight: '25G', price: 120.00 },
-                        { weight: '50G', price: 200.00 },
-                        { weight: '100G', price: 300.00, badge: 'PROMO ⚡️' },
-                    ]
-                },
-                {
-                    id: 'TROPICANA CHERRY',
-                    flag: '🇺🇸',
-                    name: 'TROPICANA CHERRY 🍒',
-                    farm: '👹 MONSTER CALI-MOUSSE 👹',
-                    promoEligible: true,
-                    type: 'JauneUsa',
-                    image: 'ProductTC.jpg', 
-                    description: '👹🍊 MONSTER CALI-MOUSSE — TROPICANA CHERRY 🍒👹\n\n Une mousse jaune fruitée et explosive qui combine la douceur de la cerise avec la fraîcheur intense des agrumes. Tropicana Cherry développe un profil coloré, sucré et acidulé, parfaitement adapté aux amateurs de saveurs modernes. 🇺🇸🔥\n\n 👃 Profil aromatique :\n 🍒 Cerise sucrée et fruits rouges\n 🍊 Orange fraîche et zestée\n 🍋 Agrumes acidulés\n 🍬 Bonbon fruité\n 🌸 Petite touche florale\n\n 👅 Goût :\n En bouche, une vague de cerise et d’orange sucrée arrive dès la première bouffée. Les agrumes apportent ensuite une fraîcheur légèrement acidulée, tandis qu’une douceur candy et florale équilibre parfaitement l’ensemble. 😮‍💨🍊\n\n 💛 Texture :\n ☁️ Mousseuse et légère\n ✨ Profil aromatique très expressif\n 🤲 Facile à travailler\n 🔥 Fumée douce et parfumée\n\n 🏆 Le verdict :\n Une Cali-Mousse vive, fruitée et rafraîchissante, avec un équilibre parfait entre cerise sucrée et agrumes pétillants. Une sélection pleine de caractère signée Monster Cali-Mousse. 👹🍒🍊🔥',
-                    tarifs: [
-                        { weight: '9G', price: 50.00 },
-                        { weight: '25G', price: 120.00 },
-                        { weight: '50G', price: 200.00 },
-                        { weight: '100G', price: 300.00, badge: 'PROMO ⚡️' },
-                    ]
-                },
-                {
-                    id: 'PEANUT BUTTER',
-                    flag: '🇺🇸',
-                    name: 'PEANUT BUTTER 🥜',
-                    farm: '👹 MONSTER CALI-MOUSSE 👹',
-                    promoEligible: true,
-                    type: 'JauneUsa',
-                    image: 'ProductPB.jpg', 
-                    description: '👹🥜 MONSTER CALI-MOUSSE — PEANUT BUTTER 🥜👹\n\n Une mousse jaune au profil gourmand et original, inspirée des saveurs riches du beurre de cacahuète. Elle mélange des notes crémeuses, grillées et légèrement salées avec un fond terreux et gazeux typique des grosses sélections US. 🇺🇸🔥\n\n 👃 Profil aromatique :\n 🥜 Cacahuète grillée\n 🧈 Beurre crémeux\n 🍪 Biscuit et pâte sucrée\n 🌿 Fond terreux\n ⛽ Légère touche de gaz\n\n 👅 Goût :\n L’attaque est ronde et crémeuse, avec une saveur de cacahuète grillée et de biscuit. Elle évolue progressivement vers des notes plus terreuses et légèrement gazeuses, laissant une finale riche et persistante sur le palais. 😮‍💨🥜\n\n 💛 Texture :\n ☁️ Mousseuse et souple\n 🤲 Facile à travailler\n ✨ Profil gourmand très marqué\n 🔥 Fumée épaisse et savoureuse\n\n 🏆 Le verdict :\n Une Cali-Mousse différente des profils fruités classiques, destinée aux amateurs de saveurs crémeuses, grillées et gassy. Une sélection originale et pleine de caractère. 👹🥜🧈🔥',
-                    tarifs: [
-                        { weight: '9G', price: 50.00 },
-                        { weight: '25G', price: 120.00 },
-                        { weight: '50G', price: 200.00 },
-                        { weight: '100G', price: 300.00, badge: 'PROMO ⚡️' },
-                    ]
-                },
-                {
-                    id: 'RS11',
-                    flag: '🇺🇸',
-                    name: 'RS 11 🏎️',
-                    farm: '👹 MONSTER CALI-MOUSSE 👹',
-                    promoEligible: true,
-                    type: 'JauneUsa',
-                    image: 'ProductR1.jpg', 
-                    description: '👹🏎️ MONSTER CALI-MOUSSE — RS 11 🏎️👹\n\n Une mousse jaune inspirée de la célèbre RS11, connue pour son profil candy, fruité et crémeux accompagné d’une belle touche gazeuse. Une sélection moderne, riche en arômes et immédiatement reconnaissable. 🇺🇸🔥\n\n 👃 Profil aromatique :\n 🍬 Bonbon fruité\n 🍓 Fruits rouges et baies\n 🍦 Crème vanillée\n 🌸 Notes florales légères\n ⛽ Fond gazeux et terreux\n\n 👅 Goût :\n En bouche, RS11 commence par une douceur candy très marquée, accompagnée de fruits rouges sucrés. Des notes crémeuses et florales apparaissent ensuite, avant une finale gassy plus profonde qui apporte du relief et une belle longueur en bouche. 😮‍💨🍬\n\n 💛 Texture :\n ☁️ Mousseuse et aérée\n 🤲 Souple et facile à effriter\n ✨ Terpènes riches et expressifs\n 🔥 Fumée dense et parfumée\n\n 🏆 Le verdict :\n Une Cali-Mousse premium au profil candy-gas parfaitement équilibré. RS11 conviendra aux amateurs de saveurs fruitées, crémeuses et puissantes, avec une vraie identité West Coast. 👹🏎️🍬🔥',
-                    tarifs: [
-                        { weight: '9G', price: 50.00 },
-                        { weight: '25G', price: 120.00 },
-                        { weight: '50G', price: 200.00 },
-                        { weight: '100G', price: 300.00, badge: 'PROMO ⚡️' },
-                    ]
-                },
-                  /* {
+      products: [
+        {
+          id: "White truffle 🍄",
+          flag: "🇺🇸",
+          name: "White truffle 🍄",
+          farm: "🌾 WEST COAST MOUSSE",
+          promoEligible: true,
+          type: "3xFiltre",
+          image: "ProductWT.jpg",
+          video: "VideoWT.mp4",
+          description:
+            "🍄🤍 WHITE TRUFFLE — WEST COAST MOUSSE 🤍🍄\n\n Une mousse premium au profil profond, crémeux et raffiné. White Truffle se distingue par son mélange de notes terreuses, boisées et légèrement gazeuses, accompagné d’une douceur gourmande qui apporte beaucoup de rondeur à l’ensemble. 🇺🇸🔥\n\n 👃 Profil aromatique :\n 🍄 Notes terreuses et boisées\n 🌰 Noisette et fruits à coque\n 🍦 Fond crémeux et vanillé\n 🌿 Légère touche végétale\n ⛽ Finition gazeuse discrète\n\n 👅 Goût :\n En bouche, l’attaque est ronde et crémeuse, avec des saveurs de noisette grillée et de sous-bois. Une douceur légèrement vanillée apparaît ensuite, avant de laisser place à une finale plus profonde, terreuse et gassy qui reste longtemps sur le palais. 😮‍💨🍄\n\n 💛 Texture & qualité :\n ☁️ Mousseuse et homogène\n 🤲 Souple et facile à travailler\n ✨ Profil aromatique riche\n 🔥 Fumée dense et savoureuse\n 💎 Finition premium West Coast\n\n 🏆 Le verdict :\n White Truffle est une sélection élégante et pleine de caractère, idéale pour les amateurs de profils crémeux, terreux et légèrement gazeux. Une mousse raffinée qui change des saveurs fruitées classiques. 🍄🤍⛽🔥",
+          tarifs: [
+            { weight: "9G", price: 50.0 },
+            { weight: "25G", price: 120.0 },
+            { weight: "50G", price: 200.0 },
+            { weight: "100G", price: 350.0 },
+          ],
+        },
+        {
+          id: "Pink Lemonade 🥤",
+          flag: "🇺🇸",
+          name: "Pink Lemonade 🥤",
+          farm: "🌾 WEST COAST MOUSSE",
+          promoEligible: true,
+          type: "3xFiltre",
+          image: "ProductPK.jpg",
+          video: "VideoPK.mp4",
+          description:
+            "🍓🍋 PINK LEMONADE — WEST COAST MOUSSE 🥤💗\n\n Une mousse ultra fraîche et fruitée qui rappelle une limonade rose bien glacée. Pink Lemonade mélange des agrumes acidulés, des fruits rouges sucrés et une touche candy pour créer un profil vif, gourmand et particulièrement rafraîchissant. 🇺🇸🔥\n\n 👃 Profil aromatique :\n 🍋 Citron frais et zesté\n 🍓 Fraise et fruits rouges\n 🥤 Limonade sucrée\n 🍬 Bonbon acidulé\n 🌸 Petite touche florale\n\n 👅 Goût :\n Dès la première bouffée, une vague de citron sucré et de fruits rouges envahit le palais. L’acidité reste parfaitement équilibrée par une douceur candy et légèrement crémeuse. La finale est fraîche, fruitée et persistante, comme une limonade rose artisanale. 😮‍💨🍓🍋\n\n 💛 Texture & qualité :\n ☁️ Mousseuse et légère\n 🤲 Facile à travailler\n ✨ Arômes frais et expressifs\n 🔥 Fumée douce et parfumée\n 💎 Sélection premium West Coast\n\n 🏆 Le verdict :\n Pink Lemonade est parfaite pour les amateurs de profils citronnés, fruités et sucrés. Une mousse moderne, colorée et rafraîchissante qui ne passe pas inaperçue. 🥤💗🍓🔥",
+          tarifs: [
+            { weight: "9G", price: 50.0 },
+            { weight: "25G", price: 120.0 },
+            { weight: "50G", price: 200.0 },
+            { weight: "100G", price: 350.0 },
+          ],
+        },
+        {
+          id: "BISCOTTI 🍪",
+          flag: "🇺🇸",
+          name: "BISCOTTI 🍪",
+          farm: "🌾 WEST COAST MOUSSE",
+          promoEligible: true,
+          type: "3xFiltre",
+          image: "ProductBisco.jpg",
+          video: "VideoBisco.mp4",
+          description:
+            "🍪🔥 BISCOTTI — WEST COAST MOUSSE 🔥🍪\n\n Une mousse gourmande inspirée des meilleurs profils dessert américains. Biscotti développe un mélange riche de biscuit sucré, de crème vanillée et de notes légèrement épicées, accompagné d’un fond kush et gazeux qui lui apporte beaucoup de caractère. 🇺🇸💎\n\n 👃 Profil aromatique :\n 🍪 Biscuit chaud et pâte sucrée\n 🍦 Vanille et crème douce\n 🌰 Amande et noisette grillée\n 🌶️ Légères notes épicées\n ⛽ Fond kush et gazeux\n\n 👅 Goût :\n En bouche, l’attaque rappelle un biscuit tout juste sorti du four, avec des notes de vanille, de caramel et de fruits à coque. Le profil devient ensuite plus profond et légèrement épicé, avant une finale kush et gassy qui reste longtemps sur le palais. 😮‍💨🍪\n\n 💛 Texture & qualité :\n ☁️ Mousseuse et souple\n 🤲 Facile à effriter\n ✨ Profil gourmand très marqué\n 🔥 Fumée dense et crémeuse\n 💎 Finition premium West Coast\n\n 🏆 Le verdict :\n Biscotti est une valeur sûre pour les amateurs de profils pâtissiers, crémeux et gazeux. Une mousse riche et réconfortante avec une véritable identité Cali dessert. 🍪🍦⛽🔥",
+          tarifs: [
+            { weight: "9G", price: 50.0 },
+            { weight: "25G", price: 120.0 },
+            { weight: "50G", price: 200.0 },
+            { weight: "100G", price: 350.0 },
+          ],
+        },
+        {
+          id: "Candy Crush 🍭",
+          flag: "🇺🇸",
+          name: "Candy Crush 🍭",
+          farm: "🌾 WEST COAST MOUSSE",
+          promoEligible: true,
+          type: "3xFiltre",
+          image: "ProductUsa3.jpg",
+          video: "VideoCCH.mp4",
+          description:
+            "🇺🇸 DRY SIFT PREMIUM • UPGRADE AROMATIQUE & PUISSANCE 🇺🇸 \n\n Le Mousseux Made in Los Angeles monte en gamme. Ce nouveau batch bénéficie d'une technique \"Dry Sift\" optimisée : le goût Cali est beaucoup plus prononcé et la défonce frappe nettement plus fort que l'ancienne version. \n\n  🍭 Candy Land : Euphorie percutante, profil ultra-sucré candy. \n\n 🍯 Texture : Jaune mousseux d’exception qui s'effrite tout seul. Une frappe exclusive introuvable ailleurs. 🥵😱🍫",
+          tarifs: [
+            { weight: "9G", price: 50.0 },
+            { weight: "25G", price: 120.0 },
+            { weight: "50G", price: 200.0 },
+            { weight: "100G", price: 350.0 },
+          ],
+        },
+        {
+          id: "ORANGE CREAMPOP 🔥💛",
+          flag: "🇺🇸",
+          name: "ORANGE CREAMPOP 🔥💛",
+          farm: "🌾 WEST COAST MOUSSE",
+          promoEligible: true,
+          type: "JauneUsa",
+          image: "ProductOre.png",
+          video: "VideoOre.mov",
+          description:
+            "Un jaune mousseux ultra gourmand qui frappe direct dès l’ouverture du pochon 🍊💨\n La strain Orange Creampop ramène un profil ultra crémeux et fruité, avec une vraie identité cali premium 🇺🇸✨\n\n 👃 Profil aromatique :\n Une grosse odeur d’orange sucrée type bonbon crémeux, mélangée à des notes vanilla cream et une légère touche gazeuse bien propre 🍦🍊⛽️\n Le mousseux est gras, collant et hyper parfumé.\n\n 👅 Goût :\n En bouche c’est une vraie dinguerie 😮‍💨\n Tu retrouves un mélange parfait entre agrumes sucrés, crème vanillée et une petite finition légèrement candy qui reste longtemps sur le palais 🍬🍊\n Une fumée douce, lourde et ultra savoureuse.\n\n 💥 Effets :\n Bonne grosse défonce relaxante mais propre 🧠🔥\n Ça monte progressivement avec un effet lourd sur le corps tout en gardant un mood chill et agréable. Parfait pour se poser tranquillement le soir 😴💨\n ⭐️ Texture mousseuse\n ⭐️ Goût ultra prononcé\n ⭐️ Cali vibes\n ⭐️ Très gros niveau de qualité",
+          tarifs: [
+            { weight: "9G", price: 50.0 },
+            { weight: "25G", price: 120.0 },
+            { weight: "50G", price: 200.0 },
+            { weight: "100G", price: 350.0 },
+          ],
+        },
+        {
+          id: "🤯🚀 PERMANENT MARKER",
+          flag: "🇺🇸",
+          name: "🤯🚀 PERMANENT MARKER",
+          farm: "🌾 WEST COAST MOUSSE",
+          promoEligible: true,
+          type: "JauneUsa",
+          image: "ProductPerm.jpg",
+          video: "VideoPerm.mp4",
+          description:
+            "🔥 Une mousse réputée pour son caractère unique et sa puissance. Son profil est marqué par des notes de gaz, de crème et de marqueur, ce qui lui donne une identité immédiatement reconnaissable.\n\n 💨 Effets recherchés :\n 😌 Détente profonde\n 😊 Sensation de bien-être\n 🧠 Esprit apaisé\n 🛋️ Relaxation physique marquée\n 🌙 Peut devenir très relaxante en fin de session\n\n ⭐ Pourquoi les amateurs l’apprécient ?\n ✔️ Arômes puissants et originaux\n ✔️ Goût qui reste longtemps en bouche\n ✔️ Effets durables\n ✔️ Idéale pour se poser et profiter du moment\n\n 🇺🇸💎 Pour les vrais connaisseurs de mousse US, la Permanent Marker est souvent considérée comme une référence moderne grâce à son profil terpénique atypique, puissant et facilement identifiable. Une variété qui ne passe jamais inaperçue et qui a su se faire une place parmi les génétiques les plus appréciées de ces dernières années.\n 🏆 En bref : Une mousse de caractère, riche en saveurs et en sensations, pensée pour ceux qui recherchent une expérience authentique et typiquement West Coast. 🌊🔥🧱💨",
+          tarifs: [
+            { weight: "9G", price: 50.0 },
+            { weight: "25G", price: 120.0 },
+            { weight: "50G", price: 200.0 },
+            { weight: "100G", price: 350.0 },
+          ],
+        },
+        {
+          id: "GELATO",
+          flag: "🇺🇸",
+          name: "GELATO 🍦",
+          farm: "👹 MONSTER CALI-MOUSSE 👹",
+          promoEligible: true,
+          type: "JauneUsa",
+          image: "ProductGel.jpg",
+          description:
+            "👹🍦 MONSTER CALI-MOUSSE — GELATO 🍦👹\n\n Une mousse jaune ultra gourmande qui met en avant tout le caractère crémeux et fruité de la célèbre Gelato. Dès l’ouverture, elle dévoile un parfum riche, sucré et moderne, avec une vraie identité Cali. 🇺🇸🔥\n\n 👃 Profil aromatique :\n 🍦 Crème glacée et vanille douce\n 🍓 Fruits rouges sucrés\n 🍊 Agrumes légèrement acidulés\n 🍬 Notes de bonbon\n ⛽ Fond gazeux discret\n\n 👅 Goût :\n En bouche, l’attaque est douce et crémeuse, accompagnée de saveurs fruitées rappelant les fruits rouges et les agrumes sucrés. La finale devient légèrement gazeuse et laisse un arrière-goût gourmand façon dessert. 😮‍💨🍦\n\n 💛 Texture :\n ☁️ Mousseuse et aérée\n 🤲 Facile à travailler\n ✨ Parfum intense dès l’ouverture\n 🔥 Combustion régulière\n\n 🏆 Le verdict :\n Une Cali-Mousse gourmande et équilibrée, idéale pour les amateurs de profils crémeux, fruités et légèrement gassy. Une valeur sûre signée Monster Cali-Mousse. 👹🍦🔥",
+          tarifs: [
+            { weight: "9G", price: 50.0 },
+            { weight: "25G", price: 120.0 },
+            { weight: "50G", price: 200.0 },
+            {
+              weight: "100G",
+              price: 300.0,
+              oldPrice: 350.0,
+              badge: "PROMO ⚡️",
+            },
+          ],
+        },
+        {
+          id: "CHERRY PIE",
+          flag: "🇺🇸",
+          name: "CHERRY PIE 🥧",
+          farm: "👹 MONSTER CALI-MOUSSE 👹",
+          promoEligible: true,
+          type: "JauneUsa",
+          image: "ProductCP.jpg",
+          description:
+            "👹🍒 MONSTER CALI-MOUSSE — CHERRY PIE 🥧👹\n\n Une mousse jaune au profil dessert intense, dominée par la cerise sucrée et les notes pâtissières. Cherry Pie mélange gourmandise fruitée, douceur crémeuse et petite touche gazeuse pour une identité riche et reconnaissable. 🇺🇸🔥\n\n 👃 Profil aromatique :\n 🍒 Cerise mûre et fruits rouges\n 🥧 Pâte sucrée et biscuit\n 🍦 Crème douce et vanillée\n 🌿 Légère note terreuse\n ⛽ Fond gazeux subtil\n\n 👅 Goût :\n L’attaque rappelle une tarte à la cerise avec une belle douceur fruitée. Elle évolue ensuite vers des notes de pâte sucrée, de crème et de vanille, avant une finition légèrement terreuse et gassy qui reste longtemps en bouche. 😮‍💨🍒\n\n 💛 Texture :\n ☁️ Mousseuse et souple\n 🤲 Facile à effriter\n ✨ Riche en arômes\n 🔥 Fumée dense et savoureuse\n\n 🏆 Le verdict :\n Une Cali-Mousse très gourmande, pensée pour les amateurs de cerise, de profils pâtissiers et de saveurs dessert. Cherry Pie porte parfaitement la signature Monster Cali-Mousse. 👹🍒🥧🔥",
+          tarifs: [
+            { weight: "9G", price: 50.0 },
+            { weight: "25G", price: 120.0 },
+            { weight: "50G", price: 200.0 },
+            {
+              weight: "100G",
+              price: 300.0,
+              oldPrice: 350.0,
+              badge: "PROMO ⚡️",
+            },
+          ],
+        },
+        {
+          id: "TROPICANA CHERRY",
+          flag: "🇺🇸",
+          name: "TROPICANA CHERRY 🍒",
+          farm: "👹 MONSTER CALI-MOUSSE 👹",
+          promoEligible: true,
+          type: "JauneUsa",
+          image: "ProductTC.jpg",
+          description:
+            "👹🍊 MONSTER CALI-MOUSSE — TROPICANA CHERRY 🍒👹\n\n Une mousse jaune fruitée et explosive qui combine la douceur de la cerise avec la fraîcheur intense des agrumes. Tropicana Cherry développe un profil coloré, sucré et acidulé, parfaitement adapté aux amateurs de saveurs modernes. 🇺🇸🔥\n\n 👃 Profil aromatique :\n 🍒 Cerise sucrée et fruits rouges\n 🍊 Orange fraîche et zestée\n 🍋 Agrumes acidulés\n 🍬 Bonbon fruité\n 🌸 Petite touche florale\n\n 👅 Goût :\n En bouche, une vague de cerise et d’orange sucrée arrive dès la première bouffée. Les agrumes apportent ensuite une fraîcheur légèrement acidulée, tandis qu’une douceur candy et florale équilibre parfaitement l’ensemble. 😮‍💨🍊\n\n 💛 Texture :\n ☁️ Mousseuse et légère\n ✨ Profil aromatique très expressif\n 🤲 Facile à travailler\n 🔥 Fumée douce et parfumée\n\n 🏆 Le verdict :\n Une Cali-Mousse vive, fruitée et rafraîchissante, avec un équilibre parfait entre cerise sucrée et agrumes pétillants. Une sélection pleine de caractère signée Monster Cali-Mousse. 👹🍒🍊🔥",
+          tarifs: [
+            { weight: "9G", price: 50.0 },
+            { weight: "25G", price: 120.0 },
+            { weight: "50G", price: 200.0 },
+            {
+              weight: "100G",
+              price: 300.0,
+              oldPrice: 350.0,
+              badge: "PROMO ⚡️",
+            },
+          ],
+        },
+        {
+          id: "PEANUT BUTTER",
+          flag: "🇺🇸",
+          name: "PEANUT BUTTER 🥜",
+          farm: "👹 MONSTER CALI-MOUSSE 👹",
+          promoEligible: true,
+          type: "JauneUsa",
+          image: "ProductPB.jpg",
+          description:
+            "👹🥜 MONSTER CALI-MOUSSE — PEANUT BUTTER 🥜👹\n\n Une mousse jaune au profil gourmand et original, inspirée des saveurs riches du beurre de cacahuète. Elle mélange des notes crémeuses, grillées et légèrement salées avec un fond terreux et gazeux typique des grosses sélections US. 🇺🇸🔥\n\n 👃 Profil aromatique :\n 🥜 Cacahuète grillée\n 🧈 Beurre crémeux\n 🍪 Biscuit et pâte sucrée\n 🌿 Fond terreux\n ⛽ Légère touche de gaz\n\n 👅 Goût :\n L’attaque est ronde et crémeuse, avec une saveur de cacahuète grillée et de biscuit. Elle évolue progressivement vers des notes plus terreuses et légèrement gazeuses, laissant une finale riche et persistante sur le palais. 😮‍💨🥜\n\n 💛 Texture :\n ☁️ Mousseuse et souple\n 🤲 Facile à travailler\n ✨ Profil gourmand très marqué\n 🔥 Fumée épaisse et savoureuse\n\n 🏆 Le verdict :\n Une Cali-Mousse différente des profils fruités classiques, destinée aux amateurs de saveurs crémeuses, grillées et gassy. Une sélection originale et pleine de caractère. 👹🥜🧈🔥",
+          tarifs: [
+            { weight: "9G", price: 50.0 },
+            { weight: "25G", price: 120.0 },
+            { weight: "50G", price: 200.0 },
+            { weight: "100G",
+              price: 300.0,
+              oldPrice: 350.0,
+              badge: "PROMO ⚡️",
+            },
+          ],
+        },
+        {
+          id: "RS11",
+          flag: "🇺🇸",
+          name: "RS 11 🏎️",
+          farm: "👹 MONSTER CALI-MOUSSE 👹",
+          promoEligible: true,
+          type: "JauneUsa",
+          image: "ProductR1.jpg",
+          description:
+            "👹🏎️ MONSTER CALI-MOUSSE — RS 11 🏎️👹\n\n Une mousse jaune inspirée de la célèbre RS11, connue pour son profil candy, fruité et crémeux accompagné d’une belle touche gazeuse. Une sélection moderne, riche en arômes et immédiatement reconnaissable. 🇺🇸🔥\n\n 👃 Profil aromatique :\n 🍬 Bonbon fruité\n 🍓 Fruits rouges et baies\n 🍦 Crème vanillée\n 🌸 Notes florales légères\n ⛽ Fond gazeux et terreux\n\n 👅 Goût :\n En bouche, RS11 commence par une douceur candy très marquée, accompagnée de fruits rouges sucrés. Des notes crémeuses et florales apparaissent ensuite, avant une finale gassy plus profonde qui apporte du relief et une belle longueur en bouche. 😮‍💨🍬\n\n 💛 Texture :\n ☁️ Mousseuse et aérée\n 🤲 Souple et facile à effriter\n ✨ Terpènes riches et expressifs\n 🔥 Fumée dense et parfumée\n\n 🏆 Le verdict :\n Une Cali-Mousse premium au profil candy-gas parfaitement équilibré. RS11 conviendra aux amateurs de saveurs fruitées, crémeuses et puissantes, avec une vraie identité West Coast. 👹🏎️🍬🔥",
+          tarifs: [
+            { weight: "9G", price: 50.0 },
+            { weight: "25G", price: 120.0 },
+            { weight: "50G", price: 200.0 },
+            {
+              weight: "100G",
+              price: 300.0,
+              oldPrice: 350.0,
+              badge: "PROMO ⚡️",
+            },
+          ],
+        },
+        /* {
                     id: '🤯🚀 PERMANENT MARKER',
                     flag: '🇺🇸',
                     name: '🤯🚀 PERMANENT MARKER',
@@ -303,7 +332,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100G', price: 350.00 },
                     ]
                 },*/
-                /* {
+        /* {
                     id: 'Candy Crush 🍭',
                     flag: '🇲🇦',
                     name: 'Candy Crush 🍭',
@@ -337,7 +366,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100G', price: 350.00 },
                     ]
                 }, */
-                /*  {
+        /*  {
                     id: 'PermanentMarker 🖍️',
                     flag: '🇲🇦',
                     name: 'PermanentMarker 🖍️',
@@ -354,7 +383,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100G', price: 400.00 },
                     ]
                 }, */
-              /*   {
+        /*   {
                     id: 'Jaune mousseux 🥵',
                     flag: '🇲🇦',
                     name: 'Jaune mousseux 🥵',
@@ -380,8 +409,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100G', price: 400.00 },
                     ]
                 }, */
-                
-                  /* {
+
+        /* {
                     id: 'BLUE LOBSTER 🦞💙',
                     flag: '🇲🇦',
                     name: 'BLUE LOBSTER 🦞💙',
@@ -415,102 +444,107 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100G', price: 400.00 },
                     ]
                 },*/
-            ]
-        }, 
-        {
-            id: 'STATIC',
-            name: 'STATIC 🇲🇦',
-            type: 'DoubleStatic',
-            quality: 'STATIC 🇲🇦',
-            image: 'CategDouble.png', // Ton image de catégorie Weed
+      ],
+    },
+    {
+      id: "STATIC",
+      name: "STATIC 🇲🇦",
+      type: "DoubleStatic",
+      quality: "STATIC 🇲🇦",
+      image: "CategDouble.png", // Ton image de catégorie Weed
 
-            products: [
-                 {
-                    id: 'STRAWBERRY PINK',
-                    flag: '🇺🇸',
-                    name: '🍓 STRAWBERRY PINK 🌷', 
-                    farm: '🌸 The Pink Farms 🌸',
-                    promoEligible: true,
-                    type: 'STATIC',
-                    image: 'ProductSTP.jpg',
-                    video: 'VideoSTP.mp4',
-                    description: '⚡️🌸 STATIC SIFT PLASMA 🌸⚡️ \n\n Une exclusivité ultra premium signée 🌸 The Pink Farms 🌸. La Strawberry Pink est une extraction static d\'élite qui repousse les limites des profils fruités et floraux. Une véritable masterclass pour les palais les plus exigeants 🔥\n\n 👃 Aromatique :\n Dès l’ouverture, une explosion de fraise bien mûre et sucrée 🍓, enveloppée par des notes florales délicates 🌷. En arrière-plan, on retrouve un fond candy crémeux et une légère touche gazeuse ⛽️ qui vient rappeler l\'ADN US de cette génétique exceptionnelle.\n\n 👅 Goût :\n En bouche, c’est une expérience luxueuse : attaque gourmande sur la fraise bonbon, suivie d\'une rondeur lactée et florale qui tapisse le palais. La texture du static offre une combustion parfaite et une fumée épaisse, douce et ultra propre ☁️✨.\n\n 💨 Effets :\n Montée rapide avec un high très joyeux et euphorique 🚀. L\'esprit reste clair et créatif tandis qu\'une relaxation physique profonde s\'installe progressivement 😌. Idéal pour chiller avec une vibe ultra positive.\n\n 🏆 Le verdict :\n Un static sift full terpènes, à la texture sableuse et fondante. The Pink Farms livre ici un produit d\'une pureté maximale, alliant douceur extrême et vraie frappe de connaisseur 💎🍓.',
-                    tarifs: [
-                        { weight: '3G', price: 50.00 },
-                        { weight: '10G', price: 140.00},
-                        { weight: '25G', price: 250.00 },
-                        { weight: '50G', price: 450.00 },
-                    ]
-                },
-                 {
-                    id: 'HONEY (BANANAS x SPRITZER) 🍌🍯',
-                    flag: '🇺🇸',
-                    name: 'HONEY (BANANAS x SPRITZER) 🍌🍯', 
-                    farm: '🌟 By Secret House Smoke Farm 🌟',
-                    promoEligible: true,
-                    type: 'STATIC',
-                    image: 'ProductHBS.jpg',
-                    video: 'VideoHBS.mp4',
-                    description: '⚡🍯 STATIC SIFT PLASMA 70-130u 🍯⚡  \n\n 💎🔥 Un static sift premium sélectionné sur la tranche 70-130 microns, réputée pour offrir un excellent équilibre entre pureté, richesse aromatique et puissance. Cette extraction met en avant des trichomes soigneusement isolés afin de préserver un maximum de terpènes et de saveurs.  \n\n ✨ Génétique\n 🧬 Honey Bananas x Spritzer\n Une combinaison qui marie le caractère sucré et crémeux de Honey Bananas avec le profil frais et pétillant de Spritzer, donnant naissance à un hash moderne particulièrement expressif.\n\n 👃 Profil aromatique\n\n 🍯 Miel doux et gourmand\n 🍌 Banane mûre\n 🍬 Notes crémeuses et sucrées\n 🍋 Légère touche d’agrumes pétillante\n\n 😮‍💨 Effets\n\n ⚡ Euphorie rapide et agréable\n 🧠 Bien-être mental et humeur positive\n 😌 Relaxation corporelle progressive\n 🎵 Idéal pour une session détente, musique ou fin de journée\n\n 🎯 Pour les connaisseurs\n 🔥 Le calibre 70-130u est souvent recherché pour sa capacité à conserver une belle complexité aromatique tout en offrant une excellente qualité de résine.  \n 💎 Secret House Smoke Farm propose ici un plasma gourmand et très parfumé, où les notes de miel et de banane dominent la dégustation. Une pièce qui séduira les amateurs de hash moderne à la recherche d’un profil riche, doux et particulièrement savoureux. 🍯🍌✨',
-                    tarifs: [
-                        { weight: '3G', price: 50.00 },
-                        { weight: '10G', price: 140.00},
-                        { weight: '25G', price: 250.00 },
-                        { weight: '50G', price: 450.00 },
-                    ]
-                },
-                 {
-                    id: '⚡🍇❄️ FORBIDDEN',
-                    flag: '🇲🇦',
-                    name: '⚡🍇❄️ FORBIDDEN', 
-                    farm: '🎻 MOZART FARM',
-                    promoEligible: true,
-                    type: 'STATIC',
-                    image: 'ProductForr.jpg',
-                    video: 'VideoForr.mp4',
-                    description: '⚡🍇❄️ PLASMA STATIC ❄️🍇⚡ \n\n 💎 Type d’extraction\n Static Sift hautement purifié.\n Forte concentration en trichomes.\n Très peu de matière végétale résiduelle.\n Résine destinée aux amateurs de hash moderne premium.\n\n 🍇🍬 Profil aromatique\n Notes de fruits noirs et fruits rouges.\n Touches sucrées rappelant le bonbon et le raisin.\n Fond crémeux avec une légère pointe gassy.\n Odeur puissante et complexe dès l’ouverture.\n\n 🤤 Texture\n Souple et grasse.\n Aspect brillant et résineux.\n Se travaille facilement à température ambiante.\n Fusion lente et propre.\n\n 💨 Effets généralement recherchés\n Montée euphorique et relaxante.\n Sensation de bien-être assez rapide.\n Relaxation musculaire progressive.\n Effet équilibré entre détente mentale et physique.\n\n 🔥 Pourquoi les connaisseurs l’apprécient ?\n Terpènes très présents.\n Extraction particulièrement propre.\n Saveurs persistantes.\n Excellent compromis entre puissance et plaisir gustatif.\n\n ⚡💎 PLASMA STATIC FORBIDDEN – MOZART FARM 💎⚡\n ✨ Une résine moderne qui séduit par sa richesse aromatique et sa pureté. Son profil mêlant fruits noirs, notes sucrées et fond crémeux en fait un hash particulièrement apprécié des amateurs de Static recherchant une expérience terpénique intense. 🤤🍇❄️\n\n 👑 Destiné aux vrais connaisseurs de résines premium qui privilégient avant tout la qualité d’extraction, les saveurs et la richesse des terpènes. 👑🔥🍇',
-                    tarifs: [
-                        { weight: '3G', price: 50.00 },
-                        { weight: '10G', price: 140.00},
-                        { weight: '25G', price: 250.00 },
-                        { weight: '50G', price: 450.00 },
-                    ]
-                },
-                {
-                    id: '🍬🍓❄️ CANDY FRUIT',
-                    flag: '🇲🇦',
-                    name: '🍬🍓❄️ CANDY FRUIT', 
-                    farm: '🎻 MOZART FARM',
-                    promoEligible: true,
-                    type: 'STATIC',
-                    image: 'ProductCF.jpg',
-                    video: 'VideoCF.mp4',
-                    description: '🍬🍓❄️ DOUBLE STATIC ❄️🍓🍬 \n\n Le Double Static Candy Fruit de Mozart Farm semble être une résine orientée sur un profil très fruité et sucré, dans l’esprit des variétés modernes inspirées des génétiques Candy, Runtz, Zkittlez ou Fruit Cocktail\n\n ✨ Ce qui le distingue :\n Double purification statique pour obtenir un hash très propre.\n Forte concentration en têtes de trichomes.\n Excellent niveau de préservation des terpènes.\n Résine destinée aux amateurs de qualité premium.  \n\n 🍭 Profil aromatique\n Bonbon fruité très prononcé.\n Notes de fruits rouges, fruits exotiques et agrumes sucrés.\n Fond crémeux rappelant parfois certaines génétiques type Runtz ou Candy.\n Odeur puissante dès l’ouverture.  \n\n 🤤 Texture\n Souple et grasse.\n Très malléable à température ambiante.\n Aspect brillant avec une belle richesse en résine.\n Fond généralement mieux qu’un dry sift classique.  \n\n 💨 Effets recherchés\n Euphorie légère et agréable au départ.\n Sensation de bien-être et de détente.\n Relaxation corporelle progressive.\n Effet souvent décrit comme équilibré entre plaisir gustatif et puissance.  \n\n 🔥 Pourquoi les connaisseurs l’apprécient ?\n aveurs très marquées.\n Longueur en bouche importante.\n Extraction particulièrement propre.\n Excellent compromis entre gourmandise et puissance.  \n\n 🍬💎 DOUBLE STATIC CANDY FRUIT – MOZART FARM 💎🍬\n ✨ Résine premium aux terpènes ultra gourmands, dominée par des notes de bonbons fruités et de fruits mûrs. Grâce à son extraction Double Static, elle offre une texture fondante, une grande pureté et une expression aromatique intense qui séduit particulièrement les amateurs de hash moderne haut de gamme. ❄️🤤🔥\n\n 🍓🍭 Un hash pensé pour les vrais connaisseurs qui recherchent avant tout le goût, les terpènes et une qualité d’extraction irréprochable. 🍭🍓',
-                    tarifs: [
-                        { weight: '5G', price: 80.00 },
-                        { weight: '10G', price: 150.00},
-                        { weight: '25G', price: 350.00 },
-                        { weight: '50G', price: 650.00 },
-                    ]
-                },
-                {
-                    id: '🍉❄️ WATERMELON',
-                    flag: '🇲🇦',
-                    name: '🍉❄️ WATERMELON', 
-                    farm: '🎻 MOZART FARM',
-                    promoEligible: true,
-                    type: 'STATIC',
-                    image: 'ProductMel1.jpg',
-                    video: 'VideoMel.mp4',
-                    description: '🍉❄️ DOUBLE STATIC ❄️🍉 \n\n 💎 Type d’extraction : Double Static Sift\n Le « Double Static » désigne une double purification des trichomes par électricité statique afin d’éliminer un maximum d’impuretés végétales. Le résultat est généralement plus pur, plus fondant et plus riche en terpènes qu’un hash classique.  \n\n 🍉 Profil aromatique\n Notes sucrées rappelant la pastèque mûre.\n Fond légèrement crémeux et terreux typique des résines premium.\n Odeur très expressive à froid, avec une belle intensité terpénique.  \n\n 🤤 Texture\n Souple et grasse.\n Facile à travailler à température ambiante.\n Tendance à devenir plus collante lorsqu’elle est conservée dans de bonnes conditions.  \n\n ✨ Effets généralement recherchés\n Sensation de détente progressive.\n Effet mental agréable sans être trop lourd au départ.\n Relaxation corporelle marquée en fin d’expérience.\n Souvent apprécié pour les moments calmes en soirée.  \n\n 🔥 Pourquoi les connaisseurs l’apprécient ?\n Très bonne conservation des terpènes.\n Pureté élevée grâce au double tri statique.\n Saveurs plus nettes et plus persistantes qu’une mousse ou un dry classique.\n Format recherché par les amateurs de résines premium modernes.  \n\n 🫒🍉💎 Le Double Static Watermelon de Mozart Farm s’adresse surtout aux amateurs de hash premium qui recherchent une résine propre, fondante et extrêmement parfumée, avec un profil sucré et frais rappelant la pastèque. 💎🍉🫒',
-                    tarifs: [
-                        { weight: '5G', price: 80.00 },
-                        { weight: '10G', price: 150.00},
-                        { weight: '25G', price: 350.00 },
-                        { weight: '50G', price: 650.00 },
-                    ]
-                },
-             /*   
+      products: [
+        {
+          id: "STRAWBERRY PINK",
+          flag: "🇺🇸",
+          name: "🍓 STRAWBERRY PINK 🌷",
+          farm: "🌸 The Pink Farms 🌸",
+          promoEligible: true,
+          type: "STATIC",
+          image: "ProductSTP.jpg",
+          video: "VideoSTP.mp4",
+          description:
+            "⚡️🌸 STATIC SIFT PLASMA 🌸⚡️ \n\n Une exclusivité ultra premium signée 🌸 The Pink Farms 🌸. La Strawberry Pink est une extraction static d'élite qui repousse les limites des profils fruités et floraux. Une véritable masterclass pour les palais les plus exigeants 🔥\n\n 👃 Aromatique :\n Dès l’ouverture, une explosion de fraise bien mûre et sucrée 🍓, enveloppée par des notes florales délicates 🌷. En arrière-plan, on retrouve un fond candy crémeux et une légère touche gazeuse ⛽️ qui vient rappeler l'ADN US de cette génétique exceptionnelle.\n\n 👅 Goût :\n En bouche, c’est une expérience luxueuse : attaque gourmande sur la fraise bonbon, suivie d'une rondeur lactée et florale qui tapisse le palais. La texture du static offre une combustion parfaite et une fumée épaisse, douce et ultra propre ☁️✨.\n\n 💨 Effets :\n Montée rapide avec un high très joyeux et euphorique 🚀. L'esprit reste clair et créatif tandis qu'une relaxation physique profonde s'installe progressivement 😌. Idéal pour chiller avec une vibe ultra positive.\n\n 🏆 Le verdict :\n Un static sift full terpènes, à la texture sableuse et fondante. The Pink Farms livre ici un produit d'une pureté maximale, alliant douceur extrême et vraie frappe de connaisseur 💎🍓.",
+          tarifs: [
+            { weight: "3G", price: 50.0 },
+            { weight: "10G", price: 140.0 },
+            { weight: "25G", price: 250.0 },
+            { weight: "50G", price: 450.0 },
+          ],
+        },
+        {
+          id: "HONEY (BANANAS x SPRITZER) 🍌🍯",
+          flag: "🇺🇸",
+          name: "HONEY (BANANAS x SPRITZER) 🍌🍯",
+          farm: "🌟 By Secret House Smoke Farm 🌟",
+          promoEligible: true,
+          type: "STATIC",
+          image: "ProductHBS.jpg",
+          video: "VideoHBS.mp4",
+          description:
+            "⚡🍯 STATIC SIFT PLASMA 70-130u 🍯⚡  \n\n 💎🔥 Un static sift premium sélectionné sur la tranche 70-130 microns, réputée pour offrir un excellent équilibre entre pureté, richesse aromatique et puissance. Cette extraction met en avant des trichomes soigneusement isolés afin de préserver un maximum de terpènes et de saveurs.  \n\n ✨ Génétique\n 🧬 Honey Bananas x Spritzer\n Une combinaison qui marie le caractère sucré et crémeux de Honey Bananas avec le profil frais et pétillant de Spritzer, donnant naissance à un hash moderne particulièrement expressif.\n\n 👃 Profil aromatique\n\n 🍯 Miel doux et gourmand\n 🍌 Banane mûre\n 🍬 Notes crémeuses et sucrées\n 🍋 Légère touche d’agrumes pétillante\n\n 😮‍💨 Effets\n\n ⚡ Euphorie rapide et agréable\n 🧠 Bien-être mental et humeur positive\n 😌 Relaxation corporelle progressive\n 🎵 Idéal pour une session détente, musique ou fin de journée\n\n 🎯 Pour les connaisseurs\n 🔥 Le calibre 70-130u est souvent recherché pour sa capacité à conserver une belle complexité aromatique tout en offrant une excellente qualité de résine.  \n 💎 Secret House Smoke Farm propose ici un plasma gourmand et très parfumé, où les notes de miel et de banane dominent la dégustation. Une pièce qui séduira les amateurs de hash moderne à la recherche d’un profil riche, doux et particulièrement savoureux. 🍯🍌✨",
+          tarifs: [
+            { weight: "3G", price: 50.0 },
+            { weight: "10G", price: 140.0 },
+            { weight: "25G", price: 250.0 },
+            { weight: "50G", price: 450.0 },
+          ],
+        },
+        {
+          id: "⚡🍇❄️ FORBIDDEN",
+          flag: "🇲🇦",
+          name: "⚡🍇❄️ FORBIDDEN",
+          farm: "🎻 MOZART FARM",
+          promoEligible: true,
+          type: "STATIC",
+          image: "ProductForr.jpg",
+          video: "VideoForr.mp4",
+          description:
+            "⚡🍇❄️ PLASMA STATIC ❄️🍇⚡ \n\n 💎 Type d’extraction\n Static Sift hautement purifié.\n Forte concentration en trichomes.\n Très peu de matière végétale résiduelle.\n Résine destinée aux amateurs de hash moderne premium.\n\n 🍇🍬 Profil aromatique\n Notes de fruits noirs et fruits rouges.\n Touches sucrées rappelant le bonbon et le raisin.\n Fond crémeux avec une légère pointe gassy.\n Odeur puissante et complexe dès l’ouverture.\n\n 🤤 Texture\n Souple et grasse.\n Aspect brillant et résineux.\n Se travaille facilement à température ambiante.\n Fusion lente et propre.\n\n 💨 Effets généralement recherchés\n Montée euphorique et relaxante.\n Sensation de bien-être assez rapide.\n Relaxation musculaire progressive.\n Effet équilibré entre détente mentale et physique.\n\n 🔥 Pourquoi les connaisseurs l’apprécient ?\n Terpènes très présents.\n Extraction particulièrement propre.\n Saveurs persistantes.\n Excellent compromis entre puissance et plaisir gustatif.\n\n ⚡💎 PLASMA STATIC FORBIDDEN – MOZART FARM 💎⚡\n ✨ Une résine moderne qui séduit par sa richesse aromatique et sa pureté. Son profil mêlant fruits noirs, notes sucrées et fond crémeux en fait un hash particulièrement apprécié des amateurs de Static recherchant une expérience terpénique intense. 🤤🍇❄️\n\n 👑 Destiné aux vrais connaisseurs de résines premium qui privilégient avant tout la qualité d’extraction, les saveurs et la richesse des terpènes. 👑🔥🍇",
+          tarifs: [
+            { weight: "3G", price: 50.0 },
+            { weight: "10G", price: 140.0 },
+            { weight: "25G", price: 250.0 },
+            { weight: "50G", price: 450.0 },
+          ],
+        },
+        {
+          id: "🍬🍓❄️ CANDY FRUIT",
+          flag: "🇲🇦",
+          name: "🍬🍓❄️ CANDY FRUIT",
+          farm: "🎻 MOZART FARM",
+          promoEligible: true,
+          type: "STATIC",
+          image: "ProductCF.jpg",
+          video: "VideoCF.mp4",
+          description:
+            "🍬🍓❄️ DOUBLE STATIC ❄️🍓🍬 \n\n Le Double Static Candy Fruit de Mozart Farm semble être une résine orientée sur un profil très fruité et sucré, dans l’esprit des variétés modernes inspirées des génétiques Candy, Runtz, Zkittlez ou Fruit Cocktail\n\n ✨ Ce qui le distingue :\n Double purification statique pour obtenir un hash très propre.\n Forte concentration en têtes de trichomes.\n Excellent niveau de préservation des terpènes.\n Résine destinée aux amateurs de qualité premium.  \n\n 🍭 Profil aromatique\n Bonbon fruité très prononcé.\n Notes de fruits rouges, fruits exotiques et agrumes sucrés.\n Fond crémeux rappelant parfois certaines génétiques type Runtz ou Candy.\n Odeur puissante dès l’ouverture.  \n\n 🤤 Texture\n Souple et grasse.\n Très malléable à température ambiante.\n Aspect brillant avec une belle richesse en résine.\n Fond généralement mieux qu’un dry sift classique.  \n\n 💨 Effets recherchés\n Euphorie légère et agréable au départ.\n Sensation de bien-être et de détente.\n Relaxation corporelle progressive.\n Effet souvent décrit comme équilibré entre plaisir gustatif et puissance.  \n\n 🔥 Pourquoi les connaisseurs l’apprécient ?\n aveurs très marquées.\n Longueur en bouche importante.\n Extraction particulièrement propre.\n Excellent compromis entre gourmandise et puissance.  \n\n 🍬💎 DOUBLE STATIC CANDY FRUIT – MOZART FARM 💎🍬\n ✨ Résine premium aux terpènes ultra gourmands, dominée par des notes de bonbons fruités et de fruits mûrs. Grâce à son extraction Double Static, elle offre une texture fondante, une grande pureté et une expression aromatique intense qui séduit particulièrement les amateurs de hash moderne haut de gamme. ❄️🤤🔥\n\n 🍓🍭 Un hash pensé pour les vrais connaisseurs qui recherchent avant tout le goût, les terpènes et une qualité d’extraction irréprochable. 🍭🍓",
+          tarifs: [
+            { weight: "5G", price: 80.0 },
+            { weight: "10G", price: 150.0 },
+            { weight: "25G", price: 350.0 },
+            { weight: "50G", price: 650.0 },
+          ],
+        },
+        {
+          id: "🍉❄️ WATERMELON",
+          flag: "🇲🇦",
+          name: "🍉❄️ WATERMELON",
+          farm: "🎻 MOZART FARM",
+          promoEligible: true,
+          type: "STATIC",
+          image: "ProductMel1.jpg",
+          video: "VideoMel.mp4",
+          description:
+            "🍉❄️ DOUBLE STATIC ❄️🍉 \n\n 💎 Type d’extraction : Double Static Sift\n Le « Double Static » désigne une double purification des trichomes par électricité statique afin d’éliminer un maximum d’impuretés végétales. Le résultat est généralement plus pur, plus fondant et plus riche en terpènes qu’un hash classique.  \n\n 🍉 Profil aromatique\n Notes sucrées rappelant la pastèque mûre.\n Fond légèrement crémeux et terreux typique des résines premium.\n Odeur très expressive à froid, avec une belle intensité terpénique.  \n\n 🤤 Texture\n Souple et grasse.\n Facile à travailler à température ambiante.\n Tendance à devenir plus collante lorsqu’elle est conservée dans de bonnes conditions.  \n\n ✨ Effets généralement recherchés\n Sensation de détente progressive.\n Effet mental agréable sans être trop lourd au départ.\n Relaxation corporelle marquée en fin d’expérience.\n Souvent apprécié pour les moments calmes en soirée.  \n\n 🔥 Pourquoi les connaisseurs l’apprécient ?\n Très bonne conservation des terpènes.\n Pureté élevée grâce au double tri statique.\n Saveurs plus nettes et plus persistantes qu’une mousse ou un dry classique.\n Format recherché par les amateurs de résines premium modernes.  \n\n 🫒🍉💎 Le Double Static Watermelon de Mozart Farm s’adresse surtout aux amateurs de hash premium qui recherchent une résine propre, fondante et extrêmement parfumée, avec un profil sucré et frais rappelant la pastèque. 💎🍉🫒",
+          tarifs: [
+            { weight: "5G", price: 80.0 },
+            { weight: "10G", price: 150.0 },
+            { weight: "25G", price: 350.0 },
+            { weight: "50G", price: 650.0 },
+          ],
+        },
+        /*   
                 {
                     id: '⚡🥣 CEREAL MILK 🥣⚡',
                     flag: '🇺🇸',
@@ -559,8 +593,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '25G', price: 450.00 },
                     ]
                 }, */
-                
-                /* {
+
+        /* {
                     id: 'MOTORBREAD',
                     flag: '🇲🇦',
                     name: 'MOTORBREAD 🛵', 
@@ -608,7 +642,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '25G', price: 320.00 },
                     ]
                 }, */
-                /* {
+        /* {
                     id: 'GAZ MONKEY 🦍⛽️ ⚡️💎',
                     flag: '🇲🇦',
                     name: 'GAZ MONKEY 🦍⛽️', 
@@ -624,7 +658,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '25G', price: 320.00 },
                     ]
                 }, */
-                /* {
+        /* {
                     id: 'RAINBOW x SPRITZER 🌈🍹',
                     flag: '🇲🇦',
                     name: 'RAINBOW x SPRITZER 🌈🍹', 
@@ -641,7 +675,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '50G', price: 450.00 },
                     ]
                 }, */
-                /* {
+        /* {
                     id: 'SPRITZER 🌈🍹',
                     flag: '🇲🇦',
                     name: 'SPRITZER 🌈🍹', 
@@ -689,7 +723,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '25G', price: 320.00 },
                     ]
                 }, */
-               /*  {
+        /*  {
                     id: 'STATIC RS11 🍬⛽',
                     flag: '🇲🇦',
                     name: 'STATIC RS11 🍬⛽', 
@@ -705,7 +739,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '25G', price: 320.00 },
                     ]
                 }, */
-               /*  {
+        /*  {
                     id: 'SPRITE RS 🍋🥤',
                     flag: '🇲🇦',
                     name: 'SPRITE RS 🍋🥤', 
@@ -721,7 +755,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '25G', price: 320.00 },
                     ]
                 }, */
-             /*    {
+        /*    {
                     id: 'CAP JUNKY HASH 🧪🔥',
                     flag: '🇲🇦',
                     name: 'CAP JUNKY HASH 🧪🔥', 
@@ -737,7 +771,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '25G', price: 340.00 },
                     ]
                 }, */
-             /*    {
+        /*    {
                     id: 'SFV HASH ⛽️🔥',
                     flag: '🇲🇦',
                     name: 'SFV HASH ⛽️🔥', 
@@ -753,7 +787,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '25G', price: 340.00 },
                     ]
                 }, */
-               /*  {
+        /*  {
                     id: 'FF x SD HASH 🍓⛽️',
                     flag: '🇲🇦',
                     name: 'FF x SD HASH 🍓⛽️', 
@@ -769,7 +803,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '25G', price: 340.00 },
                     ]
                 }, */
-               /*  {
+        /*  {
                     id: 'OBAMA KUSH 🇺🇸⚡️',
                     flag: '🇲🇦',
                     name: 'OBAMA KUSH 🇺🇸⚡️', 
@@ -785,7 +819,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '25G', price: 320.00 },
                     ]
                 }, */
-              /*   {
+        /*   {
                     id: 'GMO FUEL ⛽️⚡️',
                     flag: '🇲🇦',
                     name: 'GMO FUEL ⛽️⚡️', 
@@ -801,7 +835,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '25G', price: 320.00 },
                     ]
                 }, */
-            /*     {
+        /*     {
                     id: 'PINEAPPLE JUICE 🍍⚡️',
                     flag: '🇲🇦',
                     name: 'PINEAPPLE JUICE 🍍⚡️', // ⚠️ Corrigé ici (c'était écrit Zkittlez)
@@ -817,7 +851,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '25G', price: 320.00 },
                     ]
                 }, */
-              /*   {
+        /*   {
                     id: 'ACAPULCO 🌴🔥',
                     flag: '🇲🇦',
                     name: 'ACAPULCO 🌴🔥', // ⚠️ Corrigé ici (c'était écrit Zkittlez)
@@ -834,8 +868,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '50G', price: 450.00},
                         { weight: '100G', price: 850.00}
                     ]
-                },  */  
-               /*  {
+                },  */
+        /*  {
                     id: '🫒 PINK RUNTZ 🎀',
                     flag: '🇲🇦',
                     name: '🫒 PINK RUNTZ 🎀', // ⚠️ Corrigé ici (c'était écrit Zkittlez)
@@ -852,8 +886,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '50G', price: 450.00},
                         { weight: '100G', price: 850.00}
                     ]
-                }, */  
-                 /* {
+                }, */
+        /* {
                     id: '🫒 ZKITTLEZ 🧸',
                     flag: '🇲🇦',
                     name: '🫒 ZKITTLEZ 🧸',
@@ -871,7 +905,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100G', price: 850.00}
                     ]
                 }, */
-                 /* {
+        /* {
                     id: '🌟 CALYPSO',
                     flag: '🇲🇦',
                     name: '🌟 CALYPSO',
@@ -889,7 +923,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100G', price: 800.00}
                     ]
                 },   */
-                 /* {
+        /* {
                     id: '🌑 BLACK CHERRY',
                     flag: '🇲🇦',
                     name: '🌑 BLACK CHERRY',
@@ -906,8 +940,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '50G', price: 450.00},
                         { weight: '100G', price: 800.00}
                     ]
-                },  */ 
-                /*  {
+                },  */
+        /*  {
                     id: '🌬️ B. GARLIC JAM',
                     flag: '🇲🇦',
                     name: '🌬️ B. GARLIC JAM',
@@ -924,8 +958,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '50G', price: 450.00},
                         { weight: '100G', price: 800.00}
                     ]
-                }, */ 
-                 /* {
+                }, */
+        /* {
                     id: 'ALL BLUE 🫐',
                     flag: '🇲🇦',
                     name: 'ALL BLUE 🫐',
@@ -943,7 +977,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100G', price: 800.00}
                     ]
                 },  */
-            /*      {
+        /*      {
                     id: 'ALL CAKEZ 🍰',
                     flag: '🇲🇦',
                     name: 'ALL CAKEZ 🍰',
@@ -961,8 +995,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100G', price: 800.00}
                     ]
                 },  */
-              
-               /*  {
+
+        /*  {
                     id: 'OLIVE',
                     flag: '🇲🇦',
                     name: '🍫 OLIVE HASBULLA 🍯🫒',
@@ -987,123 +1021,129 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '20G', price: 280.00 },
                     ]
                 }, */
-            ]
-        },
-        // ============================================================
-        // CATEGORIE 1 : CALI 🌿
-        // ============================================================
-        {
-            id: 'WEED',
-            name: 'WEED CALI 🇺🇸 🥦',
-            type: 'Weed',
-            quality: 'WEED CALI 🇺🇸 🥦',
-            image: 'CategWeed.png', // Ton image de catégorie Weed
+      ],
+    },
+    // ============================================================
+    // CATEGORIE 1 : CALI 🌿
+    // ============================================================
+    {
+      id: "WEED",
+      name: "WEED CALI 🇺🇸 🥦",
+      type: "Weed",
+      quality: "WEED CALI 🇺🇸 🥦",
+      image: "CategWeed.png", // Ton image de catégorie Weed
 
-            products: [
-                {
-                    id: 'PermanentMarker 🖍️',
-                    flag: '🇺🇸',
-                    name: 'PermanentMarker 🖍️',
-                    farm: '🌾 No Farm 🌾',
-                    promoEligible: true,
-                    type: 'Weed',
-                    image: 'ProductPermm.jpg',
-                    video:'VideoPermm.mp4',
-                    description: '🖍️⛽ PERMANENT MARKER ⛽🖍️\n\n Une génétique américaine devenue incontournable grâce à son profil aromatique extrêmement reconnaissable. Permanent Marker combine des notes chimiques et gazeuses avec une douceur crémeuse et légèrement fruitée, pour une variété moderne pleine de caractère. 🇺🇸🔥\n\n 👃 Profil aromatique :\n ⛽ Gaz et carburant puissant\n 🖍️ Notes chimiques rappelant le marqueur\n 🍬 Bonbon sucré et légèrement fruité\n 🍦 Fond crémeux et vanillé\n 🌿 Petite touche terreuse en finition\n\n 👅 Goût :\n Dès les premières bouffées, le côté gassy et chimique prend rapidement toute la place. Il est ensuite adouci par des notes crémeuses, sucrées et légèrement fruitées. La finale reste longtemps en bouche avec une signature intense et facilement identifiable. 😮‍💨🖍️\n\n ✨ Effets généralement recherchés :\n 🚀 Montée rapide et marquée\n 😄 Euphorie mentale\n 🧠 Esprit progressivement apaisé\n 💆 Relaxation corporelle profonde\n 🛋️ Sensation lourde et confortable en fin de session\n\n 🏆 Le verdict :\n Une variété puissante et originale destinée aux amateurs de profils gas, chimiques et crémeux. Permanent Marker ne passe jamais inaperçue et reste une véritable référence parmi les génétiques US modernes. 🖍️⛽🔥💎',
-                    tarifs: [
-                        { weight: '5g', price: 50.00 },
-                        { weight: '10g', price: 90.00 },
-                        { weight: '25g', price: 200.00 },
-                        { weight: '50g', price: 350.00 },
-                    ]
-                },
-                {
-                    id: 'OBAMA RUNTZ 🇺🇸⚡️',
-                    flag: '🇺🇸',
-                    name: 'OBAMA RUNTZ 🇺🇸⚡️', 
-                    farm: '🌾 No Farm 🌾',
-                    promoEligible: true,
-                    type: 'Weed',
-                    image: 'ProductOR.jpg',
-                    video: 'VideoOR.mp4',
-                    description: '🇺🇸⚡ OBAMA RUNTZ ⚡🇺🇸\n\n Une sélection au profil moderne qui mélange parfaitement la gourmandise sucrée de la famille Runtz avec des notes plus profondes, crémeuses et gazeuses. Obama Runtz dévoile une identité riche et équilibrée, pensée pour les amateurs de grosses génétiques américaines. 🔥💎\n\n 👃 Profil aromatique :\n 🍬 Bonbon fruité et sucré\n 🍓 Fruits rouges et baies mûres\n 🍦 Crème vanillée\n 🌿 Notes terreuses et légèrement boisées\n ⛽ Fond gazeux typiquement US\n\n 👅 Goût :\n En bouche, l’attaque est dominée par des saveurs candy et fruitées, accompagnées d’une belle rondeur crémeuse. Une touche plus terreuse et gazeuse apparaît progressivement, offrant une finale profonde et persistante. 😮‍💨🍬\n\n ✨ Effets généralement recherchés :\n 😄 Euphorie et bonne humeur\n 🧠 Sensation mentale légère et agréable\n 🎵 Moment convivial et détendu\n 💆 Relaxation corporelle progressive\n 🌙 Effet plus posé au fil de la session\n\n 🏆 Le verdict :\n Une Runtz gourmande, fruitée et gassy qui équilibre parfaitement douceur et caractère. Obama Runtz s’adresse aux amateurs de profils candy modernes avec une finition plus lourde et profonde. 🇺🇸⚡🍬🔥',
-                    tarifs: [
-                        { weight: '5g', price: 50.00 },
-                        { weight: '10g', price: 90.00 },
-                        { weight: '25g', price: 200.00 },
-                        { weight: '50g', price: 350.00 },
-                    ]
-                },
-                 {
-                    id: '🥣🥛 CEREAL MILK 🥛🥣',
-                    flag: '🇺🇸',
-                    name: '🥣🥛 CEREAL MILK 🥛🥣',
-                    farm: '🌾 No Farm 🌾',
-                    promoEligible: true,
-                    type: 'Weed',
-                    image: 'ProductGSM.jpg', 
-                    video: 'VideoGSM.mp4',
-                    description: '🔥 Une variété devenue incontournable grâce à son profil terpénique unique, à mi-chemin entre les céréales sucrées, le lait crémeux et une puissance moderne parfaitement maîtrisée. Très appréciée des amateurs de génétiques américaines pour son équilibre entre saveur et effet. 🔥\n ✨ Ce qu’elle apporte\n\n 😄 Euphorie propre et immédiate\n 🧠 Esprit léger et positif\n 🎯 Bonne clarté mentale\n 😌 Relaxation progressive sans lourdeur excessive\n 💨 Effet équilibré qui peut accompagner aussi bien une discussion qu’un moment de détente\n\n 👃 Profil aromatique\n\n 🥣 Céréales sucrées\n 🥛 Lait crémeux\n 🍦 Notes vanillées et gourmandes\n 🍬 Fond sucré rappelant parfois les marshmallows\n 🍋 Légère touche fruitée et citronnée selon les phénotypes\n\n 💨 L’expérience\n\n Dès les premières bouffées, Cereal Milk se distingue par sa douceur et son côté gourmand. L’effet démarre souvent par une montée euphorique et agréable qui améliore l’humeur, avant d’évoluer vers une détente confortable sans écraser l’esprit. C’est cette combinaison entre puissance, saveurs et équilibre qui lui a valu sa réputation.\n ⭐ Pourquoi les connaisseurs l’apprécient ?\n\n 🥛 Terpènes ultra gourmands et reconnaissables\n ❄️ Production de résine souvent impressionnante\n 🧠 Effet à la fois lucide et relaxant\n 🍦 Profil moderne très recherché dans les génétiques américaines\n 🔥 Une variété qui a marqué toute une génération de cultivars “dessert” et qui reste aujourd’hui une référence du haut de gamme. 💎✨',                    
-                    tarifs: [
-                        { weight: '5g', price: 50.00 },
-                        { weight: '10g', price: 90.00 },
-                        { weight: '25g', price: 200.00 },
-                        { weight: '50g', price: 350.00 },
-                    ]
-                }, 
-                {
-                    id: 'GlueBerry 🧴',
-                    flag: '🇺🇸',
-                    name: 'GlueBerry 🧴',
-                    farm: '🌾 No Farm 🌾',
-                    promoEligible: true,
-                    type: 'Weed',
-                    image: 'ProductGL.jpg', 
-                    video: 'VideoGL.mp4',
-                    description: '🫐🧴 GLUEBERRY 🧴🫐\n\n Une génétique puissante qui combine un profil de fruits rouges et de baies avec le caractère collant, terreux et gazeux des variétés de la famille Glue. Une variété riche en arômes, résineuse et dotée d’une vraie personnalité. 🔥💎\n\n 👃 Profil aromatique :\n 🫐 Myrtille et fruits des bois\n 🍓 Fruits rouges sucrés\n ⛽ Notes de gaz et de diesel\n 🌿 Fond terreux et légèrement boisé\n 🍬 Petite douceur fruitée en finition\n\n 👅 Goût :\n L’attaque dévoile des saveurs de baies sucrées et de fruits mûrs. Progressivement, le côté Glue prend le dessus avec des notes terreuses, résineuses et gazeuses. La finale est longue, légèrement crémeuse et laisse un mélange de fruits noirs et de diesel sur le palais. 😮‍💨⛽\n\n ✨ Effets généralement recherchés :\n 🚀 Montée rapide et marquée\n 😄 Euphorie mentale\n 🧠 Esprit progressivement apaisé\n 💆 Relaxation corporelle profonde\n 🛋️ Idéale pour les moments de détente\n\n 🏆 Le verdict :\n Une variété complète qui équilibre parfaitement gourmandise fruitée et puissance gazeuse. GlueBerry s’adresse aux amateurs de profils complexes, résineux et riches en terpènes. 🫐⛽🧴🔥',                    
-                    tarifs: [
-                        { weight: '5g', price: 50.00 },
-                        { weight: '10g', price: 90.00 },
-                        { weight: '25g', price: 200.00 },
-                        { weight: '50g', price: 350.00 },
-                    ]
-                },
-                {
-                    id: 'Cherry runtz 🍒',
-                    flag: '🇺🇸',
-                    name: 'Cherry runtz 🍒',
-                    farm: '🌾 No Farm 🌾',
-                    promoEligible: true,
-                    type: 'Weed',
-                    image: 'ProductCHR.jpg', 
-                    images:['ProductCHRR.jpg'],
-                    video: '',
-                    description: '🍒🍬 CHERRY RUNTZ 🍬🍒\n\n Une variété ultra gourmande qui mélange parfaitement le caractère fruité de la cerise avec le célèbre profil sucré et crémeux de la famille Runtz. Dès l’ouverture, elle dévoile une identité moderne, intense et particulièrement agréable. 🔥💎\n\n 👃 Profil aromatique :\n 🍒 Cerise mûre et sucrée\n 🍬 Bonbon fruité\n 🍓 Fruits rouges\n 🍦 Fond crémeux et légèrement vanillé\n ⛽ Petite touche gazeuse en arrière-plan\n\n 👅 Goût :\n En bouche, l’attaque est dominée par une cerise sucrée et juteuse, rapidement accompagnée de notes de bonbons et de fruits rouges. La finale devient plus crémeuse, avec une légère touche gassy qui apporte du caractère et une belle longueur en bouche. 😮‍💨🍒\n\n ✨ Effets généralement recherchés :\n 😄 Euphorie et bonne humeur\n 🧠 Esprit détendu\n 🎨 Sensation créative et agréable\n 💆 Relaxation corporelle progressive\n 🌙 Peut devenir plus reposante en fin de session\n\n 🏆 Le verdict :\n Une Runtz fruitée, sucrée et pleine de caractère, idéale pour les amateurs de profils candy, cerise et crème. Une variété moderne aussi séduisante par ses arômes que par son équilibre. 🍒🍬🔥💎',                    
-                    tarifs: [
-                        { weight: '5g', price: 50.00 },
-                        { weight: '10g', price: 90.00 },
-                        { weight: '25g', price: 200.00 },
-                        { weight: '50g', price: 350.00 },
-                    ]
-                },
-                 {
-                    id: '🌴💣 SUPER BOMBE 💣🌴',
-                    flag: '🇺🇸',
-                    name: '🌴💣 SUPER BOMBE 💣🌴',
-                    farm: '🌾 No Farm 🌾',
-                    promoEligible: true,
-                    type: 'Weed',
-                    image: 'ProductS.jpg', 
-                    video: 'VideoSB.mp4',
-                    description: '✨ Cette génétique est appréciée pour son profil aromatique très expressif :\n 🍬 Notes sucrées et fruitées\n ⛽ Fond gazeux et légèrement diesel\n 🍋 Touches d’agrumes selon les phénotypes\n ❄️ Têtes très résineuses et visuellement attractives\n\n 💨 Effets généralement recherchés :\n 😁 Euphorie rapide\n 🚀 Sensation cérébrale puissante\n 😌 Relaxation progressive du corps\n 🎨 Peut favoriser la créativité et la bonne humeur\n\n 👃 Ce qui séduit les connaisseurs, c’est surtout son mélange entre douceur sucrée et caractère gassy, offrant une fumée riche en terpènes et une belle longueur en bouche.  \n\n 💎 Une variété moderne qui mise avant tout sur l’intensité aromatique, la résine et une expérience complète du premier nez jusqu’à la dernière bouffée. 🔥🌴💨',                    
-                    tarifs: [
-                        { weight: '5g', price: 50.00 },
-                        { weight: '10g', price: 90.00 },
-                        { weight: '25g', price: 200.00 },
-                        { weight: '50g', price: 350.00 },
-                    ]
-                }, 
-               /*   {
+      products: [
+        {
+          id: "PermanentMarker 🖍️",
+          flag: "🇺🇸",
+          name: "PermanentMarker 🖍️",
+          farm: "🌾 No Farm 🌾",
+          promoEligible: true,
+          type: "Weed",
+          image: "ProductPermm.jpg",
+          video: "VideoPermm.mp4",
+          description:
+            "🖍️⛽ PERMANENT MARKER ⛽🖍️\n\n Une génétique américaine devenue incontournable grâce à son profil aromatique extrêmement reconnaissable. Permanent Marker combine des notes chimiques et gazeuses avec une douceur crémeuse et légèrement fruitée, pour une variété moderne pleine de caractère. 🇺🇸🔥\n\n 👃 Profil aromatique :\n ⛽ Gaz et carburant puissant\n 🖍️ Notes chimiques rappelant le marqueur\n 🍬 Bonbon sucré et légèrement fruité\n 🍦 Fond crémeux et vanillé\n 🌿 Petite touche terreuse en finition\n\n 👅 Goût :\n Dès les premières bouffées, le côté gassy et chimique prend rapidement toute la place. Il est ensuite adouci par des notes crémeuses, sucrées et légèrement fruitées. La finale reste longtemps en bouche avec une signature intense et facilement identifiable. 😮‍💨🖍️\n\n ✨ Effets généralement recherchés :\n 🚀 Montée rapide et marquée\n 😄 Euphorie mentale\n 🧠 Esprit progressivement apaisé\n 💆 Relaxation corporelle profonde\n 🛋️ Sensation lourde et confortable en fin de session\n\n 🏆 Le verdict :\n Une variété puissante et originale destinée aux amateurs de profils gas, chimiques et crémeux. Permanent Marker ne passe jamais inaperçue et reste une véritable référence parmi les génétiques US modernes. 🖍️⛽🔥💎",
+          tarifs: [
+            { weight: "5g", price: 50.0 },
+            { weight: "10g", price: 90.0 },
+            { weight: "25g", price: 200.0 },
+            { weight: "50g", price: 350.0 },
+          ],
+        },
+        {
+          id: "OBAMA RUNTZ 🇺🇸⚡️",
+          flag: "🇺🇸",
+          name: "OBAMA RUNTZ 🇺🇸⚡️",
+          farm: "🌾 No Farm 🌾",
+          promoEligible: true,
+          type: "Weed",
+          image: "ProductOR.jpg",
+          video: "VideoOR.mp4",
+          description:
+            "🇺🇸⚡ OBAMA RUNTZ ⚡🇺🇸\n\n Une sélection au profil moderne qui mélange parfaitement la gourmandise sucrée de la famille Runtz avec des notes plus profondes, crémeuses et gazeuses. Obama Runtz dévoile une identité riche et équilibrée, pensée pour les amateurs de grosses génétiques américaines. 🔥💎\n\n 👃 Profil aromatique :\n 🍬 Bonbon fruité et sucré\n 🍓 Fruits rouges et baies mûres\n 🍦 Crème vanillée\n 🌿 Notes terreuses et légèrement boisées\n ⛽ Fond gazeux typiquement US\n\n 👅 Goût :\n En bouche, l’attaque est dominée par des saveurs candy et fruitées, accompagnées d’une belle rondeur crémeuse. Une touche plus terreuse et gazeuse apparaît progressivement, offrant une finale profonde et persistante. 😮‍💨🍬\n\n ✨ Effets généralement recherchés :\n 😄 Euphorie et bonne humeur\n 🧠 Sensation mentale légère et agréable\n 🎵 Moment convivial et détendu\n 💆 Relaxation corporelle progressive\n 🌙 Effet plus posé au fil de la session\n\n 🏆 Le verdict :\n Une Runtz gourmande, fruitée et gassy qui équilibre parfaitement douceur et caractère. Obama Runtz s’adresse aux amateurs de profils candy modernes avec une finition plus lourde et profonde. 🇺🇸⚡🍬🔥",
+          tarifs: [
+            { weight: "5g", price: 50.0 },
+            { weight: "10g", price: 90.0 },
+            { weight: "25g", price: 200.0 },
+            { weight: "50g", price: 350.0 },
+          ],
+        },
+        {
+          id: "🥣🥛 CEREAL MILK 🥛🥣",
+          flag: "🇺🇸",
+          name: "🥣🥛 CEREAL MILK 🥛🥣",
+          farm: "🌾 No Farm 🌾",
+          promoEligible: true,
+          type: "Weed",
+          image: "ProductGSM.jpg",
+          video: "VideoGSM.mp4",
+          description:
+            "🔥 Une variété devenue incontournable grâce à son profil terpénique unique, à mi-chemin entre les céréales sucrées, le lait crémeux et une puissance moderne parfaitement maîtrisée. Très appréciée des amateurs de génétiques américaines pour son équilibre entre saveur et effet. 🔥\n ✨ Ce qu’elle apporte\n\n 😄 Euphorie propre et immédiate\n 🧠 Esprit léger et positif\n 🎯 Bonne clarté mentale\n 😌 Relaxation progressive sans lourdeur excessive\n 💨 Effet équilibré qui peut accompagner aussi bien une discussion qu’un moment de détente\n\n 👃 Profil aromatique\n\n 🥣 Céréales sucrées\n 🥛 Lait crémeux\n 🍦 Notes vanillées et gourmandes\n 🍬 Fond sucré rappelant parfois les marshmallows\n 🍋 Légère touche fruitée et citronnée selon les phénotypes\n\n 💨 L’expérience\n\n Dès les premières bouffées, Cereal Milk se distingue par sa douceur et son côté gourmand. L’effet démarre souvent par une montée euphorique et agréable qui améliore l’humeur, avant d’évoluer vers une détente confortable sans écraser l’esprit. C’est cette combinaison entre puissance, saveurs et équilibre qui lui a valu sa réputation.\n ⭐ Pourquoi les connaisseurs l’apprécient ?\n\n 🥛 Terpènes ultra gourmands et reconnaissables\n ❄️ Production de résine souvent impressionnante\n 🧠 Effet à la fois lucide et relaxant\n 🍦 Profil moderne très recherché dans les génétiques américaines\n 🔥 Une variété qui a marqué toute une génération de cultivars “dessert” et qui reste aujourd’hui une référence du haut de gamme. 💎✨",
+          tarifs: [
+            { weight: "5g", price: 50.0 },
+            { weight: "10g", price: 90.0 },
+            { weight: "25g", price: 200.0 },
+            { weight: "50g", price: 350.0 },
+          ],
+        },
+        {
+          id: "GlueBerry 🧴",
+          flag: "🇺🇸",
+          name: "GlueBerry 🧴",
+          farm: "🌾 No Farm 🌾",
+          promoEligible: true,
+          type: "Weed",
+          image: "ProductGL.jpg",
+          video: "VideoGL.mp4",
+          description:
+            "🫐🧴 GLUEBERRY 🧴🫐\n\n Une génétique puissante qui combine un profil de fruits rouges et de baies avec le caractère collant, terreux et gazeux des variétés de la famille Glue. Une variété riche en arômes, résineuse et dotée d’une vraie personnalité. 🔥💎\n\n 👃 Profil aromatique :\n 🫐 Myrtille et fruits des bois\n 🍓 Fruits rouges sucrés\n ⛽ Notes de gaz et de diesel\n 🌿 Fond terreux et légèrement boisé\n 🍬 Petite douceur fruitée en finition\n\n 👅 Goût :\n L’attaque dévoile des saveurs de baies sucrées et de fruits mûrs. Progressivement, le côté Glue prend le dessus avec des notes terreuses, résineuses et gazeuses. La finale est longue, légèrement crémeuse et laisse un mélange de fruits noirs et de diesel sur le palais. 😮‍💨⛽\n\n ✨ Effets généralement recherchés :\n 🚀 Montée rapide et marquée\n 😄 Euphorie mentale\n 🧠 Esprit progressivement apaisé\n 💆 Relaxation corporelle profonde\n 🛋️ Idéale pour les moments de détente\n\n 🏆 Le verdict :\n Une variété complète qui équilibre parfaitement gourmandise fruitée et puissance gazeuse. GlueBerry s’adresse aux amateurs de profils complexes, résineux et riches en terpènes. 🫐⛽🧴🔥",
+          tarifs: [
+            { weight: "5g", price: 50.0 },
+            { weight: "10g", price: 90.0 },
+            { weight: "25g", price: 200.0 },
+            { weight: "50g", price: 350.0 },
+          ],
+        },
+        {
+          id: "Cherry runtz 🍒",
+          flag: "🇺🇸",
+          name: "Cherry runtz 🍒",
+          farm: "🌾 No Farm 🌾",
+          promoEligible: true,
+          type: "Weed",
+          image: "ProductCHR.jpg",
+          images: ["ProductCHRR.jpg"],
+          video: "",
+          description:
+            "🍒🍬 CHERRY RUNTZ 🍬🍒\n\n Une variété ultra gourmande qui mélange parfaitement le caractère fruité de la cerise avec le célèbre profil sucré et crémeux de la famille Runtz. Dès l’ouverture, elle dévoile une identité moderne, intense et particulièrement agréable. 🔥💎\n\n 👃 Profil aromatique :\n 🍒 Cerise mûre et sucrée\n 🍬 Bonbon fruité\n 🍓 Fruits rouges\n 🍦 Fond crémeux et légèrement vanillé\n ⛽ Petite touche gazeuse en arrière-plan\n\n 👅 Goût :\n En bouche, l’attaque est dominée par une cerise sucrée et juteuse, rapidement accompagnée de notes de bonbons et de fruits rouges. La finale devient plus crémeuse, avec une légère touche gassy qui apporte du caractère et une belle longueur en bouche. 😮‍💨🍒\n\n ✨ Effets généralement recherchés :\n 😄 Euphorie et bonne humeur\n 🧠 Esprit détendu\n 🎨 Sensation créative et agréable\n 💆 Relaxation corporelle progressive\n 🌙 Peut devenir plus reposante en fin de session\n\n 🏆 Le verdict :\n Une Runtz fruitée, sucrée et pleine de caractère, idéale pour les amateurs de profils candy, cerise et crème. Une variété moderne aussi séduisante par ses arômes que par son équilibre. 🍒🍬🔥💎",
+          tarifs: [
+            { weight: "5g", price: 50.0 },
+            { weight: "10g", price: 90.0 },
+            { weight: "25g", price: 200.0 },
+            { weight: "50g", price: 350.0 },
+          ],
+        },
+        {
+          id: "🌴💣 SUPER BOMBE 💣🌴",
+          flag: "🇺🇸",
+          name: "🌴💣 SUPER BOMBE 💣🌴",
+          farm: "🌾 No Farm 🌾",
+          promoEligible: true,
+          type: "Weed",
+          image: "ProductS.jpg",
+          video: "VideoSB.mp4",
+          description:
+            "✨ Cette génétique est appréciée pour son profil aromatique très expressif :\n 🍬 Notes sucrées et fruitées\n ⛽ Fond gazeux et légèrement diesel\n 🍋 Touches d’agrumes selon les phénotypes\n ❄️ Têtes très résineuses et visuellement attractives\n\n 💨 Effets généralement recherchés :\n 😁 Euphorie rapide\n 🚀 Sensation cérébrale puissante\n 😌 Relaxation progressive du corps\n 🎨 Peut favoriser la créativité et la bonne humeur\n\n 👃 Ce qui séduit les connaisseurs, c’est surtout son mélange entre douceur sucrée et caractère gassy, offrant une fumée riche en terpènes et une belle longueur en bouche.  \n\n 💎 Une variété moderne qui mise avant tout sur l’intensité aromatique, la résine et une expérience complète du premier nez jusqu’à la dernière bouffée. 🔥🌴💨",
+          tarifs: [
+            { weight: "5g", price: 50.0 },
+            { weight: "10g", price: 90.0 },
+            { weight: "25g", price: 200.0 },
+            { weight: "50g", price: 350.0 },
+          ],
+        },
+        /*   {
                     id: '🍨🌿 GELATO #33 🌿🍨',
                     flag: '🇺🇸',
                     name: '🍨🌿 GELATO #33 🌿🍨',
@@ -1120,43 +1160,45 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '50g', price: 350.00 },
                     ]
                 },  */
-                {
-                    id: 'Pech sherbet 🍨',
-                    flag: '🇺🇸',
-                    name: 'Pech sherbet 🍨',
-                    farm: '🌾 No Farm 🌾',
-                    promoEligible: true,
-                    type: 'Weed',
-                    image: 'ProductPS.jpg', 
-                    images:['ProductPSS.jpg'],
-                    video: '',
-                    description: '🍑🍨 PEACH SHERBET 🍨🍑\n\n Une variété ultra gourmande inspirée des meilleurs profils dessert californiens. Peach Sherbet associe la douceur d’une pêche bien mûre à des notes crémeuses et légèrement acidulées, pour une expérience aromatique riche et rafraîchissante. 🇺🇸🔥\n\n 👃 Profil aromatique :\n 🍑 Pêche mûre et juteuse\n 🍨 Sorbet fruité\n 🍦 Crème douce et vanillée\n 🍬 Bonbon légèrement acidulé\n 🍋 Petite touche d’agrumes frais\n\n 👅 Goût :\n Dès les premières bouffées, une saveur de pêche sucrée envahit le palais. Elle laisse ensuite apparaître une crème façon glace ou sorbet, accompagnée d’une légère fraîcheur citronnée. La fumée est douce, gourmande et laisse une belle saveur fruitée en bouche. 😮‍💨🍑\n\n ✨ Effets généralement recherchés :\n 😄 Bonne humeur\n 🌈 Sensation euphorique agréable\n 🧠 Esprit léger et détendu\n 💆 Relaxation physique progressive\n 🎶 Parfaite pour un moment calme et convivial\n\n 🏆 Le verdict :\n Une variété dessert fruitée, crémeuse et pleine de fraîcheur. Peach Sherbet conviendra parfaitement aux amateurs de saveurs sucrées qui recherchent un profil gourmand sans manquer de caractère. 🍑🍨✨🔥',                    
-                    tarifs: [
-                        { weight: '5g', price: 50.00 },
-                        { weight: '10g', price: 90.00 },
-                        { weight: '25g', price: 200.00 },
-                        { weight: '50g', price: 350.00 },
-                    ]
-                },
-                {
-                    id: 'GlueBerry 🧴',
-                    flag: '🇺🇸',
-                    name: 'GlueBerry 🧴',
-                    farm: '🌾 No Farm 🌾',
-                    promoEligible: true,
-                    type: 'Weed',
-                    image: 'productGL.jpg', 
-                    images:['ProductGLL.jpg'],
-                    video: '',
-                    description: '🫐🧴 GLUEBERRY 🧴🫐\n\n Une génétique puissante qui combine un profil de fruits rouges et de baies avec le caractère collant, terreux et gazeux des variétés de la famille Glue. Une variété riche en arômes, résineuse et dotée d’une vraie personnalité. 🔥💎\n\n 👃 Profil aromatique :\n 🫐 Myrtille et fruits des bois\n 🍓 Fruits rouges sucrés\n ⛽ Notes de gaz et de diesel\n 🌿 Fond terreux et légèrement boisé\n 🍬 Petite douceur fruitée en finition\n\n 👅 Goût :\n L’attaque dévoile des saveurs de baies sucrées et de fruits mûrs. Progressivement, le côté Glue prend le dessus avec des notes terreuses, résineuses et gazeuses. La finale est longue, légèrement crémeuse et laisse un mélange de fruits noirs et de diesel sur le palais. 😮‍💨⛽\n\n ✨ Effets généralement recherchés :\n 🚀 Montée rapide et marquée\n 😄 Euphorie mentale\n 🧠 Esprit progressivement apaisé\n 💆 Relaxation corporelle profonde\n 🛋️ Idéale pour les moments de détente\n\n 🏆 Le verdict :\n Une variété complète qui équilibre parfaitement gourmandise fruitée et puissance gazeuse. GlueBerry s’adresse aux amateurs de profils complexes, résineux et riches en terpènes. 🫐⛽🧴🔥',                    
-                    tarifs: [
-                        { weight: '5g', price: 50.00 },
-                        { weight: '10g', price: 90.00 },
-                        { weight: '25g', price: 200.00 },
-                        { weight: '50g', price: 350.00 },
-                    ]
-                },
-              /*   {
+        {
+          id: "Pech sherbet 🍨",
+          flag: "🇺🇸",
+          name: "Pech sherbet 🍨",
+          farm: "🌾 No Farm 🌾",
+          promoEligible: true,
+          type: "Weed",
+          image: "ProductPS.jpg",
+          images: ["ProductPSS.jpg"],
+          video: "",
+          description:
+            "🍑🍨 PEACH SHERBET 🍨🍑\n\n Une variété ultra gourmande inspirée des meilleurs profils dessert californiens. Peach Sherbet associe la douceur d’une pêche bien mûre à des notes crémeuses et légèrement acidulées, pour une expérience aromatique riche et rafraîchissante. 🇺🇸🔥\n\n 👃 Profil aromatique :\n 🍑 Pêche mûre et juteuse\n 🍨 Sorbet fruité\n 🍦 Crème douce et vanillée\n 🍬 Bonbon légèrement acidulé\n 🍋 Petite touche d’agrumes frais\n\n 👅 Goût :\n Dès les premières bouffées, une saveur de pêche sucrée envahit le palais. Elle laisse ensuite apparaître une crème façon glace ou sorbet, accompagnée d’une légère fraîcheur citronnée. La fumée est douce, gourmande et laisse une belle saveur fruitée en bouche. 😮‍💨🍑\n\n ✨ Effets généralement recherchés :\n 😄 Bonne humeur\n 🌈 Sensation euphorique agréable\n 🧠 Esprit léger et détendu\n 💆 Relaxation physique progressive\n 🎶 Parfaite pour un moment calme et convivial\n\n 🏆 Le verdict :\n Une variété dessert fruitée, crémeuse et pleine de fraîcheur. Peach Sherbet conviendra parfaitement aux amateurs de saveurs sucrées qui recherchent un profil gourmand sans manquer de caractère. 🍑🍨✨🔥",
+          tarifs: [
+            { weight: "5g", price: 50.0 },
+            { weight: "10g", price: 90.0 },
+            { weight: "25g", price: 200.0 },
+            { weight: "50g", price: 350.0 },
+          ],
+        },
+        {
+          id: "GlueBerry 🧴",
+          flag: "🇺🇸",
+          name: "GlueBerry 🧴",
+          farm: "🌾 No Farm 🌾",
+          promoEligible: true,
+          type: "Weed",
+          image: "productGL.jpg",
+          images: ["ProductGLL.jpg"],
+          video: "",
+          description:
+            "🫐🧴 GLUEBERRY 🧴🫐\n\n Une génétique puissante qui combine un profil de fruits rouges et de baies avec le caractère collant, terreux et gazeux des variétés de la famille Glue. Une variété riche en arômes, résineuse et dotée d’une vraie personnalité. 🔥💎\n\n 👃 Profil aromatique :\n 🫐 Myrtille et fruits des bois\n 🍓 Fruits rouges sucrés\n ⛽ Notes de gaz et de diesel\n 🌿 Fond terreux et légèrement boisé\n 🍬 Petite douceur fruitée en finition\n\n 👅 Goût :\n L’attaque dévoile des saveurs de baies sucrées et de fruits mûrs. Progressivement, le côté Glue prend le dessus avec des notes terreuses, résineuses et gazeuses. La finale est longue, légèrement crémeuse et laisse un mélange de fruits noirs et de diesel sur le palais. 😮‍💨⛽\n\n ✨ Effets généralement recherchés :\n 🚀 Montée rapide et marquée\n 😄 Euphorie mentale\n 🧠 Esprit progressivement apaisé\n 💆 Relaxation corporelle profonde\n 🛋️ Idéale pour les moments de détente\n\n 🏆 Le verdict :\n Une variété complète qui équilibre parfaitement gourmandise fruitée et puissance gazeuse. GlueBerry s’adresse aux amateurs de profils complexes, résineux et riches en terpènes. 🫐⛽🧴🔥",
+          tarifs: [
+            { weight: "5g", price: 50.0 },
+            { weight: "10g", price: 90.0 },
+            { weight: "25g", price: 200.0 },
+            { weight: "50g", price: 350.0 },
+          ],
+        },
+        /*   {
                     id: 'ROCKET 🚀🔥',
                     flag: '🇺🇸',
                     name: 'ROCKET 🚀🔥',
@@ -1174,35 +1216,36 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '50g', price: 350.00 },
                     ]
                 }, */
-            ]
-        },
-        {
-            id: 'FROZEN',
-            name: 'FROZEN 🇲🇦🍯',
-            type: 'Frozen',
-            quality: 'FROZEN 🇲🇦🍯',
-            image: 'CategFrozen.png', // Ton image de catégorie Weed
+      ],
+    },
+    {
+      id: "FROZEN",
+      name: "FROZEN 🇲🇦🍯",
+      type: "Frozen",
+      quality: "FROZEN 🇲🇦🍯",
+      image: "CategFrozen.png", // Ton image de catégorie Weed
 
-            products: [
-                {
-                    id: 'L\'Etoile ✨',
-                    flag: '🇺🇸',
-                    name: 'L\'Etoile ✨',
-                    farm: '🌾 No Farm 🌾',
-                    promoEligible: true,
-                    type: 'Weed',
-                    image: 'ProductEti.jpg', 
-                    video: '',
-                    description: '✨❄️ L’ÉTOILE ❄️✨\n\n Une sélection Frozen au profil élégant et lumineux, pensée pour les amateurs de résines modernes riches en terpènes. L’Étoile se distingue par une texture fondante, une belle expression aromatique et un équilibre entre douceur fruitée et caractère résineux. 💎🔥\n\n 👃 Profil aromatique :\n 🍋 Agrumes doux et frais\n 🍬 Notes sucrées de bonbon\n 🌸 Légère touche florale\n 🍦 Fond crémeux\n ⛽ Pointe gazeuse discrète en finition\n\n 👅 Goût :\n En bouche, L’Étoile développe une attaque douce et fruitée, suivie d’une rondeur crémeuse particulièrement agréable. Quelques notes citronnées et florales apportent de la fraîcheur, tandis que la finale légèrement gassy renforce son caractère. ☁️✨\n\n ❄️ Texture et qualité :\n 💎 Résine riche et soigneusement travaillée\n 🤲 Texture souple et fondante\n 🌈 Belle conservation des terpènes\n ☁️ Fumée dense, douce et aromatique\n 🔥 Combustion homogène\n\n 🏆 Le verdict :\n Une Frozen raffinée, gourmande et expressive, qui offre une dégustation équilibrée du premier nez jusqu’à la dernière bouffée. Une véritable étoile destinée aux amateurs de résines premium. ✨❄️💎🔥',
-                    tarifs: [
-                        { weight: '5G', price: 50.00 },
-                        { weight: '10G', price: 90.00 },
-                        { weight: '25G', price: 200.00 },
-                        { weight: '50G', price: 350.00 },
-                        { weight: '100G', price: 680.00 },
-                    ]
-                },
-                 /* {
+      products: [
+        {
+          id: "L'Etoile ✨",
+          flag: "🇺🇸",
+          name: "L'Etoile ✨",
+          farm: "🌾 No Farm 🌾",
+          promoEligible: true,
+          type: "Weed",
+          image: "ProductEti.jpg",
+          video: "",
+          description:
+            "✨❄️ L’ÉTOILE ❄️✨\n\n Une sélection Frozen au profil élégant et lumineux, pensée pour les amateurs de résines modernes riches en terpènes. L’Étoile se distingue par une texture fondante, une belle expression aromatique et un équilibre entre douceur fruitée et caractère résineux. 💎🔥\n\n 👃 Profil aromatique :\n 🍋 Agrumes doux et frais\n 🍬 Notes sucrées de bonbon\n 🌸 Légère touche florale\n 🍦 Fond crémeux\n ⛽ Pointe gazeuse discrète en finition\n\n 👅 Goût :\n En bouche, L’Étoile développe une attaque douce et fruitée, suivie d’une rondeur crémeuse particulièrement agréable. Quelques notes citronnées et florales apportent de la fraîcheur, tandis que la finale légèrement gassy renforce son caractère. ☁️✨\n\n ❄️ Texture et qualité :\n 💎 Résine riche et soigneusement travaillée\n 🤲 Texture souple et fondante\n 🌈 Belle conservation des terpènes\n ☁️ Fumée dense, douce et aromatique\n 🔥 Combustion homogène\n\n 🏆 Le verdict :\n Une Frozen raffinée, gourmande et expressive, qui offre une dégustation équilibrée du premier nez jusqu’à la dernière bouffée. Une véritable étoile destinée aux amateurs de résines premium. ✨❄️💎🔥",
+          tarifs: [
+            { weight: "5G", price: 50.0 },
+            { weight: "10G", price: 90.0 },
+            { weight: "25G", price: 200.0 },
+            { weight: "50G", price: 350.0 },
+            { weight: "100G", price: 680.0 },
+          ],
+        },
+        /* {
                     id: '🫒❄️🔥 OLIVE 🔥❄️🫒',
                     flag: '🇲🇦',
                     name: '🫒❄️🔥 OLIVE 🔥❄️🫒',
@@ -1240,7 +1283,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '1 olive', price: 90.00 },
                     ]
                 }, */
-               /*   {
+        /*   {
                     id: '🍓 SINFUL STRAWBERRY',
                     flag: '🇲🇦',
                     name: '🧊🍓 SINFUL STRAWBERRY',
@@ -1256,7 +1299,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '25G', price: 250.00 },
                     ]
                 }, */
-              /*   {
+        /*   {
                     id: '🥭 FORBIDDEN MANGO',
                     flag: '🇲🇦',
                     name: '🥭 FORBIDDEN MANGO',
@@ -1272,7 +1315,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '25G', price: 250.00 },
                     ]
                 }, */
-           /*      {
+        /*      {
                     id: 'TIRAMISU 🍰☕🍫✨',
                     flag: '🇲🇦',
                     name: 'TIRAMISU 🍰☕🍫✨',
@@ -1288,7 +1331,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '25G', price: 270.00 },
                     ]
                 }, */
-                /* {
+        /* {
                     id: '☣️ TOXIC CHERRY',
                     flag: '🇲🇦',
                     name: '☣️ TOXIC CHERRY',
@@ -1304,7 +1347,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '25G', price: 250.00 },
                     ]
                 }, */
-               /*  {
+        /*  {
                     id: '🧊 SAVAGE LYCHEE',
                     flag: '🇲🇦',
                     name: '🧊 SAVAGE LYCHEE',
@@ -1320,7 +1363,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '25G', price: 250.00 },
                     ]
                 }, */
-              /*   {
+        /*   {
                     id: '🍍 DIRTY PINEAPPLE',
                     flag: '🇲🇦',
                     name: '🍍 DIRTY PINEAPPLE',
@@ -1352,7 +1395,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '25G', price: 250.00 },
                     ]
                 }, */
-                /* {
+        /* {
                     id: '🥭 FORBIDDEN MANGO',
                     flag: '🇲🇦',
                     name: '🥭 FORBIDDEN MANGO',
@@ -1368,7 +1411,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '25G', price: 250.00 },
                     ]
                 }, */
-                /*  {
+        /*  {
                     id: 'Chocolato 🍪',
                     flag: '🇲🇦',
                     name: 'Chocolato 🍪',
@@ -1383,7 +1426,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '10G', price: 250.00 },
                     ]
                 }, */
-              /*      {
+        /*      {
                     id: 'Peach Lassi 🍑',
                     flag: '🇲🇦',
                     name: 'Peach Lassi 🍑',
@@ -1400,8 +1443,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '50G', price: 400.00 },
                         { weight: '100G', price: 750.00 },
                     ]
-                }, */ 
-               /*     {
+                }, */
+        /*     {
                     id: 'Exotic Thai 🌴',
                     flag: '🇲🇦',
                     name: 'Exotic Thai 🌴',
@@ -1419,7 +1462,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100G', price: 750.00 },
                     ]
                 },  */
-            /*        {
+        /*        {
                     id: '🍋🦞 LEMON LOBSTER',
                     flag: '🇲🇦',
                     name: '🍋🦞 LEMON LOBSTER',
@@ -1437,8 +1480,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100G', price: 750.00 },
                     ]
                 },  */
-                  
-                  /*  {
+
+        /*  {
                     id: 'GRAPENANA 🍫 🍯',
                     flag: '🇲🇦',
                     name: 'GRAPENANA 🍫 🍯',
@@ -1455,7 +1498,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100G', price: 650.00 },
                     ]
                 },  */
-                /* {
+        /* {
                     id: '🥵 FROZEN SIFT 🍫',
                     flag: '🇲🇦',
                     name: '🥵 FROZEN SIFT 🍫',
@@ -1480,7 +1523,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100G', price: 750.00 },
                     ]
                 }, */
-              /*   {
+        /*   {
                     id: '🧊 FROZEN',
                     flag: '🇲🇦',
                     name: '🧊 FROZEN',
@@ -1504,136 +1547,143 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100G', price: 750.00 },
                     ]
                 }, */
-            ]
+      ],
+    },
+    {
+      id: "3xFiltre",
+      name: "3X FILTRE PREMIUM 🇲🇦🍫",
+      type: "3xFiltre",
+      quality: "3X FILTRE PREMIUM 🇲🇦🍫",
+      image: "Categ3X.png", // Ton image de catégorie Weed
+
+      products: [
+        {
+          id: "Banana Limonade 🍹",
+          flag: "🇲🇦",
+          name: "Banana Limonade 🍹",
+          farm: "👨‍🌾 DHF Farmz 👨‍🌾",
+          promoEligible: true,
+          type: "3xFiltre",
+          image: "ProductBL.jpg",
+          video: "",
+          description:
+            "💨🔥 Une sélection fruitée et pétillante signée DHF Farmz 🔥💨\n 🍌🍋 120U PREMIUM – Banana Limonade 🍋🍌\n\n ✨ Profil aromatique ✨\n Dès l’ouverture, Banana Limonade dévoile un profil terpénique frais et ultra-gourmand 🤤🍹. Une vague de banane mûre et crémeuse 🍌 envahit les sens, rapidement accompagnée de notes de citron pressé 🍋, de soda acidulé 🥤 et de bonbon fruité 🍬. En arrière-plan, une légère touche tropicale et gazeuse apporte du relief et équilibre parfaitement la douceur de l’ensemble ✨.\n\n 😮‍💨🍹 Goût\n En bouche, l’attaque est douce et crémeuse, dominée par la banane sucrée 🍌. Une fraîcheur citronnée apparaît ensuite, rappelant une limonade artisanale bien glacée 🍋🧊. La sélection 120U Premium offre une fumée dense, propre et particulièrement savoureuse ☁️✨. La finale reste longtemps sur le palais avec un mélange de fruits tropicaux, de citron candy et de crème légère.\n\n 💎 Texture & qualité\n ✨ Sélection 120 microns premium\n 🤲 Texture souple et homogène\n 🌈 Belle conservation du profil aromatique\n ☁️ Fumée douce et parfumée\n 🔥 Finition propre et soigneusement travaillée\n\n 🏆🍌 Le verdict\n Banana Limonade est une référence gourmande pour les amateurs de profils fruités, frais et légèrement acidulés. DHF Farmz propose ici un 120U Premium original, équilibré et rempli de saveurs tropicales. 🍌🍋🍹💎",
+          tarifs: [
+            { weight: "10G", price: 60.0 },
+            { weight: "25G", price: 130.0 },
+            { weight: "50G", price: 230.0 },
+            { weight: "100G", price: 420.0 },
+          ],
         },
         {
-            id: '3xFiltre',
-            name: '3X FILTRE PREMIUM 🇲🇦🍫',
-            type: '3xFiltre',
-            quality: '3X FILTRE PREMIUM 🇲🇦🍫',
-            image: 'Categ3X.png', // Ton image de catégorie Weed
-
-            products: [
-                  {
-                    id: 'Banana Limonade 🍹',
-                    flag: '🇲🇦',
-                    name: 'Banana Limonade 🍹',
-                    farm: '👨‍🌾 DHF Farmz 👨‍🌾',
-                    promoEligible: true,
-                    type: '3xFiltre',
-                    image: 'ProductBL.jpg', 
-                    video: '',
-                    description: '💨🔥 Une sélection fruitée et pétillante signée DHF Farmz 🔥💨\n 🍌🍋 120U PREMIUM – Banana Limonade 🍋🍌\n\n ✨ Profil aromatique ✨\n Dès l’ouverture, Banana Limonade dévoile un profil terpénique frais et ultra-gourmand 🤤🍹. Une vague de banane mûre et crémeuse 🍌 envahit les sens, rapidement accompagnée de notes de citron pressé 🍋, de soda acidulé 🥤 et de bonbon fruité 🍬. En arrière-plan, une légère touche tropicale et gazeuse apporte du relief et équilibre parfaitement la douceur de l’ensemble ✨.\n\n 😮‍💨🍹 Goût\n En bouche, l’attaque est douce et crémeuse, dominée par la banane sucrée 🍌. Une fraîcheur citronnée apparaît ensuite, rappelant une limonade artisanale bien glacée 🍋🧊. La sélection 120U Premium offre une fumée dense, propre et particulièrement savoureuse ☁️✨. La finale reste longtemps sur le palais avec un mélange de fruits tropicaux, de citron candy et de crème légère.\n\n 💎 Texture & qualité\n ✨ Sélection 120 microns premium\n 🤲 Texture souple et homogène\n 🌈 Belle conservation du profil aromatique\n ☁️ Fumée douce et parfumée\n 🔥 Finition propre et soigneusement travaillée\n\n 🏆🍌 Le verdict\n Banana Limonade est une référence gourmande pour les amateurs de profils fruités, frais et légèrement acidulés. DHF Farmz propose ici un 120U Premium original, équilibré et rempli de saveurs tropicales. 🍌🍋🍹💎',
-                    tarifs: [
-                        { weight: '10G', price: 60.00 },
-                        { weight: '25G', price: 130.00 },
-                        { weight: '50G', price: 230.00 },
-                        { weight: '100G', price: 420.00 },
-                    ]
-                },
-                 {
-                    id: 'Pineapple Juice 🍍',
-                    flag: '🇲🇦',
-                    name: 'Pineapple Juice 🍍',
-                    farm: '👨‍🌾 DHF Farmz 👨‍🌾',
-                    promoEligible: true,
-                    type: '3xFiltre',
-                    image: 'ProductPJ.jpg', 
-                    video: '',
-                    description: '💨🔥 Une vague tropicale ultra-fraîche signée DHF Farmz 🔥💨\n 🍍🥤 120U PREMIUM – Pineapple Juice 🥤🍍\n\n ✨ Profil aromatique ✨\n Pineapple Juice libère dès l’ouverture un parfum tropical particulièrement intense 🌴🔥. L’ananas mûr et juteux 🍍 domine largement le profil, accompagné de notes d’agrumes sucrés 🍊, de jus de fruits frais 🥤 et d’une légère touche candy 🍬. En fond, une nuance crémeuse et discrètement gazeuse apporte davantage de profondeur à l’ensemble.\n\n 😮‍💨🍍 Goût\n À la dégustation, l’attaque rappelle un véritable jus d’ananas fraîchement pressé 🍍🥤. Les saveurs sont douces, sucrées et légèrement acidulées, avec une petite touche tropicale qui reste longtemps sur le palais. La sélection 120U Premium apporte une fumée dense, soyeuse et particulièrement riche en arômes ☁️✨.\n\n 💎 Texture & qualité\n ✨ Sélection premium en 120 microns\n 🤲 Matière fine, souple et homogène\n 🌴 Profil tropical très expressif\n ☁️ Fumée douce et aromatique\n 🔥 Travail propre signé DHF Farmz\n\n 🏆🍍 Le verdict\n Pineapple Juice s’adresse aux amateurs de profils exotiques, fruités et rafraîchissants. Un 120U Premium gourmand qui restitue parfaitement la douceur et l’acidité d’un ananas bien mûr. 🍍🌴🥤💎',
-                    tarifs: [
-                        { weight: '10G', price: 60.00 },
-                        { weight: '25G', price: 130.00 },
-                        { weight: '50G', price: 230.00 },
-                        { weight: '100G', price: 420.00 },
-                    ]
-                },
-                 {
-                    id: 'Black Papaya ♣️',
-                    flag: '🇲🇦',
-                    name: 'Black Papaya ♣️',
-                    farm: '👨‍🌾 DHF Farmz 👨‍🌾',
-                    promoEligible: true,
-                    type: '3xFiltre',
-                    image: 'ProductBP.jpg', 
-                    video: '',
-                    description: '💨🔥 Une sélection exotique, sombre et raffinée signée DHF Farmz 🔥💨\n ♣️🥭 120U PREMIUM – Black Papaya 🥭♣️\n\n ✨ Profil aromatique ✨\n Dès l’ouverture, Black Papaya impose un profil profond et particulièrement complexe 😮‍💨🔥. Des notes de papaye mûre 🥭, de fruits tropicaux et de mangue sucrée se mélangent à une base plus sombre, légèrement terreuse et épicée 🌿. Une touche crémeuse ainsi qu’un fond gazeux discret apportent du caractère à cette sélection premium.\n\n 😮‍💨🥭 Goût\n En bouche, l’attaque est fruitée et généreuse, dominée par la papaye et les fruits exotiques bien mûrs 🥭🌴. Elle évolue ensuite vers des saveurs plus profondes, mêlant terre douce, épices légères et crème tropicale. La fumée issue de la sélection 120U Premium est dense, ronde et persistante ☁️✨.\n\n 💎 Texture & qualité\n ✨ Sélection de trichomes en 120 microns\n 🤲 Texture souple et riche\n 🌈 Profil aromatique complexe\n ☁️ Fumée épaisse et savoureuse\n 🔥 Finition premium et homogène\n\n 🏆♣️ Le verdict\n Black Papaya offre un équilibre original entre gourmandise tropicale et profondeur aromatique. Une pièce 120U Premium destinée aux amateurs de profils fruités, crémeux et légèrement terreux. ♣️🥭🌴💎',
-                    tarifs: [
-                        { weight: '10G', price: 60.00 },
-                        { weight: '25G', price: 130.00 },
-                        { weight: '50G', price: 230.00 },
-                        { weight: '100G', price: 420.00 },
-                    ]
-                },
-                 {
-                    id: 'Peach Tsunami 🌊',
-                    flag: '🇲🇦',
-                    name: 'Peach Tsunami 🌊',
-                    farm: '👨‍🌾 DHF Farmz 👨‍🌾',
-                    promoEligible: true,
-                    type: '3xFiltre',
-                    image: 'ProductPT.jpg', 
-                    video: '',
-                    description: '💨🔥 Une énorme vague fruitée signée DHF Farmz 🔥💨\n 🍑🌊 120U PREMIUM – Peach Tsunami 🌊🍑\n\n ✨ Profil aromatique ✨\n Peach Tsunami porte parfaitement son nom : dès l’ouverture, une vague puissante de pêche mûre et juteuse 🍑 envahit instantanément les sens 🌊. Elle est accompagnée de notes de bonbon fruité 🍬, de sorbet à la pêche 🍨 et d’agrumes légèrement acidulés 🍊. Une touche crémeuse et florale vient arrondir le profil et lui apporter beaucoup de finesse.\n\n 😮‍💨🍑 Goût\n En bouche, l’attaque est intensément fruitée, rappelant une pêche blanche bien mûre et un nectar frais 🍑🥤. Une douceur candy apparaît ensuite, accompagnée d’une légère fraîcheur acidulée. Grâce à la sélection 120U Premium, la fumée reste propre, dense et particulièrement expressive ☁️✨. La finale laisse une longue saveur de pêche sucrée sur le palais.\n\n 💎 Texture & qualité\n ✨ Sélection premium en 120 microns\n 🤲 Texture fine, souple et homogène\n 🍑 Profil fruité très marqué\n ☁️ Fumée douce et persistante\n 🔥 Travail précis signé DHF Farmz\n\n 🏆🌊 Le verdict\n Peach Tsunami est une véritable vague de saveurs pour les amateurs de profils fruités, sucrés et rafraîchissants. Un 120U Premium gourmand avec une signature pêche particulièrement intense. 🍑🌊🍬💎',
-                    tarifs: [
-                        { weight: '10G', price: 60.00 },
-                        { weight: '25G', price: 130.00 },
-                        { weight: '50G', price: 230.00 },
-                        { weight: '100G', price: 420.00 },
-                    ]
-                },
-                 {
-                    id: 'Tropicana Glue 🍼',
-                    flag: '🇲🇦',
-                    name: 'Tropicana Glue 🍼',
-                    farm: '👨‍🌾 DHF Farmz 👨‍🌾',
-                    promoEligible: true,
-                    type: '3xFiltre',
-                    image: 'ProductTG.jpg', 
-                    video: '',
-                    description: '💨🔥 Une combinaison fruitée et résineuse signée DHF Farmz 🔥💨\n 🍊🍼 120U PREMIUM – Tropicana Glue 🍼🍊\n\n ✨ Profil aromatique ✨\n Tropicana Glue combine la fraîcheur explosive des agrumes avec le caractère plus profond et résineux des profils Glue 🔥. Dès l’ouverture, des notes d’orange sanguine 🍊, de mandarine sucrée et de fruits tropicaux envahissent les sens. Elles sont accompagnées d’un fond terreux, crémeux et légèrement gazeux qui apporte une vraie complexité aromatique.\n\n 😮‍💨🍊 Goût\n En bouche, l’attaque est fraîche et citronnée, dominée par l’orange sucrée et les agrumes zestés 🍊🍋. Le profil évolue ensuite vers des notes plus rondes, résineuses et crémeuses, avec une finition légèrement terreuse et gassy. La sélection 120U Premium offre une fumée dense, propre et riche en saveurs ☁️✨.\n\n 💎 Texture & qualité\n ✨ Sélection de qualité en 120 microns\n 🤲 Texture souple et homogène\n 🍊 Belle intensité aromatique\n ☁️ Fumée dense et savoureuse\n 🔥 Équilibre entre fraîcheur et profondeur\n\n 🏆🍼 Le verdict\n Tropicana Glue propose un équilibre réussi entre agrumes tropicaux, douceur crémeuse et caractère résineux. Un 120U Premium moderne, expressif et particulièrement complet signé DHF Farmz. 🍊🍼⛽💎',
-                    tarifs: [
-                        { weight: '10G', price: 60.00 },
-                        { weight: '25G', price: 130.00 },
-                        { weight: '50G', price: 230.00 },
-                        { weight: '100G', price: 420.00 },
-                    ]
-                },
-                 {
-                    id: 'KitKat 🌰',
-                    flag: '🇲🇦',
-                    name: 'KitKat 🌰',
-                    farm: '🌾 No Farm 🌾',
-                    promoEligible: true,
-                    type: '3xFiltre',
-                    image: 'ProductKit.jpg', 
-                    video: '',
-                    description: '💨🔥 Une véritable gourmandise pour les amateurs de filtré premium 🔥💨\n 🍫🍪 120U – KitKat 🍪🍫\n\n ✨ Profil aromatique ✨\n Dès l’ouverture, KitKat dévoile un profil terpénique ultra-gourmand 💥🍫. Une vague de chocolat au lait envahit instantanément les sens, dominée par le cacao doux 🍫, le biscuit croquant 🍪 et une pointe de noisette torréfiée 🌰. En arrière-plan, des notes sucrées et lactées rappellent la célèbre barre chocolatée, accompagnées d’un fond terreux discret typique des bonnes résines 🌱✨.\n\n 😮‍💨🍫 Goût\n En bouche, c’est une véritable explosion chocolatée 💥🍫. L’attaque est douce et sucrée ⚡, rapidement équilibrée par une rondeur biscuitée rappelant une gaufrette croustillante 🍪🤤. La fumée est dense, propre et particulièrement savoureuse grâce à la triple filtration ☁️✨. La finale laisse une persistance longue et gourmande, avec des notes de cacao qui restent agréablement sur le palais 😋.\n\n ⚡🧠 Effets\n KitKat offre une montée chaleureuse et réconfortante 🚀✨.\n\n 😁 Sensation de bien-être immédiate\n 🌞 Effet positif et chill\n 🧠 Esprit apaisé et détendu\n ✨ Sensation de douceur mentale\n 😌 Relaxation progressive du corps\n 🌙 Parfait pour une fin de journée gourmande\n\n 🏆🍫 Le verdict\n KitKat s’impose comme une évidence pour les amateurs de profils chocolatés et de filtrés premium 🔥🍫. Son bouquet aromatique intense, sa fumée propre et son goût ultra-gourmand en font une variété qui marque les esprits dès les premières bouffées 💨✨.',
-                    tarifs: [
-                        { weight: '10G', price: 60.00 },
-                        { weight: '25G', price: 130.00 },
-                        { weight: '50G', price: 230.00 },
-                        { weight: '100G', price: 420.00 },
-                    ]
-                },
-                {
-                    id: 'Snickers 🧸',
-                    flag: '🇲🇦',
-                    name: 'Snickers 🧸',
-                    farm: '🌾 No Farm 🌾',
-                    promoEligible: true,
-                    type: '3xFiltre',
-                    image: 'ProductSni.jpg', 
-                    video: '',
-                    description: '💨🔥 Une frappe lourde et ultra-gourmande pour les puristes du filtré 🔥💨\n 🥜🍫 120U – Snickers 🍫🥜\n\n ✨ Profil aromatique ✨\n Dès l’ouverture, Snickers dévoile un profil terpénique lourd et complexe 💥🥜. Une vague de caramel fondant envahit instantanément les sens, dominée par la cacahuète grillée 🥜, le chocolat noir 🍫 et le nougat sucré 🍬. En arrière-plan, des notes terreuses et crémeuses rappellent un dessert riche, accompagnées d’un fond kush bien prononcé 🌱✨.\n\n 😮‍💨🥜 Goût\n En bouche, c’est une véritable explosion de saveurs denses 💥🍫. L’attaque est riche et caramélisée ⚡, rapidement équilibrée par une profondeur de fruits à coque rappelant la célèbre barre gourmande 🥜🤤. La fumée est épaisse, propre et particulièrement savoureuse grâce au processus 3X Filtré ☁️✨. La finale laisse une persistance longue et terreuse, avec des notes de caramel salé qui restent agréablement sur le palais 😋.\n\n ⚡🧠 Effets\n Snickers offre une montée puissante et enveloppante 🚀✨.\n\n 😁 Sensation d\'euphorie immédiate\n 🌞 Effet lourd et profondément stimulant\n 🧠 Esprit déconnecté des tensions\n ✨ Sensation de lourdeur agréable\n 😌 Relaxation totale et rapide du corps\n 🌙 Idéal pour s\'écraser dans le canapé après une grosse journée\n\n 🏆🥜 Le verdict\n Snickers s’impose comme un poids lourd pour les amateurs de profils denses, caramélisés et de filtrés premium 🔥🥜. Son bouquet aromatique complexe, sa fumée épaisse et son goût ultra-réconfortant en font une variété qui marque les esprits dès les premières bouffées 💨✨.',
-                    tarifs: [
-                        { weight: '10G', price: 60.00 },
-                        { weight: '25G', price: 130.00 },
-                        { weight: '50G', price: 230.00 },
-                        { weight: '100G', price: 420.00 },
-                    ]
-                },
-                /*  {
+          id: "Pineapple Juice 🍍",
+          flag: "🇲🇦",
+          name: "Pineapple Juice 🍍",
+          farm: "👨‍🌾 DHF Farmz 👨‍🌾",
+          promoEligible: true,
+          type: "3xFiltre",
+          image: "ProductPJ.jpg",
+          video: "",
+          description:
+            "💨🔥 Une vague tropicale ultra-fraîche signée DHF Farmz 🔥💨\n 🍍🥤 120U PREMIUM – Pineapple Juice 🥤🍍\n\n ✨ Profil aromatique ✨\n Pineapple Juice libère dès l’ouverture un parfum tropical particulièrement intense 🌴🔥. L’ananas mûr et juteux 🍍 domine largement le profil, accompagné de notes d’agrumes sucrés 🍊, de jus de fruits frais 🥤 et d’une légère touche candy 🍬. En fond, une nuance crémeuse et discrètement gazeuse apporte davantage de profondeur à l’ensemble.\n\n 😮‍💨🍍 Goût\n À la dégustation, l’attaque rappelle un véritable jus d’ananas fraîchement pressé 🍍🥤. Les saveurs sont douces, sucrées et légèrement acidulées, avec une petite touche tropicale qui reste longtemps sur le palais. La sélection 120U Premium apporte une fumée dense, soyeuse et particulièrement riche en arômes ☁️✨.\n\n 💎 Texture & qualité\n ✨ Sélection premium en 120 microns\n 🤲 Matière fine, souple et homogène\n 🌴 Profil tropical très expressif\n ☁️ Fumée douce et aromatique\n 🔥 Travail propre signé DHF Farmz\n\n 🏆🍍 Le verdict\n Pineapple Juice s’adresse aux amateurs de profils exotiques, fruités et rafraîchissants. Un 120U Premium gourmand qui restitue parfaitement la douceur et l’acidité d’un ananas bien mûr. 🍍🌴🥤💎",
+          tarifs: [
+            { weight: "10G", price: 60.0 },
+            { weight: "25G", price: 130.0 },
+            { weight: "50G", price: 230.0 },
+            { weight: "100G", price: 420.0 },
+          ],
+        },
+        {
+          id: "Black Papaya ♣️",
+          flag: "🇲🇦",
+          name: "Black Papaya ♣️",
+          farm: "👨‍🌾 DHF Farmz 👨‍🌾",
+          promoEligible: true,
+          type: "3xFiltre",
+          image: "ProductBP.jpg",
+          video: "",
+          description:
+            "💨🔥 Une sélection exotique, sombre et raffinée signée DHF Farmz 🔥💨\n ♣️🥭 120U PREMIUM – Black Papaya 🥭♣️\n\n ✨ Profil aromatique ✨\n Dès l’ouverture, Black Papaya impose un profil profond et particulièrement complexe 😮‍💨🔥. Des notes de papaye mûre 🥭, de fruits tropicaux et de mangue sucrée se mélangent à une base plus sombre, légèrement terreuse et épicée 🌿. Une touche crémeuse ainsi qu’un fond gazeux discret apportent du caractère à cette sélection premium.\n\n 😮‍💨🥭 Goût\n En bouche, l’attaque est fruitée et généreuse, dominée par la papaye et les fruits exotiques bien mûrs 🥭🌴. Elle évolue ensuite vers des saveurs plus profondes, mêlant terre douce, épices légères et crème tropicale. La fumée issue de la sélection 120U Premium est dense, ronde et persistante ☁️✨.\n\n 💎 Texture & qualité\n ✨ Sélection de trichomes en 120 microns\n 🤲 Texture souple et riche\n 🌈 Profil aromatique complexe\n ☁️ Fumée épaisse et savoureuse\n 🔥 Finition premium et homogène\n\n 🏆♣️ Le verdict\n Black Papaya offre un équilibre original entre gourmandise tropicale et profondeur aromatique. Une pièce 120U Premium destinée aux amateurs de profils fruités, crémeux et légèrement terreux. ♣️🥭🌴💎",
+          tarifs: [
+            { weight: "10G", price: 60.0 },
+            { weight: "25G", price: 130.0 },
+            { weight: "50G", price: 230.0 },
+            { weight: "100G", price: 420.0 },
+          ],
+        },
+        {
+          id: "Peach Tsunami 🌊",
+          flag: "🇲🇦",
+          name: "Peach Tsunami 🌊",
+          farm: "👨‍🌾 DHF Farmz 👨‍🌾",
+          promoEligible: true,
+          type: "3xFiltre",
+          image: "ProductPT.jpg",
+          video: "",
+          description:
+            "💨🔥 Une énorme vague fruitée signée DHF Farmz 🔥💨\n 🍑🌊 120U PREMIUM – Peach Tsunami 🌊🍑\n\n ✨ Profil aromatique ✨\n Peach Tsunami porte parfaitement son nom : dès l’ouverture, une vague puissante de pêche mûre et juteuse 🍑 envahit instantanément les sens 🌊. Elle est accompagnée de notes de bonbon fruité 🍬, de sorbet à la pêche 🍨 et d’agrumes légèrement acidulés 🍊. Une touche crémeuse et florale vient arrondir le profil et lui apporter beaucoup de finesse.\n\n 😮‍💨🍑 Goût\n En bouche, l’attaque est intensément fruitée, rappelant une pêche blanche bien mûre et un nectar frais 🍑🥤. Une douceur candy apparaît ensuite, accompagnée d’une légère fraîcheur acidulée. Grâce à la sélection 120U Premium, la fumée reste propre, dense et particulièrement expressive ☁️✨. La finale laisse une longue saveur de pêche sucrée sur le palais.\n\n 💎 Texture & qualité\n ✨ Sélection premium en 120 microns\n 🤲 Texture fine, souple et homogène\n 🍑 Profil fruité très marqué\n ☁️ Fumée douce et persistante\n 🔥 Travail précis signé DHF Farmz\n\n 🏆🌊 Le verdict\n Peach Tsunami est une véritable vague de saveurs pour les amateurs de profils fruités, sucrés et rafraîchissants. Un 120U Premium gourmand avec une signature pêche particulièrement intense. 🍑🌊🍬💎",
+          tarifs: [
+            { weight: "10G", price: 60.0 },
+            { weight: "25G", price: 130.0 },
+            { weight: "50G", price: 230.0 },
+            { weight: "100G", price: 420.0 },
+          ],
+        },
+        {
+          id: "Tropicana Glue 🍼",
+          flag: "🇲🇦",
+          name: "Tropicana Glue 🍼",
+          farm: "👨‍🌾 DHF Farmz 👨‍🌾",
+          promoEligible: true,
+          type: "3xFiltre",
+          image: "ProductTG.jpg",
+          video: "",
+          description:
+            "💨🔥 Une combinaison fruitée et résineuse signée DHF Farmz 🔥💨\n 🍊🍼 120U PREMIUM – Tropicana Glue 🍼🍊\n\n ✨ Profil aromatique ✨\n Tropicana Glue combine la fraîcheur explosive des agrumes avec le caractère plus profond et résineux des profils Glue 🔥. Dès l’ouverture, des notes d’orange sanguine 🍊, de mandarine sucrée et de fruits tropicaux envahissent les sens. Elles sont accompagnées d’un fond terreux, crémeux et légèrement gazeux qui apporte une vraie complexité aromatique.\n\n 😮‍💨🍊 Goût\n En bouche, l’attaque est fraîche et citronnée, dominée par l’orange sucrée et les agrumes zestés 🍊🍋. Le profil évolue ensuite vers des notes plus rondes, résineuses et crémeuses, avec une finition légèrement terreuse et gassy. La sélection 120U Premium offre une fumée dense, propre et riche en saveurs ☁️✨.\n\n 💎 Texture & qualité\n ✨ Sélection de qualité en 120 microns\n 🤲 Texture souple et homogène\n 🍊 Belle intensité aromatique\n ☁️ Fumée dense et savoureuse\n 🔥 Équilibre entre fraîcheur et profondeur\n\n 🏆🍼 Le verdict\n Tropicana Glue propose un équilibre réussi entre agrumes tropicaux, douceur crémeuse et caractère résineux. Un 120U Premium moderne, expressif et particulièrement complet signé DHF Farmz. 🍊🍼⛽💎",
+          tarifs: [
+            { weight: "10G", price: 60.0 },
+            { weight: "25G", price: 130.0 },
+            { weight: "50G", price: 230.0 },
+            { weight: "100G", price: 420.0 },
+          ],
+        },
+        {
+          id: "KitKat 🌰",
+          flag: "🇲🇦",
+          name: "KitKat 🌰",
+          farm: "🌾 No Farm 🌾",
+          promoEligible: true,
+          type: "3xFiltre",
+          image: "ProductKit.jpg",
+          video: "",
+          description:
+            "💨🔥 Une véritable gourmandise pour les amateurs de filtré premium 🔥💨\n 🍫🍪 120U – KitKat 🍪🍫\n\n ✨ Profil aromatique ✨\n Dès l’ouverture, KitKat dévoile un profil terpénique ultra-gourmand 💥🍫. Une vague de chocolat au lait envahit instantanément les sens, dominée par le cacao doux 🍫, le biscuit croquant 🍪 et une pointe de noisette torréfiée 🌰. En arrière-plan, des notes sucrées et lactées rappellent la célèbre barre chocolatée, accompagnées d’un fond terreux discret typique des bonnes résines 🌱✨.\n\n 😮‍💨🍫 Goût\n En bouche, c’est une véritable explosion chocolatée 💥🍫. L’attaque est douce et sucrée ⚡, rapidement équilibrée par une rondeur biscuitée rappelant une gaufrette croustillante 🍪🤤. La fumée est dense, propre et particulièrement savoureuse grâce à la triple filtration ☁️✨. La finale laisse une persistance longue et gourmande, avec des notes de cacao qui restent agréablement sur le palais 😋.\n\n ⚡🧠 Effets\n KitKat offre une montée chaleureuse et réconfortante 🚀✨.\n\n 😁 Sensation de bien-être immédiate\n 🌞 Effet positif et chill\n 🧠 Esprit apaisé et détendu\n ✨ Sensation de douceur mentale\n 😌 Relaxation progressive du corps\n 🌙 Parfait pour une fin de journée gourmande\n\n 🏆🍫 Le verdict\n KitKat s’impose comme une évidence pour les amateurs de profils chocolatés et de filtrés premium 🔥🍫. Son bouquet aromatique intense, sa fumée propre et son goût ultra-gourmand en font une variété qui marque les esprits dès les premières bouffées 💨✨.",
+          tarifs: [
+            { weight: "10G", price: 60.0 },
+            { weight: "25G", price: 130.0 },
+            { weight: "50G", price: 230.0 },
+            { weight: "100G", price: 420.0 },
+          ],
+        },
+        {
+          id: "Snickers 🧸",
+          flag: "🇲🇦",
+          name: "Snickers 🧸",
+          farm: "🌾 No Farm 🌾",
+          promoEligible: true,
+          type: "3xFiltre",
+          image: "ProductSni.jpg",
+          video: "",
+          description:
+            "💨🔥 Une frappe lourde et ultra-gourmande pour les puristes du filtré 🔥💨\n 🥜🍫 120U – Snickers 🍫🥜\n\n ✨ Profil aromatique ✨\n Dès l’ouverture, Snickers dévoile un profil terpénique lourd et complexe 💥🥜. Une vague de caramel fondant envahit instantanément les sens, dominée par la cacahuète grillée 🥜, le chocolat noir 🍫 et le nougat sucré 🍬. En arrière-plan, des notes terreuses et crémeuses rappellent un dessert riche, accompagnées d’un fond kush bien prononcé 🌱✨.\n\n 😮‍💨🥜 Goût\n En bouche, c’est une véritable explosion de saveurs denses 💥🍫. L’attaque est riche et caramélisée ⚡, rapidement équilibrée par une profondeur de fruits à coque rappelant la célèbre barre gourmande 🥜🤤. La fumée est épaisse, propre et particulièrement savoureuse grâce au processus 3X Filtré ☁️✨. La finale laisse une persistance longue et terreuse, avec des notes de caramel salé qui restent agréablement sur le palais 😋.\n\n ⚡🧠 Effets\n Snickers offre une montée puissante et enveloppante 🚀✨.\n\n 😁 Sensation d'euphorie immédiate\n 🌞 Effet lourd et profondément stimulant\n 🧠 Esprit déconnecté des tensions\n ✨ Sensation de lourdeur agréable\n 😌 Relaxation totale et rapide du corps\n 🌙 Idéal pour s'écraser dans le canapé après une grosse journée\n\n 🏆🥜 Le verdict\n Snickers s’impose comme un poids lourd pour les amateurs de profils denses, caramélisés et de filtrés premium 🔥🥜. Son bouquet aromatique complexe, sa fumée épaisse et son goût ultra-réconfortant en font une variété qui marque les esprits dès les premières bouffées 💨✨.",
+          tarifs: [
+            { weight: "10G", price: 60.0 },
+            { weight: "25G", price: 130.0 },
+            { weight: "50G", price: 230.0 },
+            { weight: "100G", price: 420.0 },
+          ],
+        },
+        /*  {
                     id: 'LEMON SORBET ❄️',
                     flag: '🇲🇦',
                     name: 'LEMON SORBET 🍋🍨',
@@ -1650,7 +1700,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100G', price: 420.00 },
                     ]
                 }, */
-               /*  {
+        /*  {
                     id: '🍋⛰️🇲🇦 Lemon’s',
                     flag: '🇲🇦',
                     name: '🍋⛰️🇲🇦 Lemon’s',
@@ -1686,7 +1736,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100G', price: 400.00 },
                     ]
                 }, */
-               /*  {
+        /*  {
                     id: 'El Mero  💥💥',
                     flag: '🇲🇦',
                     name: 'El Mero 🌰',
@@ -1758,7 +1808,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100G', price: 400.00 },
                     ]
                 }, */
-               /*  {
+        /*  {
                     id: 'PURPLE STORM 😈',
                     flag: '🇲🇦',
                     name: 'PURPLE STORM 😈',
@@ -1830,7 +1880,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100G', price: 450.00 },
                     ]
                 }, */
-                /*  {
+        /*  {
                     id: '🍯 FRITTER LICKER 🔥',
                     flag: '🇲🇦',
                     name: '🍯 FRITTER LICKER 🔥',
@@ -1848,7 +1898,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100G', price: 400.00 },
                     ]
                 }, */
-               /*  {
+        /*  {
                     id: '🍓 TWIX STRAWBERRY GUMMY 🍫',
                     flag: '🇲🇦',
                     name: '🍓 TWIX STRAWBERRY GUMMY 🍫',
@@ -1866,7 +1916,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100G', price: 400.00 },
                     ]
                 }, */
-             /*    {
+        /*    {
                     id: '🍭 RUNTZ 💎',
                     flag: '🇲🇦',
                     name: '🍭 RUNTZ 💎',
@@ -1902,7 +1952,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100G', price: 400.00 },
                     ]
                 }, */
-              /*   {
+        /*   {
                     id: '🌊 SUPER SOAKER 💎',
                     flag: '🇲🇦',
                     name: '🌊 SUPER SOAKER 💎',
@@ -1920,8 +1970,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100G', price: 400.00 },
                     ]
                 }, */
-               
-               /* ,
+
+        /* ,
                 {
                     id: 'PremiumDur',
                     flag: '🇲🇦',
@@ -1951,34 +2001,35 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100G', price: 450.00, badge: 'PROMO ⚡️' },
                     ]
                 } */
-            ]
-        },
-        {
-            id: 'HASH',
-            name: 'HASH 🌰',
-            type: 'HASH',
-            quality: 'HASH 🌰',
-            image: 'CategHash.png', // Ton image de catégorie Weed
+      ],
+    },
+    {
+      id: "HASH",
+      name: "HASH 🌰",
+      type: "HASH",
+      quality: "HASH 🌰",
+      image: "CategHash.png", // Ton image de catégorie Weed
 
-            products: [
-                {
-                    id: 'Mario 🍄',
-                    flag: '🇲🇦',
-                    name: 'Mario 🍄',
-                    farm: '🌾 No Farm 🌾',
-                    promoEligible: true,
-                    type: 'Weed',
-                    image: 'ProductWaza.jpg', 
-                    video: '',
-                    description: '🍄⭐ MARIO ⭐🍄\n\n Une sélection au profil gourmand et bien équilibré, inspirée de l’univers emblématique de Mario. Cette variété se distingue par ses notes fruitées, sucrées et légèrement terreuses, avec une belle intensité aromatique dès l’ouverture. 🔥💎\n\n 👃 Profil aromatique :\n 🍓 Fruits rouges sucrés\n 🍄 Notes terreuses légères\n 🍬 Bonbon fruité\n 🍋 Petite touche d’agrumes\n 🌿 Fond végétal doux et naturel\n\n 👅 Goût :\n En bouche, Mario développe une attaque fruitée et sucrée, suivie de notes plus rondes et légèrement terreuses. La fumée reste douce, agréable et laisse un arrière-goût gourmand avec une petite fraîcheur citronnée. 😮‍💨🍄\n\n ✨ Effets généralement recherchés :\n 😄 Bonne humeur et euphorie\n 🧠 Esprit léger et détendu\n 🎮 Sensation agréable et conviviale\n 💆 Relaxation corporelle progressive\n 🌙 Parfaite pour se poser tranquillement\n\n 🏆 Le verdict :\n Une variété originale, fruitée et facile à apprécier, idéale pour les amateurs de profils sucrés avec une légère touche terreuse. Mario combine gourmandise, équilibre et bonne vibe dans une sélection pleine de caractère. 🍄⭐🔥💎',
-                    tarifs: [
-                        { weight: '10g', price: 50.00 },
-                        { weight: '25g', price: 110.00 },
-                        { weight: '50g', price: 180.00 },
-                        { weight: '100g', price: 310.00 },
-                    ]
-                },
-                /* {
+      products: [
+        {
+          id: "Mario 🍄",
+          flag: "🇲🇦",
+          name: "Mario 🍄",
+          farm: "🌾 No Farm 🌾",
+          promoEligible: true,
+          type: "Weed",
+          image: "ProductWaza.jpg",
+          video: "",
+          description:
+            "🍄⭐ MARIO ⭐🍄\n\n Une sélection au profil gourmand et bien équilibré, inspirée de l’univers emblématique de Mario. Cette variété se distingue par ses notes fruitées, sucrées et légèrement terreuses, avec une belle intensité aromatique dès l’ouverture. 🔥💎\n\n 👃 Profil aromatique :\n 🍓 Fruits rouges sucrés\n 🍄 Notes terreuses légères\n 🍬 Bonbon fruité\n 🍋 Petite touche d’agrumes\n 🌿 Fond végétal doux et naturel\n\n 👅 Goût :\n En bouche, Mario développe une attaque fruitée et sucrée, suivie de notes plus rondes et légèrement terreuses. La fumée reste douce, agréable et laisse un arrière-goût gourmand avec une petite fraîcheur citronnée. 😮‍💨🍄\n\n ✨ Effets généralement recherchés :\n 😄 Bonne humeur et euphorie\n 🧠 Esprit léger et détendu\n 🎮 Sensation agréable et conviviale\n 💆 Relaxation corporelle progressive\n 🌙 Parfaite pour se poser tranquillement\n\n 🏆 Le verdict :\n Une variété originale, fruitée et facile à apprécier, idéale pour les amateurs de profils sucrés avec une légère touche terreuse. Mario combine gourmandise, équilibre et bonne vibe dans une sélection pleine de caractère. 🍄⭐🔥💎",
+          tarifs: [
+            { weight: "10g", price: 50.0 },
+            { weight: "25g", price: 110.0 },
+            { weight: "50g", price: 180.0 },
+            { weight: "100g", price: 310.0 },
+          ],
+        },
+        /* {
                     id: 'Banana Candy 🍌',
                     flag: '🇲🇦',
                     name: 'Banana Candy 🍌',
@@ -2012,7 +2063,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100g', price: 330.00 },
                     ]
                 }, */
-               /*  {
+        /*  {
                     id: 'MANGO',
                     flag: '🇲🇦',
                     name: 'MANGO 🥭',
@@ -2046,7 +2097,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100g', price: 310.00 },
                     ]
                 }, */
-               /*  {
+        /*  {
                     id: '🌕🍈 SUPER MOUSSEUX 🍈🌕',
                     flag: '🇲🇦',
                     name: '🌕🍈 Moon Melon 🍈🌕',
@@ -2063,7 +2114,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100g', price: 330.00 },
                     ]
                 }, */
-                /* {
+        /* {
                     id: 'NICOLE KUSH ✨',
                     flag: '🇺🇸',
                     name: 'NICOLE KUSH ✨',
@@ -2080,11 +2131,131 @@ document.addEventListener('DOMContentLoaded', function () {
                         { weight: '100g', price: 330.00 },
                     ]
                 },  */
-            ]
-        },
-      
+      ],
+    },
 
-   /*      // ============================================================
+    {
+      id: "EXTRA",
+      name: "EXTRA 🔞",
+      type: "EXTRA",
+      quality: "EXTRA 🔞",
+      image: "CategExtra.png",
+
+      // 👇 Sous-catégories de EXTRA
+      farms: [
+        {
+          id: "COKE",
+          name: "COKE 🥚",
+          image: "",
+          badgeText: "",
+          products: [
+            {
+              id: "777",
+              flag: "🇨🇴",
+              name: "❼❼❼",
+              farm: "🌾 No Farm 🌾",
+              promoEligible: true,
+              type: "Weed",
+              image: "Product777.png",
+              video: "Video777.mp4",
+              description: "94% de pureter ",
+              tarifs: [
+                { weight: "1g", price: 60.0 },
+                { weight: "2g", price: 100.0 },
+                { weight: "5g", price: 200.0 },
+                { weight: "10g", price: 370.0 },
+              ],
+            },
+            {
+              id: "Fish Scales 🐟",
+              flag: "🇱🇧",
+              name: "Fish Scales 🐟",
+              farm: "🌾 No Farm 🌾",
+              promoEligible: true,
+              type: "Weed",
+              image: "ProductFish.png",
+              video: "VideoFish.mp4",
+              description: "100% de pureter ",
+              tarifs: [
+                { weight: "1g", price: 70.0 },
+                { weight: "2g", price: 130.0 },
+                { weight: "5g", price: 300.0 },
+                { weight: "10g", price: 550.0 },
+              ],
+            },
+            {
+              id: "Pink Scales 🪸",
+              flag: "🇱🇧",
+              name: "Pink Scales 🪸",
+              farm: "🌾 No Farm 🌾",
+              promoEligible: true,
+              type: "Weed",
+              image: "ProductPink.png",
+              video: "VideoPink.mp4",
+              description: "100% de pureter ",
+              tarifs: [
+                { weight: "1g", price: 80.0 },
+                { weight: "2g", price: 140.0 },
+                { weight: "5g", price: 320.0 },
+                { weight: "10g", price: 600.0 },
+              ],
+            },
+          ],
+        },
+
+        {
+          id: "extasy",
+          name: "extasy 🍬",
+          image: "",
+          badgeText: "",
+          products: [
+            {
+              id: "Rolex 280mg",
+              flag: "💎",
+              name: "Rolex 280mg ",
+              farm: "🌾 No Farm 🌾",
+              promoEligible: true,
+              type: "Weed",
+              image: "ProductRolex.jpg",
+              video: "VideoPink.mp4",
+              description: "",
+              tarifs: [
+                { weight: "1", price: 10.0 },
+                { weight: "5", price: 30.0 },
+                { weight: "10", price: 50.0 },
+              ],
+            },
+          ],
+        },
+        {
+          id: "ketamine",
+          name: "ketamine 🔥",
+          image: "",
+          badgeText: "",
+          products: [
+            {
+              id: "Needles 💠",
+              flag: "💎",
+              name: "Needles 💠",
+              farm: "🌾 No Farm 🌾",
+              promoEligible: true,
+              type: "Weed",
+              image: "ProductNeed.jpg",
+              video: "VideoNedd.mp4",
+              description: "",
+              tarifs: [
+                { weight: "1g", price: 20.0 },
+                { weight: "2g", price: 30.0 },
+                { weight: "5g", price: 50.0 },
+                { weight: "10g", price: 90.0 },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+
+    /*      // ============================================================
         // CATEGORIE 2 : HASH 🍫
         // ============================================================
         {
@@ -2610,24 +2781,24 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         ]
     } */
-    ];
+  ];
 
-    // --- VARIABLES D'ÉTAT ---
-    let cart = [];
-    let currentFilters = {
-        searchTerm: '',
-        quality: 'all',
-        farm: 'all'
-    };
-    let currentView = 'categories'; // 'categories', 'farms', ou 'products'
-    let currentCategoryId = null; // Garde en mémoire la catégorie sélectionnée
-    let currentFarmId = null; // Garde en mémoire la farm sélectionnée
-    let appliedPromo = null; // Pour suivre le code promo
-    let paymentMethod = 'Espèce'; // Méthode de paiement par défaut
+  // --- VARIABLES D'ÉTAT ---
+  let cart = [];
+  let currentFilters = {
+    searchTerm: "",
+    quality: "all",
+    farm: "all",
+  };
+  let currentView = "categories"; // 'categories', 'farms', ou 'products'
+  let currentCategoryId = null; // Garde en mémoire la catégorie sélectionnée
+  let currentFarmId = null; // Garde en mémoire la farm sélectionnée
+  let appliedPromo = null; // Pour suivre le code promo
+  let paymentMethod = "Espèce"; // Méthode de paiement par défaut
 
-    // --- DÉFINIS TES CODES PROMO ICI ---
-    const validPromoCodes = {
-      /*   "": {
+  // --- DÉFINIS TES CODES PROMO ICI ---
+  const validPromoCodes = {
+    /*   "": {
             type: 'fixed', // 'percent' (pourcentage) ou 'fixed' (fixe)
             value: 10,       // 20%
             appliesTo: 'eligible', // 'eligible' (articles marqués) ou 'all' (tout le panier)
@@ -2639,131 +2810,134 @@ document.addEventListener('DOMContentLoaded', function () {
             appliesTo: 'eligible', // 'eligible' (articles marqués) ou 'all' (tout le panier)
             cumulative: false // <-- AJOUTE CETTE LIGNE
         } */
-        /*  "WELCOME5": {
+    /*  "WELCOME5": {
              type: 'percent',   // 20%
              value: 20,        // 20%
              appliesTo: 'all' // S'applique à tout
          } */
-        // Ajoute d'autres codes ici
+    // Ajoute d'autres codes ici
+    // ADD CUMULABLE FONCTION POUR PLUTARD
+  };
 
-        // ADD CUMULABLE FONCTION POUR PLUTARD
-    };
+  // --- SÉLECTEURS D'ÉLÉMENTS DU DOM ---
+  const pages = document.querySelectorAll(".page");
+  const productListContainer = document.getElementById("product-list");
+  const loaderPage = document.getElementById("page-loader");
 
+  const filterContainer = document.querySelector(".filters");
 
-    // --- SÉLECTEURS D'ÉLÉMENTS DU DOM ---
-    const pages = document.querySelectorAll('.page');
-    const productListContainer = document.getElementById('product-list');
-    const loaderPage = document.getElementById('page-loader');
+  // --- NOUVEAUX SÉLECTEURS POUR CHAQUE FILTRE ---
+  const searchFilterWrapper =
+    document.getElementById("search-filter").parentElement;
+  const qualityFilterWrapper =
+    document.getElementById("quality-filter").parentElement;
+  const farmFilterWrapper =
+    document.getElementById("farm-filter").parentElement;
+  // --- FIN NOUVEAUX SÉLECTEURS ---
 
-    const filterContainer = document.querySelector('.filters');
+  // --- HELPER : TROUVER UN PRODUIT PAR SON ID ---
+  function getProductById(productId) {
+    for (const category of appData) {
+      // 1. Cherche dans les produits directs (Nouveau cas)
+      if (category.products) {
+        const product = category.products.find((p) => p.id === productId);
+        if (product) return product;
+      }
 
-    // --- NOUVEAUX SÉLECTEURS POUR CHAQUE FILTRE ---
-    const searchFilterWrapper = document.getElementById('search-filter').parentElement;
-    const qualityFilterWrapper = document.getElementById('quality-filter').parentElement;
-    const farmFilterWrapper = document.getElementById('farm-filter').parentElement;
-    // --- FIN NOUVEAUX SÉLECTEURS ---
-
-    // --- HELPER : TROUVER UN PRODUIT PAR SON ID ---
-    function getProductById(productId) {
-        for (const category of appData) {
-            // 1. Cherche dans les produits directs (Nouveau cas)
-            if (category.products) {
-                const product = category.products.find(p => p.id === productId);
-                if (product) return product;
-            }
-
-            // 2. Cherche dans les farms (Ancien cas)
-            if (category.farms) {
-                for (const farm of category.farms) {
-                    const product = farm.products.find(p => p.id === productId);
-                    if (product) return product;
-                }
-            }
+      // 2. Cherche dans les farms (Ancien cas)
+      if (category.farms) {
+        for (const farm of category.farms) {
+          const product = farm.products.find((p) => p.id === productId);
+          if (product) return product;
         }
-        return undefined; // Non trouvé
+      }
+    }
+    return undefined; // Non trouvé
+  }
+
+  // --- NAVIGATION ---
+  function showPage(pageId) {
+    // 👇 AJOUT STRATÉGIQUE : Coupe toutes les vidéos instantanément au changement de page
+    document.querySelectorAll("video").forEach((video) => {
+      video.pause();
+    });
+    pages.forEach((p) => p.classList.remove("active"));
+    // S'assure que la page existe avant de l'activer
+    const page = document.getElementById(pageId);
+    if (page) {
+      page.classList.add("active");
     }
 
-    // --- NAVIGATION ---
-    function showPage(pageId) {
-        // 👇 AJOUT STRATÉGIQUE : Coupe toutes les vidéos instantanément au changement de page
-        document.querySelectorAll('video').forEach(video => {
-            video.pause();
-        });
-        pages.forEach(p => p.classList.remove('active'));
-        // S'assure que la page existe avant de l'activer
-        const page = document.getElementById(pageId);
-        if (page) {
-            page.classList.add('active');
-        }
+    // --- GESTION AUTOMATIQUE DES BOUTONS NAV ---
+    const homeNav = document.getElementById("nav-menu");
+    const infoNav = document.getElementById("nav-info"); // On ajoute l'info
+    const contactNav = document.getElementById("nav-contact");
+    const avisNav = document.getElementById("nav-avis"); // <-- AJOUT ICI
 
-        // --- GESTION AUTOMATIQUE DES BOUTONS NAV ---
-        const homeNav = document.getElementById('nav-menu');
-        const infoNav = document.getElementById('nav-info'); // On ajoute l'info
-        const contactNav = document.getElementById('nav-contact');
-        const avisNav = document.getElementById('nav-avis'); // <-- AJOUT ICI
+    // On reset tout
+    homeNav.classList.remove("active");
+    infoNav.classList.remove("active");
+    contactNav.classList.remove("active");
+    if (avisNav) avisNav.classList.remove("active"); // <-- AJOUT ICI
 
-        // On reset tout
-        homeNav.classList.remove('active');
-        infoNav.classList.remove('active');
-        contactNav.classList.remove('active');
-        if (avisNav) avisNav.classList.remove('active'); // <-- AJOUT ICI
-
-        // On active le bon
-        if (pageId === 'page-contact') {
-            contactNav.classList.add('active');
-        } else if (pageId === 'page-info') {
-            infoNav.classList.add('active');
-        } else if (pageId === 'page-avis') { // <-- LA NOUVELLE CONDITION
-            if (avisNav) avisNav.classList.add('active');
-        }else {
-            // Pour page-home, page-produit, panier, etc.
-            homeNav.classList.add('active');
-        }
+    // On active le bon
+    if (pageId === "page-contact") {
+      contactNav.classList.add("active");
+    } else if (pageId === "page-info") {
+      infoNav.classList.add("active");
+    } else if (pageId === "page-avis") {
+      // <-- LA NOUVELLE CONDITION
+      if (avisNav) avisNav.classList.add("active");
+    } else {
+      // Pour page-home, page-produit, panier, etc.
+      homeNav.classList.add("active");
     }
+  }
 
-    // --- LOGIQUE D'AFFICHAGE ---
+  // --- LOGIQUE D'AFFICHAGE ---
 
-    // --- MODIFIÉ : renderHomePage ---
+  // --- MODIFIÉ : renderHomePage ---
 
-    function renderHomePage() {
-        // Toujours afficher le conteneur principal des filtres
-        filterContainer.style.display = 'flex';
+  function renderHomePage() {
+    // Toujours afficher le conteneur principal des filtres
+    filterContainer.style.display = "flex";
 
-        // On enlève les anciens boutons "retour"
-        const existingBackBtnCat = filterContainer.querySelector('.back-to-categories-btn');
-        if (existingBackBtnCat) existingBackBtnCat.remove();
-        const existingBackBtnFarm = filterContainer.querySelector('.back-to-farms-btn');
-        if (existingBackBtnFarm) existingBackBtnFarm.remove();
+    // On enlève les anciens boutons "retour"
+    const existingBackBtnCat = filterContainer.querySelector(
+      ".back-to-categories-btn",
+    );
+    if (existingBackBtnCat) existingBackBtnCat.remove();
+    const existingBackBtnFarm =
+      filterContainer.querySelector(".back-to-farms-btn");
+    if (existingBackBtnFarm) existingBackBtnFarm.remove();
 
+    if (currentView === "categories") {
+      renderCategoryList();
 
-        if (currentView === 'categories') {
-            renderCategoryList();
+      // --- GESTION DES FILTRES (Vue Catégorie) ---
+      searchFilterWrapper.style.display = "none";
+      farmFilterWrapper.style.display = "none";
+      qualityFilterWrapper.style.display = "flex"; // On montre QUE la qualité
 
-            // --- GESTION DES FILTRES (Vue Catégorie) ---
-            searchFilterWrapper.style.display = 'none';
-            farmFilterWrapper.style.display = 'none';
-            qualityFilterWrapper.style.display = 'flex'; // On montre QUE la qualité
+      // --- GESTION DU STYLE DE GRILLE ---
+      productListContainer.style.gridTemplateColumns = "repeat(1, 1fr)";
+    } else if (currentView === "farms") {
+      renderFarmList(currentCategoryId);
 
-            // --- GESTION DU STYLE DE GRILLE ---
-            productListContainer.style.gridTemplateColumns = 'repeat(1, 1fr)';
+      // --- GESTION DES FILTRES (Vue Farms) ---
+      searchFilterWrapper.style.display = "none";
+      farmFilterWrapper.style.display = "none"; // Pas de filtres pour les farms
+      qualityFilterWrapper.style.display = "none";
 
-        } else if (currentView === 'farms') {
-            renderFarmList(currentCategoryId);
+      // --- GESTION DU STYLE DE GRILLE ---
+      productListContainer.style.gridTemplateColumns = "repeat(1, 1fr)"; // 1 colonne pour les farms
 
-            // --- GESTION DES FILTRES (Vue Farms) ---
-            searchFilterWrapper.style.display = 'none';
-            farmFilterWrapper.style.display = 'none'; // Pas de filtres pour les farms
-            qualityFilterWrapper.style.display = 'none';
-
-            // --- GESTION DU STYLE DE GRILLE ---
-            productListContainer.style.gridTemplateColumns = 'repeat(1, 1fr)'; // 1 colonne pour les farms
-
-            // --- AJOUT BOUTON RETOUR (vers Catégories) ---
-            const category = appData.find(c => c.id === currentCategoryId);
-            const backButton = document.createElement('button');
-            backButton.className = 'back-to-categories-btn'; // CLASSE IMPORTANTE
-            backButton.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> ${category.name}`;
-            backButton.style.cssText = `
+      // --- AJOUT BOUTON RETOUR (vers Catégories) ---
+      const category = appData.find((c) => c.id === currentCategoryId);
+      const backButton = document.createElement("button");
+      backButton.className = "back-to-categories-btn"; // CLASSE IMPORTANTE
+      backButton.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> ${category.name}`;
+      backButton.style.cssText = `
             border: none;
             color: rgb(201 156 66);
     padding: 40px;
@@ -2782,31 +2956,29 @@ document.addEventListener('DOMContentLoaded', function () {
     background: linear-gradient(194deg, rgb(110 69 20), rgba(0, 0, 0, 0.31));
             border-radius: 10px;`;
 
-            filterContainer.prepend(backButton);
+      filterContainer.prepend(backButton);
+    } else if (currentView === "simple_products") {
+      updateFarmFilter(currentCategoryId);
 
-        } else if (currentView === 'simple_products') { 
+      renderProductListSimple(currentCategoryId);
 
-            updateFarmFilter(currentCategoryId);
+      // --- GESTION DES FILTRES ---
+      // 1. On AFFICHE la barre de recherche
+      searchFilterWrapper.style.display = "flex";
 
-            renderProductListSimple(currentCategoryId);
+      // 2. On AFFICHE le filtre Farm
+      farmFilterWrapper.style.display = "flex";
 
-            // --- GESTION DES FILTRES ---
-            // 1. On AFFICHE la barre de recherche
-            searchFilterWrapper.style.display = 'flex';
-            
-            // 2. On AFFICHE le filtre Farm
-            farmFilterWrapper.style.display = 'flex'; 
-            
-            // 3. On CACHE le filtre Qualité ("Sélection du chef")
-            qualityFilterWrapper.style.display = 'none';
+      // 3. On CACHE le filtre Qualité ("Sélection du chef")
+      qualityFilterWrapper.style.display = "none";
 
-            // --- AJOUT BOUTON RETOUR (vers Catégories) ---
-            const category = appData.find(c => c.id === currentCategoryId);
-            const backButton = document.createElement('button');
-            backButton.className = 'back-to-categories-btn';
-            backButton.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> ${category.name}`;
+      // --- AJOUT BOUTON RETOUR (vers Catégories) ---
+      const category = appData.find((c) => c.id === currentCategoryId);
+      const backButton = document.createElement("button");
+      backButton.className = "back-to-categories-btn";
+      backButton.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> ${category.name}`;
 
-            backButton.style.cssText = `
+      backButton.style.cssText = `
             border: none;
            color: rgb(201 156 66);
     padding: 40px;
@@ -2825,34 +2997,33 @@ document.addEventListener('DOMContentLoaded', function () {
     background: linear-gradient(194deg, rgb(110 69 20), rgba(0, 0, 0, 0.31));
             border-radius: 10px;`;
 
-            filterContainer.prepend(backButton);
+      filterContainer.prepend(backButton);
 
-            // --- GESTION DU STYLE DE GRILLE ---
-            productListContainer.style.gridTemplateColumns = 'repeat(2, 1fr)';
+      // --- GESTION DU STYLE DE GRILLE ---
+      productListContainer.style.gridTemplateColumns = "repeat(2, 1fr)";
+    } else if (currentView === "products") {
+      updateFarmFilter(currentCategoryId, currentFarmId);
 
-        } else if (currentView === 'products') {
-            updateFarmFilter(currentCategoryId, currentFarmId); 
+      renderProductList(currentCategoryId, currentFarmId);
 
-            renderProductList(currentCategoryId, currentFarmId);
+      // --- GESTION DES FILTRES (Vue Produit) ---
+      searchFilterWrapper.style.display = "flex";
+      farmFilterWrapper.style.display = "flex"; // On montre les filtres produits
+      qualityFilterWrapper.style.display = "none"; // On cache la qualité
 
-            // --- GESTION DES FILTRES (Vue Produit) ---
-            searchFilterWrapper.style.display = 'flex';
-            farmFilterWrapper.style.display = 'flex'; // On montre les filtres produits
-            qualityFilterWrapper.style.display = 'none'; // On cache la qualité
+      // --- GESTION DU STYLE DE GRILLE ---
+      productListContainer.style.gridTemplateColumns = "repeat(2, 1fr)"; // 2 colonnes
 
-            // --- GESTION DU STYLE DE GRILLE ---
-            productListContainer.style.gridTemplateColumns = 'repeat(2, 1fr)'; // 2 colonnes
-
-            // --- AJOUT BOUTON RETOUR (vers Farms) ---
-            const category = appData.find(c => c.id === currentCategoryId);
-            const farm = category.farms.find(f => f.id === currentFarmId);
-            const backButton = document.createElement('button');
-            backButton.className = 'back-to-farms-btn'; // CLASSE IMPORTANTE
-            backButton.innerHTML = `<svg width="24"
+      // --- AJOUT BOUTON RETOUR (vers Farms) ---
+      const category = appData.find((c) => c.id === currentCategoryId);
+      const farm = category.farms.find((f) => f.id === currentFarmId);
+      const backButton = document.createElement("button");
+      backButton.className = "back-to-farms-btn"; // CLASSE IMPORTANTE
+      backButton.innerHTML = `<svg width="24"
              height="24"
               viewBox="0 0 24 24"
               ><path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>  ${farm.name}`;
-            backButton.style.cssText = `
+      backButton.style.cssText = `
             border: none;
            color: rgb(201 156 66);
     padding: 40px;
@@ -2871,131 +3042,141 @@ document.addEventListener('DOMContentLoaded', function () {
     background: linear-gradient(194deg, rgb(110 69 20), rgba(0, 0, 0, 0.31));
                         border-radius: 10px;`;
 
-            filterContainer.prepend(backButton);
-        }
+      filterContainer.prepend(backButton);
     }
+  }
 
-// --- FONCTION MODIFIÉE : Filtre intelligent par Sous-Catégorie ---
-function updateFarmFilter(categoryId, subCategoryId = null) {
-    const category = appData.find(c => c.id === categoryId);
-    const farmFilter = document.getElementById('farm-filter');
-    
+  // --- FONCTION MODIFIÉE : Filtre intelligent par Sous-Catégorie ---
+  function updateFarmFilter(categoryId, subCategoryId = null) {
+    const category = appData.find((c) => c.id === categoryId);
+    const farmFilter = document.getElementById("farm-filter");
+
     if (!category) return;
 
     let availableFarms = [];
 
     // CAS 1 : On est dans une sous-catégorie précise (ex: Cali USA)
     if (subCategoryId && category.farms) {
-        const subCategory = category.farms.find(f => f.id === subCategoryId);
-        if (subCategory) {
-            subCategory.products.forEach(p => {
-                if (p.farm) availableFarms.push(p.farm);
-            });
-        }
-    } 
+      const subCategory = category.farms.find((f) => f.id === subCategoryId);
+      if (subCategory) {
+        subCategory.products.forEach((p) => {
+          if (p.farm) availableFarms.push(p.farm);
+        });
+      }
+    }
     // CAS 2 : On est dans une catégorie globale ou simple (ex: Packs Noel ou tout voir)
     else {
-        if (category.farms) {
-            // Si c'est une catégorie à tiroirs, on prend tout
-            category.farms.forEach(sub => {
-                sub.products.forEach(p => {
-                    if (p.farm) availableFarms.push(p.farm);
-                });
-            });
-        } else if (category.products) {
-            // Si c'est une catégorie simple
-            category.products.forEach(p => {
-                if (p.farm) availableFarms.push(p.farm);
-            });
-        }
+      if (category.farms) {
+        // Si c'est une catégorie à tiroirs, on prend tout
+        category.farms.forEach((sub) => {
+          sub.products.forEach((p) => {
+            if (p.farm) availableFarms.push(p.farm);
+          });
+        });
+      } else if (category.products) {
+        // Si c'est une catégorie simple
+        category.products.forEach((p) => {
+          if (p.farm) availableFarms.push(p.farm);
+        });
+      }
     }
 
     // 2. On enlève les doublons
-    const uniqueFarms = ['all', ...new Set(availableFarms)];
+    const uniqueFarms = ["all", ...new Set(availableFarms)];
 
     // 3. On génère le HTML
     const currentValue = currentFilters.farm;
-    
-    farmFilter.innerHTML = uniqueFarms.map(farm => 
-        `<option value="${farm}">${farm === 'all' ? '👨‍🌾  -  Toutes les farms' : farm}</option>`
-    ).join('');
+
+    farmFilter.innerHTML = uniqueFarms
+      .map(
+        (farm) =>
+          `<option value="${farm}">${farm === "all" ? "👨‍🌾  -  Toutes les farms" : farm}</option>`,
+      )
+      .join("");
 
     // 4. On remet la valeur si elle existe toujours
     if (uniqueFarms.includes(currentValue)) {
-        farmFilter.value = currentValue;
+      farmFilter.value = currentValue;
     } else {
-        farmFilter.value = 'all';
-        currentFilters.farm = 'all'; 
+      farmFilter.value = "all";
+      currentFilters.farm = "all";
     }
-}
+  }
 
-    // --- MODIFIÉ : renderCategoryList ---
-    // Prend en compte le filtre qualité
-    function renderCategoryList() {
-        const filteredCategories = appData.filter(category => {
-            const searchMatch = category.name.toLowerCase().includes(currentFilters.searchTerm.toLowerCase());
-            // --- AJOUT ---
-            const qualityMatch = currentFilters.quality === 'all' || category.quality === currentFilters.quality;
-            return searchMatch && qualityMatch;
-            // --- FIN AJOUT ---
-        });
+  // --- MODIFIÉ : renderCategoryList ---
+  // Prend en compte le filtre qualité
+  function renderCategoryList() {
+    const filteredCategories = appData.filter((category) => {
+      const searchMatch = category.name
+        .toLowerCase()
+        .includes(currentFilters.searchTerm.toLowerCase());
+      // --- AJOUT ---
+      const qualityMatch =
+        currentFilters.quality === "all" ||
+        category.quality === currentFilters.quality;
+      return searchMatch && qualityMatch;
+      // --- FIN AJOUT ---
+    });
 
-        productListContainer.innerHTML = '';
-        if (filteredCategories.length === 0) {
-            productListContainer.innerHTML = '<p class="no-results">Aucune catégorie ne correspond à votre recherche.</p>';
-            return;
-        }
+    productListContainer.innerHTML = "";
+    if (filteredCategories.length === 0) {
+      productListContainer.innerHTML =
+        '<p class="no-results">Aucune catégorie ne correspond à votre recherche.</p>';
+      return;
+    }
 
-        filteredCategories.forEach(category => {
-            const card = document.createElement('div');
-            card.className = 'category-card';
-            card.dataset.categoryId = category.id;
+    filteredCategories.forEach((category) => {
+      const card = document.createElement("div");
+      card.className = "category-card";
+      card.dataset.categoryId = category.id;
 
-            card.innerHTML = `
+      card.innerHTML = `
                 <img src="${category.image}" alt="${category.name}">
               
             `;
-            productListContainer.appendChild(card);
-        });
+      productListContainer.appendChild(card);
+    });
+  }
+
+  // --- NOUVELLE FONCTION ---
+  // Affiche la liste des FARMS pour une catégorie
+  // --- FONCTION MODIFIÉE : Affichage liste bouton ---
+  function renderFarmList(categoryId) {
+    const category = appData.find((c) => c.id === categoryId);
+    if (!category) {
+      productListContainer.innerHTML =
+        '<p class="no-results">Catégorie non trouvée.</p>';
+      return;
     }
 
-    // --- NOUVELLE FONCTION ---
-    // Affiche la liste des FARMS pour une catégorie
-    // --- FONCTION MODIFIÉE : Affichage liste bouton ---
-    function renderFarmList(categoryId) {
-        const category = appData.find(c => c.id === categoryId);
-        if (!category) {
-            productListContainer.innerHTML = '<p class="no-results">Catégorie non trouvée.</p>';
-            return;
-        }
+    const farms = category.farms;
 
-        const farms = category.farms;
+    // On change le style de la grille pour avoir une seule colonne (liste verticale)
+    productListContainer.style.gridTemplateColumns = "1fr";
+    productListContainer.style.gap = "10px"; // Espacement entre les boutons
 
-        // On change le style de la grille pour avoir une seule colonne (liste verticale)
-        productListContainer.style.gridTemplateColumns = '1fr';
-        productListContainer.style.gap = '10px'; // Espacement entre les boutons
+    productListContainer.innerHTML = "";
+    if (farms.length === 0) {
+      productListContainer.innerHTML =
+        '<p class="no-results">Aucune farm trouvée.</p>';
+      return;
+    }
 
-        productListContainer.innerHTML = '';
-        if (farms.length === 0) {
-            productListContainer.innerHTML = '<p class="no-results">Aucune farm trouvée.</p>';
-            return;
-        }
+    farms.forEach((farm) => {
+      const btn = document.createElement("div");
+      // On change la classe pour ne plus utiliser le style "card"
+      btn.className = "farm-list-btn";
+      btn.dataset.farmId = farm.id;
 
-        farms.forEach(farm => {
-            const btn = document.createElement('div');
-            // On change la classe pour ne plus utiliser le style "card"
-            btn.className = 'farm-list-btn';
-            btn.dataset.farmId = farm.id;
+      if (farm.clickable === false) {
+        btn.classList.add("unclickable");
+      }
 
-            if (farm.clickable === false) {
-                btn.classList.add('unclickable');
-            }
+      const productCount = farm.products.length;
+      const countText = productCount > 0 ? `${productCount} prod.` : "";
 
-            const productCount = farm.products.length;
-            const countText = productCount > 0 ? `${productCount} prod.` : '';
-
-            // Structure : Icone | Nom + Badge | Flèche
-            btn.innerHTML = `
+      // Structure : Icone | Nom + Badge | Flèche
+      btn.innerHTML = `
             <div class="farm-btn-left">
                 
                 <div class="farm-btn-info">
@@ -3009,57 +3190,63 @@ function updateFarmFilter(categoryId, subCategoryId = null) {
                 </svg>
             </div>
         `;
-            productListContainer.appendChild(btn);
-        });
-    }
+      productListContainer.appendChild(btn);
+    });
+  }
 
-
-// Affiche la liste des PRODUITS (Version corrigée : Pleine largeur + Sans image vide)
-function renderProductListSimple(categoryId) {
-    const category = appData.find(c => c.id === categoryId);
+  // Affiche la liste des PRODUITS (Version corrigée : Pleine largeur + Sans image vide)
+  function renderProductListSimple(categoryId) {
+    const category = appData.find((c) => c.id === categoryId);
     if (!category || !category.products) {
-        productListContainer.innerHTML = '<p class="no-results">Aucun produit ne correspond à cette catégorie.</p>';
-        return;
+      productListContainer.innerHTML =
+        '<p class="no-results">Aucun produit ne correspond à cette catégorie.</p>';
+      return;
     }
 
     // Mise à jour du filtre farm intelligent
-    if(typeof updateFarmFilter === "function") updateFarmFilter(categoryId); 
+    if (typeof updateFarmFilter === "function") updateFarmFilter(categoryId);
 
     // On filtre le tableau products
-    const filteredProducts = category.products.filter(product => {
-        const searchMatch = product.name.toLowerCase().includes(currentFilters.searchTerm.toLowerCase());
-        const farmMatch = currentFilters.farm === 'all' || product.farm === currentFilters.farm;
-        return searchMatch && farmMatch;
+    const filteredProducts = category.products.filter((product) => {
+      const searchMatch = product.name
+        .toLowerCase()
+        .includes(currentFilters.searchTerm.toLowerCase());
+      const farmMatch =
+        currentFilters.farm === "all" || product.farm === currentFilters.farm;
+      return searchMatch && farmMatch;
     });
 
-    productListContainer.innerHTML = '';
+    productListContainer.innerHTML = "";
     if (filteredProducts.length === 0) {
-        productListContainer.innerHTML = '<p class="no-results">Aucun produit trouvé.</p>';
-        return;
+      productListContainer.innerHTML =
+        '<p class="no-results">Aucun produit trouvé.</p>';
+      return;
     }
 
-    filteredProducts.forEach(product => {
-        const card = document.createElement('div');
-        card.className = 'product-card product-item-card';
-        card.dataset.productId = product.id;
-        
-        // --- 1. LOGIQUE PLEINE LARGEUR ---
-        // Si c'est un Pack, on ajoute la classe spéciale
-        if (product.type === 'Pack' || product.id === 'PackNoel2025') {
-            card.classList.add('full-width');
-        }
+    filteredProducts.forEach((product) => {
+      const card = document.createElement("div");
+      card.className = "product-card product-item-card";
+      card.dataset.productId = product.id;
 
-        if (product.clickable === false) card.classList.add('unclickable');
+      // --- 1. LOGIQUE PLEINE LARGEUR ---
+      // Si c'est un Pack, on ajoute la classe spéciale
+      if (product.type === "Pack" || product.id === "PackNoel2025") {
+        card.classList.add("full-width");
+      }
 
-        let flagHTML = product.flag ? `<span class="product-flag">${product.flag}</span>` : '';
+      if (product.clickable === false) card.classList.add("unclickable");
 
-        // --- 2. LOGIQUE IMAGE (On affiche seulement si elle existe) ---
-        let imgHTML = '';
-        if (product.image && product.image !== '') {
-            imgHTML = `<img src="${product.image}" alt="${product.name}">`;
-        }
+      let flagHTML = product.flag
+        ? `<span class="product-flag">${product.flag}</span>`
+        : "";
 
-        card.innerHTML = `
+      // --- 2. LOGIQUE IMAGE (On affiche seulement si elle existe) ---
+      let imgHTML = "";
+      if (product.image && product.image !== "") {
+        imgHTML = `<img src="${product.image}" alt="${product.name}">`;
+      }
+
+      card.innerHTML = `
             ${imgHTML}
             <div class="info">
                 <div class="name">${product.name} ${flagHTML}</div>
@@ -3067,54 +3254,60 @@ function renderProductListSimple(categoryId) {
                 <div class="price">${product.tarifs[0].price.toFixed(2)}€</div>
             </div>
         `;
-        productListContainer.appendChild(card);
+      productListContainer.appendChild(card);
     });
-}
-    // Affiche la liste des PRODUITS pour une farm
-    function renderProductList(categoryId, farmId) {
-        const category = appData.find(c => c.id === categoryId);
-        if (!category) {
-            productListContainer.innerHTML = '<p class="no-results">Catégorie non trouvée.</p>';
-            return;
-        }
-        const farm = category.farms.find(f => f.id === farmId);
-        if (!farm) {
-            productListContainer.innerHTML = '<p class="no-results">Farm non trouvée.</p>';
-            return;
-        }
-        const filteredProducts = farm.products.filter(product => {
-            const searchMatch = product.name.toLowerCase().includes(currentFilters.searchTerm.toLowerCase());
-            // On a supprimé 'qualityMatch'. Le choix de la catégorie suffit.
-            const farmMatch = currentFilters.farm === 'all' || product.farm === currentFilters.farm;
+  }
+  // Affiche la liste des PRODUITS pour une farm
+  function renderProductList(categoryId, farmId) {
+    const category = appData.find((c) => c.id === categoryId);
+    if (!category) {
+      productListContainer.innerHTML =
+        '<p class="no-results">Catégorie non trouvée.</p>';
+      return;
+    }
+    const farm = category.farms.find((f) => f.id === farmId);
+    if (!farm) {
+      productListContainer.innerHTML =
+        '<p class="no-results">Farm non trouvée.</p>';
+      return;
+    }
+    const filteredProducts = farm.products.filter((product) => {
+      const searchMatch = product.name
+        .toLowerCase()
+        .includes(currentFilters.searchTerm.toLowerCase());
+      // On a supprimé 'qualityMatch'. Le choix de la catégorie suffit.
+      const farmMatch =
+        currentFilters.farm === "all" || product.farm === currentFilters.farm;
 
-            return searchMatch && farmMatch; // On retourne sans le qualityMatch
-        });
+      return searchMatch && farmMatch; // On retourne sans le qualityMatch
+    });
 
-        productListContainer.innerHTML = '';
-        if (filteredProducts.length === 0) {
-            productListContainer.innerHTML = '<p class="no-results">Aucun produit ne correspond à votre recherche.</p>';
-            return;
-        }
+    productListContainer.innerHTML = "";
+    if (filteredProducts.length === 0) {
+      productListContainer.innerHTML =
+        '<p class="no-results">Aucun produit ne correspond à votre recherche.</p>';
+      return;
+    }
 
-        filteredProducts.forEach(product => {
-            const card = document.createElement('div');
-            card.className = 'product-card product-item-card';
-            card.dataset.productId = product.id;
+    filteredProducts.forEach((product) => {
+      const card = document.createElement("div");
+      card.className = "product-card product-item-card";
+      card.dataset.productId = product.id;
 
-            // Si c'est le Pack de Noël (vérifie bien que l'ID est correct), on met la classe large
-        if (product.id === 'PackNoel2025' || product.type === 'Pack') {
-            card.classList.add('full-width');
-        }
+      // Si c'est le Pack de Noël (vérifie bien que l'ID est correct), on met la classe large
+      if (product.id === "PackNoel2025" || product.type === "Pack") {
+        card.classList.add("full-width");
+      }
 
-            if (product.clickable === false) {
-                card.classList.add('unclickable');
-            }
+      if (product.clickable === false) {
+        card.classList.add("unclickable");
+      }
 
-            let flagHTML = product.flag ? `<span class="product-flag">${product.flag}</span>` : '';
+      let flagHTML = product.flag
+        ? `<span class="product-flag">${product.flag}</span>`
+        : "";
 
-     
-
-            card.innerHTML = `
+      card.innerHTML = `
                 <img src="${product.image}" alt="${product.name}">
                 <div class="info">
                     <div class="name">${product.name} ${flagHTML}</div>
@@ -3122,186 +3315,228 @@ function renderProductListSimple(categoryId) {
                     <div class="price">${product.tarifs[0].price.toFixed(2)}€</div>
                 </div>
             `;
-            productListContainer.appendChild(card);
-        });
+      productListContainer.appendChild(card);
+    });
+  }
+
+  // Affiche la page de détail d'un produit
+  function renderProductPage(productId) {
+    const product = getProductById(productId);
+    if (!product) return;
+
+    document.getElementById("product-page-title").innerText = product.name;
+    const detailsContainer = document.getElementById("product-details-content");
+
+    // --- 1. GESTION INTELLIGENTE DES MÉDIAS ---
+    let galleryHTML = "";
+    let hasMedia = false;
+
+    // Images
+    let mediaItems = [];
+    if (product.images && product.images.length > 0) {
+      mediaItems = product.images;
+    } else if (product.image && product.image !== "") {
+      mediaItems = [product.image];
     }
 
-
-    // Affiche la page de détail d'un produit
-    function renderProductPage(productId) {
-        const product = getProductById(productId);
-        if (!product) return;
-    
-        document.getElementById('product-page-title').innerText = product.name;
-        const detailsContainer = document.getElementById('product-details-content');
-    
-        // --- 1. GESTION INTELLIGENTE DES MÉDIAS ---
-        let galleryHTML = '';
-        let hasMedia = false;
-    
-        // Images
-        let mediaItems = [];
-        if (product.images && product.images.length > 0) {
-            mediaItems = product.images;
-        } else if (product.image && product.image !== '') {
-            mediaItems = [product.image];
-        }
-    
-        if (mediaItems.length > 0) {
-            hasMedia = true;
-            galleryHTML += mediaItems.map(imgSrc => `
+    if (mediaItems.length > 0) {
+      hasMedia = true;
+      galleryHTML += mediaItems
+        .map(
+          (imgSrc) => `
                 <div class="gallery-item"><img src="${imgSrc}" alt="${product.name}"></div>
-            `).join('');
-        }
-    
-        // Vidéos
-        if (product.videos && product.videos.length > 0) {
-            hasMedia = true;
-            product.videos.forEach(videoSrc => {
-                galleryHTML += `
+            `,
+        )
+        .join("");
+    }
+
+    // Vidéos
+    if (product.videos && product.videos.length > 0) {
+      hasMedia = true;
+      product.videos.forEach((videoSrc) => {
+        galleryHTML += `
                     <div class="gallery-item">
-                        <video controls playsinline poster="${product.image || ''}">
+                        <video controls playsinline poster="${product.image || ""}">
                             <source src="${videoSrc}" type="video/mp4">
                         </video>
                     </div>`;
-            });
-        } else if (product.video && product.video !== '') {
-            hasMedia = true;
-            galleryHTML += `
+      });
+    } else if (product.video && product.video !== "") {
+      hasMedia = true;
+      galleryHTML += `
                 <div class="gallery-item">
-                    <video controls playsinline poster="${product.image || ''}">
+                    <video controls playsinline poster="${product.image || ""}">
                         <source src="${product.video}" type="video/mp4">
                     </video>
                 </div>`;
-        }
-    
-        // --- 2. LE RESTE (OPTIONS, DESCRIPTION, TARIFS) ---
+    }
 
-        // --- GESTION DU CONTENU PACK (Liens internes) ---
-    let packLinksHTML = '';
+    // --- 2. LE RESTE (OPTIONS, DESCRIPTION, TARIFS) ---
+
+    // --- GESTION DU CONTENU PACK (Liens internes) ---
+    let packLinksHTML = "";
     if (product.packContents && product.packContents.length > 0) {
-        const links = product.packContents.map(item => `
+      const links = product.packContents
+        .map(
+          (item) => `
             <div class="pack-item-btn" data-target-id="${item.targetId}">
                 <span>${item.name}</span>
                 <span class="pack-arrow">›</span>
             </div>
-        `).join('');
-        
-        packLinksHTML = `
+        `,
+        )
+        .join("");
+
+      packLinksHTML = `
             <div class="pack-content-container">
                 <div style="color:#8e8e93; font-size:0.9rem; margin-bottom:5px;">📦 CONTENU DU PACK :</div>
                 ${links}
             </div>
         `;
     }
-        let variantsHTML = '';
-        if (product.jars && product.jars.length > 0) {
-            const buttonsHTML = product.jars.map((jar, index) => `
-                <div class="variant-btn ${index === 0 ? 'active ' + jar.colorClass : ''}" 
+    let variantsHTML = "";
+    if (product.jars && product.jars.length > 0) {
+      const buttonsHTML = product.jars
+        .map(
+          (jar, index) => `
+                <div class="variant-btn ${index === 0 ? "active " + jar.colorClass : ""}" 
                      data-name="${jar.name} ${jar.emoji}" 
                      data-color-class="${jar.colorClass}">
                     <span class="emoji">${jar.emoji}</span>
                     <span class="text">${jar.name}</span>
                 </div>
-            `).join('');
-            variantsHTML = `<div class="variant-selector-container"><div class="variant-title">${product.variantTitle || 'Choisir une option :'}</div><div class="variant-grid">${buttonsHTML}</div></div>`;
-        } else if (product.options && product.options.length > 0) {
-            variantsHTML = `<div class="product-options-container" style="margin-bottom: 15px;"><label style="color: #8e8e93; font-size: 0.9rem; margin-bottom: 5px; display:block;">Choisir :</label><select id="product-variant-select" style="width: 100%; padding: 12px; border-radius: 8px; background: #2c2c2e; color: white; border: 1px solid #3a3a3c;">${product.options.map(opt => `<option value="${opt}">${opt}</option>`).join('')}</select></div>`;
-        }
-    
-        let tarifsHTML = product.tarifs.map(tarif => `
+            `,
+        )
+        .join("");
+      variantsHTML = `<div class="variant-selector-container"><div class="variant-title">${product.variantTitle || "Choisir une option :"}</div><div class="variant-grid">${buttonsHTML}</div></div>`;
+    } else if (product.options && product.options.length > 0) {
+      variantsHTML = `<div class="product-options-container" style="margin-bottom: 15px;"><label style="color: #8e8e93; font-size: 0.9rem; margin-bottom: 5px; display:block;">Choisir :</label><select id="product-variant-select" style="width: 100%; padding: 12px; border-radius: 8px; background: #2c2c2e; color: white; border: 1px solid #3a3a3c;">${product.options.map((opt) => `<option value="${opt}">${opt}</option>`).join("")}</select></div>`;
+    }
+
+    let tarifsHTML = product.tarifs
+      .map(
+        (tarif) => `
             <div class="tarif-item">
                 <div class="box-tarif">
-                ${tarif.badge ? `<span class="tarif-badge">${tarif.badge}</span>` : ''} <div class="tarif-wieght">${tarif.weight}</div>
-                    <div class="tarif-price">${tarif.price.toFixed(2)}€</div>
+                ${tarif.badge ? `<span class="tarif-badge">${tarif.badge}</span>` : ""} <div class="tarif-wieght">${tarif.weight}</div>
+                    <div class="tarif-price">
+    ${
+      Number.isFinite(tarif.oldPrice) && tarif.oldPrice > tarif.price
+        ? `<span class="old-price">${tarif.oldPrice.toFixed(2)}€</span>`
+        : ""
+    }
+    <span class="current-price">${tarif.price.toFixed(2)}€</span>
+</div>
                 </div>
                 <button class="add-to-cart-btn" data-product-id="${product.id}" data-weight="${tarif.weight}" data-price="${tarif.price}">
                     <svg width="20" height="20"><use href="#icon-cart"/></svg>
                 </button>
             </div>
-        `).join('');
-    
-        let descriptionHTML = product.description ? `<p class="product-description">${product.description.replace(/\n/g, '<br>')}</p>` : '';
-    
-        const oldVideo = document.querySelector('#page-product .product-video');
-        if(oldVideo) oldVideo.style.display = 'none';
-    
-        // --- 3. INJECTION (On cache la galerie si pas de média) ---
-        detailsContainer.innerHTML = `
-            ${hasMedia ? `<div class="product-gallery-wrapper">${galleryHTML}</div>` : ''}
-            ${hasMedia ? `<div class="gallery-counter">Swipe ➡️</div>` : ''}
+        `,
+      )
+      .join("");
+
+    let descriptionHTML = product.description
+      ? `<p class="product-description">${product.description.replace(/\n/g, "<br>")}</p>`
+      : "";
+
+    const oldVideo = document.querySelector("#page-product .product-video");
+    if (oldVideo) oldVideo.style.display = "none";
+
+    // --- 3. INJECTION (On cache la galerie si pas de média) ---
+    detailsContainer.innerHTML = `
+            ${hasMedia ? `<div class="product-gallery-wrapper">${galleryHTML}</div>` : ""}
+            ${hasMedia ? `<div class="gallery-counter">Swipe ➡️</div>` : ""}
             
-            <div class="name" style="margin-top: ${hasMedia ? '0' : '20px'}">${product.name}</div>
+            <div class="name" style="margin-top: ${hasMedia ? "0" : "20px"}">${product.name}</div>
             <div class="farm">${product.farm}</div>
             ${packLinksHTML} ${descriptionHTML}
                         ${variantsHTML}
             <h4 class="tarifs-title">💰 Tarifs disponibles :</h4>
             <div class="tarifs-grid-container">${tarifsHTML}</div>
         `;
-    
-        showPage('page-product');
-    
-        // Réattache les événements pour les variantes + stocke la strain choisie sur les boutons panier
-if (product.jars && product.jars.length > 0) {
-    const variantBtns = detailsContainer.querySelectorAll('.variant-btn');
-    const cartBtns = detailsContainer.querySelectorAll('.add-to-cart-btn');
 
-    const variantClasses = [
-        'style-purple', 'style-red', 'style-green', 'style-yellow', 'style-orange',
-        'style-brown', 'style-passion', 'style-melon', 'style-gold', 'style-cherry',
-        'style-glue', 'style-blue', 'style-pink', 'style-indigo', 'style-silver',
-        'style-white', 'style-grape', 'style-fanta', 'style-dark'
-    ];
+    showPage("page-product");
 
-    const updateCartButtonsVariant = (activeBtn) => {
-        const selectedVariant = activeBtn ? activeBtn.dataset.name : '';
-        const colorClass = activeBtn ? activeBtn.dataset.colorClass : '';
+    // Réattache les événements pour les variantes + stocke la strain choisie sur les boutons panier
+    if (product.jars && product.jars.length > 0) {
+      const variantBtns = detailsContainer.querySelectorAll(".variant-btn");
+      const cartBtns = detailsContainer.querySelectorAll(".add-to-cart-btn");
 
-        cartBtns.forEach(cartBtn => {
-            // 👇 IMPORTANT : on garde la strain choisie directement sur le bouton Ajouter
-            cartBtn.dataset.variant = selectedVariant;
+      const variantClasses = [
+        "style-purple",
+        "style-red",
+        "style-green",
+        "style-yellow",
+        "style-orange",
+        "style-brown",
+        "style-passion",
+        "style-melon",
+        "style-gold",
+        "style-cherry",
+        "style-glue",
+        "style-blue",
+        "style-pink",
+        "style-indigo",
+        "style-silver",
+        "style-white",
+        "style-grape",
+        "style-fanta",
+        "style-dark",
+      ];
 
-            cartBtn.classList.remove(...variantClasses);
-            if (colorClass) cartBtn.classList.add(colorClass);
+      const updateCartButtonsVariant = (activeBtn) => {
+        const selectedVariant = activeBtn ? activeBtn.dataset.name : "";
+        const colorClass = activeBtn ? activeBtn.dataset.colorClass : "";
+
+        cartBtns.forEach((cartBtn) => {
+          // 👇 IMPORTANT : on garde la strain choisie directement sur le bouton Ajouter
+          cartBtn.dataset.variant = selectedVariant;
+
+          cartBtn.classList.remove(...variantClasses);
+          if (colorClass) cartBtn.classList.add(colorClass);
         });
-    };
+      };
 
-    // Variante par défaut = première saveur
-    updateCartButtonsVariant(variantBtns[0]);
+      // Variante par défaut = première saveur
+      updateCartButtonsVariant(variantBtns[0]);
 
-    variantBtns.forEach(btn => {
-        btn.addEventListener('click', function () {
-            variantBtns.forEach(b => {
-                b.classList.remove('active');
-                if (b.dataset.colorClass) b.classList.remove(b.dataset.colorClass);
-            });
+      variantBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          variantBtns.forEach((b) => {
+            b.classList.remove("active");
+            if (b.dataset.colorClass) b.classList.remove(b.dataset.colorClass);
+          });
 
-            this.classList.add('active');
-            if (this.dataset.colorClass) this.classList.add(this.dataset.colorClass);
+          this.classList.add("active");
+          if (this.dataset.colorClass)
+            this.classList.add(this.dataset.colorClass);
 
-            updateCartButtonsVariant(this);
+          updateCartButtonsVariant(this);
 
-            if (window.Telegram.WebApp.HapticFeedback) {
-                window.Telegram.WebApp.HapticFeedback.selectionChanged();
-            }
+          if (window.Telegram.WebApp.HapticFeedback) {
+            window.Telegram.WebApp.HapticFeedback.selectionChanged();
+          }
         });
-    });
-}
+      });
+    }
+  }
+
+  // Met à jour l'affichage du panier (CORRIGÉ : Cache l'image si vide)
+  function renderCart() {
+    const cartContainer = document.getElementById("cart-items-container");
+    if (cart.length === 0) {
+      cartContainer.innerHTML = "<p>Votre panier est vide.</p>";
+      document.getElementById("cart-total-price").innerText = "0.00€";
+      updateCartCount();
+      return;
     }
 
-    // Met à jour l'affichage du panier (CORRIGÉ : Cache l'image si vide)
-    function renderCart() {
-        const cartContainer = document.getElementById('cart-items-container');
-        if (cart.length === 0) {
-            cartContainer.innerHTML = '<p>Votre panier est vide.</p>';
-            document.getElementById('cart-total-price').innerText = '0.00€';
-            updateCartCount();
-            return;
-        }
-
-        cartContainer.innerHTML = cart.map(item => `
+    cartContainer.innerHTML = cart
+      .map(
+        (item) => `
             <div class="cart-item">
-                ${item.image ? `<img src="${item.image}" alt="${item.name}">` : ''}
+                ${item.image ? `<img src="${item.image}" alt="${item.name}">` : ""}
                 
                 <div class="item-details">
                     <div class="name" style="white-space: pre-line;">${item.name}</div>
@@ -3314,12 +3549,15 @@ if (product.jars && product.jars.length > 0) {
                     <button class="quantity-btn" data-action="increase" data-id="${item.id}">+</button>
                 </div>
             </div>
-        `).join('');
+        `,
+      )
+      .join("");
 
-        const total = cart.reduce((sum, item) => sum + item.totalPrice, 0);
-        document.getElementById('cart-total-price').innerText = `${total.toFixed(2)}€`;
-        updateCartCount();
-    }
+    const total = cart.reduce((sum, item) => sum + item.totalPrice, 0);
+    document.getElementById("cart-total-price").innerText =
+      `${total.toFixed(2)}€`;
+    updateCartCount();
+  }
 
   // Affiche la page de confirmation (VERSION WHATSAPP DIRECT)
   function renderConfirmation() {
@@ -3331,36 +3569,40 @@ if (product.jars && product.jars.length > 0) {
     let discountableAmount = 0;
 
     if (appliedPromo) {
-        const promo = validPromoCodes[appliedPromo];
-        if (promo.appliesTo === 'eligible') {
-            cart.forEach(item => {
-                const product = getProductById(item.productId);
-                if (product && product.promoEligible) {
-                    discountableAmount += item.totalPrice;
-                }
-            });
-        } else {
-            discountableAmount = subTotal;
-        }
-        if (promo.type === 'percent') {
-            discount = (discountableAmount * promo.value) / 100;
-        } else { 
-            discount = promo.value;
-        }
+      const promo = validPromoCodes[appliedPromo];
+      if (promo.appliesTo === "eligible") {
+        cart.forEach((item) => {
+          const product = getProductById(item.productId);
+          if (product && product.promoEligible) {
+            discountableAmount += item.totalPrice;
+          }
+        });
+      } else {
+        discountableAmount = subTotal;
+      }
+      if (promo.type === "percent") {
+        discount = (discountableAmount * promo.value) / 100;
+      } else {
+        discount = promo.value;
+      }
     }
     if (discount > subTotal) discount = subTotal;
     const totalPrice = subTotal - discount;
     // --- Fin calcul ---
 
     // Mise à jour du résumé
-    document.getElementById('confirmation-items-count').innerText = `${totalItems} article${totalItems > 1 ? 's' : ''}`;
-    document.getElementById('confirmation-total-price').innerText = `${totalPrice.toFixed(2)}€`;
+    document.getElementById("confirmation-items-count").innerText =
+      `${totalItems} article${totalItems > 1 ? "s" : ""}`;
+    document.getElementById("confirmation-total-price").innerText =
+      `${totalPrice.toFixed(2)}€`;
 
     // Liste des articles
-    const itemsList = document.getElementById('confirmation-items-list');
-    itemsList.innerHTML = cart.map((item, index) => `
+    const itemsList = document.getElementById("confirmation-items-list");
+    itemsList.innerHTML = cart
+      .map(
+        (item, index) => `
          <div class="cart-item">
-            ${item.image ? `<img src="${item.image}" alt="${item.name}">` : ''}
+            ${item.image ? `<img src="${item.image}" alt="${item.name}">` : ""}
 
             <div class="item-details">
                 <div>${index + 1}. ${item.name}</div>
@@ -3368,28 +3610,35 @@ if (product.jars && product.jars.length > 0) {
                 <div>Prix unitaire: ${item.unitPrice.toFixed(2)}€</div>
             </div>
         </div>
-    `).join('');
+    `,
+      )
+      .join("");
 
     // UI Promo
-    const promoInputContainer = document.getElementById('promo-input-container');
-    const promoAppliedContainer = document.getElementById('promo-applied-container');
+    const promoInputContainer = document.getElementById(
+      "promo-input-container",
+    );
+    const promoAppliedContainer = document.getElementById(
+      "promo-applied-container",
+    );
     if (appliedPromo) {
-        promoInputContainer.style.display = 'none';
-        promoAppliedContainer.style.display = 'flex';
-        document.getElementById('promo-applied-text').innerText = `Code "${appliedPromo}" appliqué !`;
+      promoInputContainer.style.display = "none";
+      promoAppliedContainer.style.display = "flex";
+      document.getElementById("promo-applied-text").innerText =
+        `Code "${appliedPromo}" appliqué !`;
     } else {
-        promoInputContainer.style.display = 'flex';
-        promoAppliedContainer.style.display = 'none';
-        document.getElementById('promo-code-input').value = ''; 
+      promoInputContainer.style.display = "flex";
+      promoAppliedContainer.style.display = "none";
+      document.getElementById("promo-code-input").value = "";
     }
 
     // UI Paiement
-    document.querySelectorAll('.payment-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.method === paymentMethod);
+    document.querySelectorAll(".payment-btn").forEach((btn) => {
+      btn.classList.toggle("active", btn.dataset.method === paymentMethod);
     });
 
     // Résumé final
-    const summaryContainer = document.getElementById('confirmation-summary');
+    const summaryContainer = document.getElementById("confirmation-summary");
     let summaryHTML = `
         <div class="summary-line">
             <span>Sous-total:</span>
@@ -3397,7 +3646,7 @@ if (product.jars && product.jars.length > 0) {
         </div>
     `;
     if (discount > 0) {
-        summaryHTML += `
+      summaryHTML += `
         <div class="summary-line discount">
             <span>Réduction:</span>
             <span>-${discount.toFixed(2)}€</span>
@@ -3413,157 +3662,175 @@ if (product.jars && product.jars.length > 0) {
     summaryContainer.innerHTML = summaryHTML;
 
     // --- MODIFICATION POUR WHATSAPP DIRECT ---
-    const copyBtn = document.getElementById('copy-order-btn');
-    const contactBtn = document.getElementById('confirm-order-button');
+    const copyBtn = document.getElementById("copy-order-btn");
+    const contactBtn = document.getElementById("confirm-order-button");
 
     // 1. On CACHE le bouton "Copier" car il ne sert plus
-    if(copyBtn) copyBtn.style.display = 'none';
+    if (copyBtn) copyBtn.style.display = "none";
 
     // 2. On configure le bouton "Confirmer" pour être actif tout de suite
-    if(contactBtn) {
-        contactBtn.classList.remove('secondary-action-btn'); // Enlève le gris
-        contactBtn.classList.add('main-action-btn');      // Met le rouge (ou couleur principale)
-        contactBtn.disabled = false;                      // Active le clic
-        contactBtn.innerHTML = 'CONFIRMER SUR WHATSAPP 📞'; // Change le texte
+    if (contactBtn) {
+      contactBtn.classList.remove("secondary-action-btn"); // Enlève le gris
+      contactBtn.classList.add("main-action-btn"); // Met le rouge (ou couleur principale)
+      contactBtn.disabled = false; // Active le clic
+      contactBtn.innerHTML = "CONFIRMER SUR WHATSAPP 📞"; // Change le texte
     }
 
-    showPage('page-confirmation');
-}
-    // Affiche la page de contact (inchangé)
-    function renderContactPage() {
-        const linksContainer = document.getElementById('contact-links-container');
-        linksContainer.innerHTML = contactLinks.map(link => `
+    showPage("page-confirmation");
+  }
+  // Affiche la page de contact (inchangé)
+  function renderContactPage() {
+    const linksContainer = document.getElementById("contact-links-container");
+    linksContainer.innerHTML = contactLinks
+      .map(
+        (link) => `
         <a href="${link.url}" class="contact-link ${link.className}" target="_blank">
         
             <span>${link.text}</span>
         </a>
-        `).join('');
-    }
+        `,
+      )
+      .join("");
+  }
 
-    // Met à jour le compteur du panier (inchangé)
-    function updateCartCount() {
-        const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-        const cartCountElements = document.querySelectorAll('.cart-count');
-        cartCountElements.forEach(el => {
-            el.innerText = count;
-            el.style.display = count > 0 ? 'flex' : 'none';
-        });
-    }
+  // Met à jour le compteur du panier (inchangé)
+  function updateCartCount() {
+    const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const cartCountElements = document.querySelectorAll(".cart-count");
+    cartCountElements.forEach((el) => {
+      el.innerText = count;
+      el.style.display = count > 0 ? "flex" : "none";
+    });
+  }
 
   // --- MODIFIÉ : populateFilters ---
   function populateFilters() {
-    const searchFilter = document.getElementById('search-filter');
-    const qualityFilter = document.getElementById('quality-filter');
-    const farmFilter = document.getElementById('farm-filter');
+    const searchFilter = document.getElementById("search-filter");
+    const qualityFilter = document.getElementById("quality-filter");
+    const farmFilter = document.getElementById("farm-filter");
 
     // 1. On récupère TOUS les produits de l'app pour trouver toutes les farms
     const allNestedProducts = [];
-    appData.forEach(category => {
-        if (category.farms) {
-            category.farms.forEach(farm => allNestedProducts.push(...farm.products));
-        } else if (category.products) {
-            allNestedProducts.push(...category.products);
-        }
+    appData.forEach((category) => {
+      if (category.farms) {
+        category.farms.forEach((farm) =>
+          allNestedProducts.push(...farm.products),
+        );
+      } else if (category.products) {
+        allNestedProducts.push(...category.products);
+      }
     });
 
     // 2. On remplit le filtre QUALITÉ (Pour la page d'accueil)
-    const categoryQualities = appData.map(c => c.quality).filter(Boolean); // filter Boolean enlève les vides
-    const qualities = ['all', ...new Set(categoryQualities)];
-    qualityFilter.innerHTML = qualities.map(q => `<option value="${q}">${q === 'all' ? 'SELECTION DU CHEF' : q}</option>`).join('');
+    const categoryQualities = appData.map((c) => c.quality).filter(Boolean); // filter Boolean enlève les vides
+    const qualities = ["all", ...new Set(categoryQualities)];
+    qualityFilter.innerHTML = qualities
+      .map(
+        (q) =>
+          `<option value="${q}">${q === "all" ? "SELECTION DU CHEF" : q}</option>`,
+      )
+      .join("");
 
     // 3. On remplit le filtre FARM (Pour la page produits)
     // On récupère la propriété 'farm' de chaque produit
-    const productFarms = allNestedProducts.map(p => p.farm).filter(f => f); // Garde seulement si une farm est définie
-    const farms = ['all', ...new Set(productFarms)];
-    
-    farmFilter.innerHTML = farms.map(farm => `<option value="${farm}">${farm === 'all' ? '👨‍🌾  -  Toutes les farms' : farm}</option>`).join('');
+    const productFarms = allNestedProducts.map((p) => p.farm).filter((f) => f); // Garde seulement si une farm est définie
+    const farms = ["all", ...new Set(productFarms)];
+
+    farmFilter.innerHTML = farms
+      .map(
+        (farm) =>
+          `<option value="${farm}">${farm === "all" ? "👨‍🌾  -  Toutes les farms" : farm}</option>`,
+      )
+      .join("");
 
     // 4. Les écouteurs d'événements
-    searchFilter.addEventListener('input', (e) => {
-        currentFilters.searchTerm = e.target.value;
-        renderHomePage();
+    searchFilter.addEventListener("input", (e) => {
+      currentFilters.searchTerm = e.target.value;
+      renderHomePage();
     });
 
-    qualityFilter.addEventListener('change', (e) => {
-        currentFilters.quality = e.target.value;
-        renderHomePage();
+    qualityFilter.addEventListener("change", (e) => {
+      currentFilters.quality = e.target.value;
+      renderHomePage();
     });
 
-    farmFilter.addEventListener('change', (e) => {
-        currentFilters.farm = e.target.value;
-        renderHomePage();
+    farmFilter.addEventListener("change", (e) => {
+      currentFilters.farm = e.target.value;
+      renderHomePage();
     });
-}
+  }
 
-    // --- NOTIFICATION (inchangé) ---
-    let notificationTimeout;
-    function showNotification(message) {
-        const notification = document.getElementById('notification-toast');
-        if (!notification) return;
+  // --- NOTIFICATION (inchangé) ---
+  let notificationTimeout;
+  function showNotification(message) {
+    const notification = document.getElementById("notification-toast");
+    if (!notification) return;
 
-        clearTimeout(notificationTimeout);
-        notification.classList.remove('show');
-        void notification.offsetWidth;
+    clearTimeout(notificationTimeout);
+    notification.classList.remove("show");
+    void notification.offsetWidth;
 
-        notification.innerText = message;
-        notification.classList.add('show');
+    notification.innerText = message;
+    notification.classList.add("show");
 
-        notificationTimeout = setTimeout(() => {
-            notification.classList.remove('show');
-        }, 3000);
+    notificationTimeout = setTimeout(() => {
+      notification.classList.remove("show");
+    }, 3000);
+  }
+
+  // --- LOGIQUE DU PANIER ---
+
+  // Ajoute le paramètre 'variant' à la fin
+  function addToCart(productId, weight, price, variant = null) {
+    // L'ID du panier doit inclure la variante pour différencier (ex: 10g Gelato vs 10g Papaya)
+    const cartItemId = `${productId}-${weight}-${variant ? variant.replace(/\s+/g, "") : "default"}`;
+
+    const existingItem = cart.find((item) => item.id === cartItemId);
+    const product = getProductById(productId);
+
+    // On prépare le nom à afficher (ex: "120u (Papaya Bomb)")
+    const displayName = variant
+      ? `${product.name} \n👉 ${variant}`
+      : product.name;
+
+    if (existingItem) {
+      existingItem.quantity++;
+      existingItem.totalPrice = existingItem.quantity * existingItem.unitPrice;
+    } else {
+      cart.push({
+        id: cartItemId,
+        productId: productId,
+        name: displayName, // On utilise le nom avec la variante
+        image: product.image,
+        weight: weight,
+        quantity: 1,
+        unitPrice: price,
+        totalPrice: price,
+        variant: variant, // On garde la variante en mémoire si besoin
+      });
+    }
+    renderCart();
+    tg.HapticFeedback.notificationOccurred("success");
+    showNotification("✅ Produit ajouté au panier !");
+  }
+  // updateQuantity (inchangé)
+  function updateQuantity(cartItemId, action) {
+    const item = cart.find((i) => i.id === cartItemId);
+    if (!item) return;
+
+    if (action === "increase") {
+      item.quantity++;
+    } else if (action === "decrease") {
+      item.quantity--;
     }
 
-    // --- LOGIQUE DU PANIER ---
-
-    // Ajoute le paramètre 'variant' à la fin
-    function addToCart(productId, weight, price, variant = null) {
-        // L'ID du panier doit inclure la variante pour différencier (ex: 10g Gelato vs 10g Papaya)
-        const cartItemId = `${productId}-${weight}-${variant ? variant.replace(/\s+/g, '') : 'default'}`;
-
-        const existingItem = cart.find(item => item.id === cartItemId);
-        const product = getProductById(productId);
-
-        // On prépare le nom à afficher (ex: "120u (Papaya Bomb)")
-        const displayName = variant ? `${product.name} \n👉 ${variant}` : product.name;
-
-        if (existingItem) {
-            existingItem.quantity++;
-            existingItem.totalPrice = existingItem.quantity * existingItem.unitPrice;
-        } else {
-            cart.push({
-                id: cartItemId,
-                productId: productId,
-                name: displayName, // On utilise le nom avec la variante
-                image: product.image,
-                weight: weight,
-                quantity: 1,
-                unitPrice: price,
-                totalPrice: price,
-                variant: variant // On garde la variante en mémoire si besoin
-            });
-        }
-        renderCart();
-        tg.HapticFeedback.notificationOccurred('success');
-        showNotification('✅ Produit ajouté au panier !');
+    if (item.quantity <= 0) {
+      cart = cart.filter((i) => i.id !== cartItemId);
+    } else {
+      item.totalPrice = item.quantity * item.unitPrice;
     }
-    // updateQuantity (inchangé)
-    function updateQuantity(cartItemId, action) {
-        const item = cart.find(i => i.id === cartItemId);
-        if (!item) return;
-
-        if (action === 'increase') {
-            item.quantity++;
-        } else if (action === 'decrease') {
-            item.quantity--;
-        }
-
-        if (item.quantity <= 0) {
-            cart = cart.filter(i => i.id !== cartItemId);
-        } else {
-            item.totalPrice = item.quantity * item.unitPrice;
-        }
-        renderCart();
-    }
+    renderCart();
+  }
 
   // --- FORMATAGE DU MESSAGE WHATSAPP (STYLE PRO & EMOJIS) ---
   function formatOrderMessage() {
@@ -3573,64 +3840,66 @@ if (product.jars && product.jars.length > 0) {
     let discountableAmount = 0;
 
     if (appliedPromo) {
-        const promo = validPromoCodes[appliedPromo];
-        if (promo.appliesTo === 'eligible') {
-            cart.forEach(item => {
-                const product = getProductById(item.productId);
-                if (product && product.promoEligible) {
-                    discountableAmount += item.totalPrice;
-                }
-            });
-        } else {
-            discountableAmount = subTotal;
-        }
-        if (promo.type === 'percent') {
-            discount = (discountableAmount * promo.value) / 100;
-        } else {
-            discount = promo.value;
-        }
+      const promo = validPromoCodes[appliedPromo];
+      if (promo.appliesTo === "eligible") {
+        cart.forEach((item) => {
+          const product = getProductById(item.productId);
+          if (product && product.promoEligible) {
+            discountableAmount += item.totalPrice;
+          }
+        });
+      } else {
+        discountableAmount = subTotal;
+      }
+      if (promo.type === "percent") {
+        discount = (discountableAmount * promo.value) / 100;
+      } else {
+        discount = promo.value;
+      }
     }
     if (discount > subTotal) discount = subTotal;
     const totalPrice = subTotal - discount;
 
     // --- 2. CONSTRUCTION DU MESSAGE (NOUVEAU DESIGN) ---
-    
+
     // En-tête
     let message = "*🛒 DÉTAIL DE LA COMMANDE:*\n\n";
 
- // Boucle sur les articles
-cart.forEach((item, index) => {
-    const product = getProductById(item.productId);
+    // Boucle sur les articles
+    cart.forEach((item, index) => {
+      const product = getProductById(item.productId);
 
-    // On reprend le vrai nom du produit, sans la variante collée dedans
-    const cleanName = product ? product.name.toUpperCase() : item.name.replace(/\n/g, ' ').toUpperCase();
+      // On reprend le vrai nom du produit, sans la variante collée dedans
+      const cleanName = product
+        ? product.name.toUpperCase()
+        : item.name.replace(/\n/g, " ").toUpperCase();
 
-    // Ligne 1 : Numéro + Nom du produit
-    message += `*${index + 1}. ${cleanName}*\n`;
+      // Ligne 1 : Numéro + Nom du produit
+      message += `*${index + 1}. ${cleanName}*\n`;
 
-    // Ligne spéciale si une strain/saveur est sélectionnée
-    if (item.variant) {
+      // Ligne spéciale si une strain/saveur est sélectionnée
+      if (item.variant) {
         message += `• Strain: ${item.variant.toUpperCase()}\n`;
-    }
+      }
 
-    // Quantité
-    message += `• Quantité: ${item.quantity}x ${item.weight}\n`;
+      // Quantité
+      message += `• Quantité: ${item.quantity}x ${item.weight}\n`;
 
-    // Prix unitaire
-    message += `• Prix unitaire: ${item.unitPrice.toFixed(2)}€\n`;
+      // Prix unitaire
+      message += `• Prix unitaire: ${item.unitPrice.toFixed(2)}€\n`;
 
-    // Total de la ligne
-    message += `• Total: ${item.totalPrice.toFixed(2)}€\n\n`;
-});
+      // Total de la ligne
+      message += `• Total: ${item.totalPrice.toFixed(2)}€\n\n`;
+    });
 
     // Résumé financier
     // Si promo, on affiche le détail, sinon juste le total
     if (discount > 0) {
-        message += `Sous-total: ${subTotal.toFixed(2)}€\n`;
-        message += `Réduction (${appliedPromo}): -${discount.toFixed(2)}€\n`;
-        message += `\n*💰 TOTAL: ${totalPrice.toFixed(2)}€*\n`;
+      message += `Sous-total: ${subTotal.toFixed(2)}€\n`;
+      message += `Réduction (${appliedPromo}): -${discount.toFixed(2)}€\n`;
+      message += `\n*💰 TOTAL: ${totalPrice.toFixed(2)}€*\n`;
     } else {
-        message += `*💰 TOTAL: ${totalPrice.toFixed(2)}€*\n`;
+      message += `*💰 TOTAL: ${totalPrice.toFixed(2)}€*\n`;
     }
 
     // Pied de page
@@ -3638,39 +3907,44 @@ cart.forEach((item, index) => {
     message += `💳 Paiement: ${paymentMethod}`;
 
     return message;
-}
+  }
 
-    // --- NOUVELLE FONCTION POUR COPIER DANS LE PRESSE-PAPIERS ---
-    function copyToClipboard(text) {
-        if (navigator.clipboard) { // API moderne et sécurisée
-            navigator.clipboard.writeText(text).then(() => {
-                showNotification('✅ Commande copiée ! Colle-la dans le chat.');
-                tg.HapticFeedback.notificationOccurred('success');
-            }, (err) => {
-                showNotification('❌ Erreur en copiant le message');
-            });
-        } else { // Ancien fallback (pour certains navigateurs)
-            const textArea = document.createElement('textarea');
-            textArea.value = text;
-            textArea.style.position = 'fixed'; // Hors de l'écran
-            document.body.appendChild(textArea);
-            textArea.focus();
-            textArea.select();
-            try {
-                document.execCommand('copy');
-                showNotification('✅ Commande copiée ! Colle-la dans le chat.');
-                tg.HapticFeedback.notificationOccurred('success');
-            } catch (err) {
-                showNotification('❌ Erreur en copiant le message');
-            }
-            document.body.removeChild(textArea);
-        }
+  // --- NOUVELLE FONCTION POUR COPIER DANS LE PRESSE-PAPIERS ---
+  function copyToClipboard(text) {
+    if (navigator.clipboard) {
+      // API moderne et sécurisée
+      navigator.clipboard.writeText(text).then(
+        () => {
+          showNotification("✅ Commande copiée ! Colle-la dans le chat.");
+          tg.HapticFeedback.notificationOccurred("success");
+        },
+        (err) => {
+          showNotification("❌ Erreur en copiant le message");
+        },
+      );
+    } else {
+      // Ancien fallback (pour certains navigateurs)
+      const textArea = document.createElement("textarea");
+      textArea.value = text;
+      textArea.style.position = "fixed"; // Hors de l'écran
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        document.execCommand("copy");
+        showNotification("✅ Commande copiée ! Colle-la dans le chat.");
+        tg.HapticFeedback.notificationOccurred("success");
+      } catch (err) {
+        showNotification("❌ Erreur en copiant le message");
+      }
+      document.body.removeChild(textArea);
     }
+  }
 
-    // --- GESTION PAGE AVIS ---
+  // --- GESTION PAGE AVIS ---
 
-    // 1. Bouton vers le canal Potato
-/*     const btnChannel = document.getElementById('btn-open-channel');
+  // 1. Bouton vers le canal Potato
+  /*     const btnChannel = document.getElementById('btn-open-channel');
     if (btnChannel) {
         btnChannel.addEventListener('click', function() {
             // Remplace par ton vrai lien de canal
@@ -3681,309 +3955,309 @@ cart.forEach((item, index) => {
         });
     }
  */
-    // 2. (Optionnel) Zoom sur l'image quand on clique dessus
-    window.openImage = function(imgElement) {
-        const modal = document.getElementById('image-modal');
-        const modalImg = document.getElementById('img-in-modal');
-        
-        modal.style.display = "flex";
-        modalImg.src = imgElement.src;
-        tg.BackButton.show(); // Affiche le bouton retour natif
-        
-        // Clic pour fermer
-        modal.onclick = function() {
-            modal.style.display = "none";
-            tg.BackButton.hide(); // Cache le bouton retour
-        }
-        
-        // Gestion du bouton retour physique/natif Telegram
-        tg.onEvent('backButtonClicked', function() {
-            modal.style.display = "none";
-            tg.BackButton.hide();
-        });
+  // 2. (Optionnel) Zoom sur l'image quand on clique dessus
+  window.openImage = function (imgElement) {
+    const modal = document.getElementById("image-modal");
+    const modalImg = document.getElementById("img-in-modal");
+
+    modal.style.display = "flex";
+    modalImg.src = imgElement.src;
+    tg.BackButton.show(); // Affiche le bouton retour natif
+
+    // Clic pour fermer
+    modal.onclick = function () {
+      modal.style.display = "none";
+      tg.BackButton.hide(); // Cache le bouton retour
     };
-    // --- GESTION DES ÉVÉNEMENTS ---
 
-    // Clics sur la barre de navigation
-    document.querySelectorAll('.nav-item').forEach(item => {
-        item.addEventListener('click', () => {
-            const pageId = item.dataset.page;
-            if (!pageId) return;
-
-            // Les lignes gérant la classe 'active' ont été supprimées
-            // showPage(pageId) s'en occupe maintenant.
-
-            if (pageId === 'page-contact') {
-                renderContactPage();
-            }
-
-            if (pageId === 'page-home') {
-                currentView = 'categories';
-                currentCategoryId = null;
-                // On reset TOUS les filtres
-                currentFilters.searchTerm = '';
-                currentFilters.quality = 'all';
-                currentFilters.farm = 'all';
-                document.getElementById('search-filter').value = '';
-                document.getElementById('quality-filter').value = 'all';
-                document.getElementById('farm-filter').value = 'all';
-
-                renderHomePage();
-            }
-
-            showPage(pageId);
-        });
+    // Gestion du bouton retour physique/natif Telegram
+    tg.onEvent("backButtonClicked", function () {
+      modal.style.display = "none";
+      tg.BackButton.hide();
     });
+  };
+  // --- GESTION DES ÉVÉNEMENTS ---
 
-    // Clics sur le reste de la page
-    document.body.addEventListener('click', async function (e) {
-                const target = e.target;
+  // Clics sur la barre de navigation
+  document.querySelectorAll(".nav-item").forEach((item) => {
+    item.addEventListener("click", () => {
+      const pageId = item.dataset.page;
+      if (!pageId) return;
 
-        if (target.closest('#copy-order-btn')) {
-            let message = formatOrderMessage();
-            message = message.replace(/\*/g, '');
+      // Les lignes gérant la classe 'active' ont été supprimées
+      // showPage(pageId) s'en occupe maintenant.
 
-            copyToClipboard(message);
+      if (pageId === "page-contact") {
+        renderContactPage();
+      }
 
-            // --- AJOUT : Inverser les styles des boutons ---
-            const copyBtn = document.getElementById('copy-order-btn');
-            const contactBtn = document.getElementById('confirm-order-button');
+      if (pageId === "page-home") {
+        currentView = "categories";
+        currentCategoryId = null;
+        // On reset TOUS les filtres
+        currentFilters.searchTerm = "";
+        currentFilters.quality = "all";
+        currentFilters.farm = "all";
+        document.getElementById("search-filter").value = "";
+        document.getElementById("quality-filter").value = "all";
+        document.getElementById("farm-filter").value = "all";
 
-            // Copier devient Gris (secondary)
-            copyBtn.classList.remove('main-action-btn');
-            copyBtn.classList.add('secondary-action-btn');
+        renderHomePage();
+      }
 
-            // Contacter devient Rouge (main) et est activé
-            contactBtn.classList.remove('secondary-action-btn');
-            contactBtn.classList.add('main-action-btn');
-            contactBtn.disabled = false; // <-- ON DÉVERROUILLE LE BOUTON
-            return; // On s'arrête là
-        }
+      showPage(pageId);
+    });
+  });
 
-        // Gère l'accordéon sur la page contact
-        const accordionHeader = target.closest('.accordion-header');
-        if (accordionHeader) {
-            const accordionItem = accordionHeader.parentElement;
+  // Clics sur le reste de la page
+  document.body.addEventListener("click", async function (e) {
+    const target = e.target;
 
-            // On ferme les autres items
-            document.querySelectorAll('#page-info .accordion-item.active').forEach(item => {
-                if (item !== accordionItem) {
-                    item.classList.remove('active');
-                }
-            });
+    if (target.closest("#copy-order-btn")) {
+      let message = formatOrderMessage();
+      message = message.replace(/\*/g, "");
 
-            // On ouvre/ferme l'item cliqué
-            accordionItem.classList.toggle('active');
-            return; // On arrête là pour ne pas déclencher d'autres clics
-        }
+      copyToClipboard(message);
 
-        // 1. Clic sur une carte CATÉGORIE
-        const categoryCard = target.closest('.category-card');
-        if (categoryCard) {
-            const category = appData.find(c => c.id === categoryCard.dataset.categoryId);
+      // --- AJOUT : Inverser les styles des boutons ---
+      const copyBtn = document.getElementById("copy-order-btn");
+      const contactBtn = document.getElementById("confirm-order-button");
 
-            if (category.products) {
-                // Si la catégorie a des produits directement (pas de sous-catégorie)
-                currentView = 'simple_products'; // <-- NOUVEL ÉTAT
-                currentCategoryId = category.id;
-            } else if (category.farms) {
-                // Si la catégorie a des farms
-                currentView = 'farms';
-                currentCategoryId = category.id;
-            } else {
-                return; // Ne fait rien si la catégorie est vide
-            }
+      // Copier devient Gris (secondary)
+      copyBtn.classList.remove("main-action-btn");
+      copyBtn.classList.add("secondary-action-btn");
 
-            // On reset les filtres et on lance la page
-            currentFilters.searchTerm = '';
-            document.getElementById('search-filter').value = '';
-            renderHomePage();
-            return;
-        }
-        // 2. MODIFIÉ : Clic sur un BOUTON FARM (Anciennement "carte farm")
-        const farmBtn = target.closest('.farm-list-btn'); // <-- J'ai changé le nom de la classe ici
-        if (farmBtn) {
-
-            if (farmBtn.classList.contains('unclickable')) {
-                return;
-            }
-
-            currentView = 'products';
-            currentFarmId = farmBtn.dataset.farmId;
-
-            // On reset les filtres
-            currentFilters.searchTerm = '';
-            document.getElementById('search-filter').value = '';
-
-            renderHomePage();
-            return;
-        }
-        // 3. Clic sur une carte PRODUIT
-        const productCard = target.closest('.product-item-card');
-        if (productCard) {
-
-            if (productCard.classList.contains('unclickable')) {
-                return;
-            }
-            renderProductPage(productCard.dataset.productId);
-            return;
-        }
-
-        // 4. NOUVEAU : Clic sur le bouton "Retour" (vers Catégories)
-        if (target.closest('.back-to-categories-btn')) {
-            currentView = 'categories';
-            currentCategoryId = null;
-            currentFilters.searchTerm = '';
-            document.getElementById('search-filter').value = '';
-            renderHomePage();
-            return;
-        }
-
-        // 5. NOUVEAU : Clic sur le bouton "Retour" (vers Farms)
-        if (target.closest('.back-to-farms-btn')) {
-            currentView = 'farms';
-            currentFarmId = null;
-            currentFilters.searchTerm = '';
-            document.getElementById('search-filter').value = '';
-            renderHomePage();
-            return;
-        }
-
-        // Clic sur "Appliquer" le code promo
-        if (target.closest('#apply-promo-btn')) {
-            const input = document.getElementById('promo-code-input');
-            const code = input.value.toUpperCase(); // Mets en majuscule
-
-            if (validPromoCodes[code]) {
-                appliedPromo = code;
-                tg.HapticFeedback.notificationOccurred('success');
-                showNotification('✅ Code promo appliqué !');
-            } else {
-                appliedPromo = null; // Reset au cas où
-                tg.HapticFeedback.notificationOccurred('error');
-                showNotification('❌ Code promo invalide.');
-            }
-            renderConfirmation(); // Met à jour la page de confirmation
-        }
-
-        // Clic sur "Supprimer" le code promo
-        if (target.closest('#remove-promo-btn')) {
-            appliedPromo = null;
-            showNotification('Code promo retiré.');
-            renderConfirmation(); // Met à jour la page
-        }
-
-        // Clic sur un bouton de paiement
-        if (target.closest('.payment-btn')) {
-            paymentMethod = target.closest('.payment-btn').dataset.method;
-            // Pas besoin de rafraîchir toute la page, juste les boutons
-            document.querySelectorAll('.payment-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.method === paymentMethod);
-            });
-        }
-
-        // Clic sur "Ajouter au panier"
-if (target.closest('.add-to-cart-btn')) {
-    const btn = target.closest('.add-to-cart-btn');
-
-    // 👇 On lit la strain directement depuis le bouton cliqué
-    let selectedVariant = btn.dataset.variant || null;
-
-    // Fallback ancien système select
-    if (!selectedVariant) {
-        const variantSelect = document.getElementById('product-variant-select');
-        if (variantSelect) {
-            selectedVariant = variantSelect.value;
-        }
+      // Contacter devient Rouge (main) et est activé
+      contactBtn.classList.remove("secondary-action-btn");
+      contactBtn.classList.add("main-action-btn");
+      contactBtn.disabled = false; // <-- ON DÉVERROUILLE LE BOUTON
+      return; // On s'arrête là
     }
 
-    addToCart(
+    // Gère l'accordéon sur la page contact
+    const accordionHeader = target.closest(".accordion-header");
+    if (accordionHeader) {
+      const accordionItem = accordionHeader.parentElement;
+
+      // On ferme les autres items
+      document
+        .querySelectorAll("#page-info .accordion-item.active")
+        .forEach((item) => {
+          if (item !== accordionItem) {
+            item.classList.remove("active");
+          }
+        });
+
+      // On ouvre/ferme l'item cliqué
+      accordionItem.classList.toggle("active");
+      return; // On arrête là pour ne pas déclencher d'autres clics
+    }
+
+    // 1. Clic sur une carte CATÉGORIE
+    const categoryCard = target.closest(".category-card");
+    if (categoryCard) {
+      const category = appData.find(
+        (c) => c.id === categoryCard.dataset.categoryId,
+      );
+
+      if (category.products) {
+        // Si la catégorie a des produits directement (pas de sous-catégorie)
+        currentView = "simple_products"; // <-- NOUVEL ÉTAT
+        currentCategoryId = category.id;
+      } else if (category.farms) {
+        // Si la catégorie a des farms
+        currentView = "farms";
+        currentCategoryId = category.id;
+      } else {
+        return; // Ne fait rien si la catégorie est vide
+      }
+
+      // On reset les filtres et on lance la page
+      currentFilters.searchTerm = "";
+      document.getElementById("search-filter").value = "";
+      renderHomePage();
+      return;
+    }
+    // 2. MODIFIÉ : Clic sur un BOUTON FARM (Anciennement "carte farm")
+    const farmBtn = target.closest(".farm-list-btn"); // <-- J'ai changé le nom de la classe ici
+    if (farmBtn) {
+      if (farmBtn.classList.contains("unclickable")) {
+        return;
+      }
+
+      currentView = "products";
+      currentFarmId = farmBtn.dataset.farmId;
+
+      // On reset les filtres
+      currentFilters.searchTerm = "";
+      document.getElementById("search-filter").value = "";
+
+      renderHomePage();
+      return;
+    }
+    // 3. Clic sur une carte PRODUIT
+    const productCard = target.closest(".product-item-card");
+    if (productCard) {
+      if (productCard.classList.contains("unclickable")) {
+        return;
+      }
+      renderProductPage(productCard.dataset.productId);
+      return;
+    }
+
+    // 4. NOUVEAU : Clic sur le bouton "Retour" (vers Catégories)
+    if (target.closest(".back-to-categories-btn")) {
+      currentView = "categories";
+      currentCategoryId = null;
+      currentFilters.searchTerm = "";
+      document.getElementById("search-filter").value = "";
+      renderHomePage();
+      return;
+    }
+
+    // 5. NOUVEAU : Clic sur le bouton "Retour" (vers Farms)
+    if (target.closest(".back-to-farms-btn")) {
+      currentView = "farms";
+      currentFarmId = null;
+      currentFilters.searchTerm = "";
+      document.getElementById("search-filter").value = "";
+      renderHomePage();
+      return;
+    }
+
+    // Clic sur "Appliquer" le code promo
+    if (target.closest("#apply-promo-btn")) {
+      const input = document.getElementById("promo-code-input");
+      const code = input.value.toUpperCase(); // Mets en majuscule
+
+      if (validPromoCodes[code]) {
+        appliedPromo = code;
+        tg.HapticFeedback.notificationOccurred("success");
+        showNotification("✅ Code promo appliqué !");
+      } else {
+        appliedPromo = null; // Reset au cas où
+        tg.HapticFeedback.notificationOccurred("error");
+        showNotification("❌ Code promo invalide.");
+      }
+      renderConfirmation(); // Met à jour la page de confirmation
+    }
+
+    // Clic sur "Supprimer" le code promo
+    if (target.closest("#remove-promo-btn")) {
+      appliedPromo = null;
+      showNotification("Code promo retiré.");
+      renderConfirmation(); // Met à jour la page
+    }
+
+    // Clic sur un bouton de paiement
+    if (target.closest(".payment-btn")) {
+      paymentMethod = target.closest(".payment-btn").dataset.method;
+      // Pas besoin de rafraîchir toute la page, juste les boutons
+      document.querySelectorAll(".payment-btn").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.method === paymentMethod);
+      });
+    }
+
+    // Clic sur "Ajouter au panier"
+    if (target.closest(".add-to-cart-btn")) {
+      const btn = target.closest(".add-to-cart-btn");
+
+      // 👇 On lit la strain directement depuis le bouton cliqué
+      let selectedVariant = btn.dataset.variant || null;
+
+      // Fallback ancien système select
+      if (!selectedVariant) {
+        const variantSelect = document.getElementById("product-variant-select");
+        if (variantSelect) {
+          selectedVariant = variantSelect.value;
+        }
+      }
+
+      addToCart(
         btn.dataset.productId,
         btn.dataset.weight,
         parseFloat(btn.dataset.price),
-        selectedVariant
-    );
-}
-
-        // Clic sur les boutons de quantité
-        if (target.closest('.quantity-btn')) {
-            const btn = target.closest('.quantity-btn');
-            updateQuantity(btn.dataset.id, btn.dataset.action);
-        }
-
-        // Clic sur le bouton "fermer"
-        if (target.closest('.close-button')) {
-            showPage('page-home');
-            // La gestion des classes 'active' est maintenant dans showPage
-        }
-
-        // Clic sur "Continuer les achats"
-        if (target.closest('#cart-continue-shopping')) {
-            showPage('page-home');
-            // La gestion des classes 'active' est maintenant dans showPage
-        }
-
-        // Clic sur les boutons "retour" (des pages produits, panier...)
-        if (target.closest('.back-button')) {
-            showPage('page-home');
-            // La gestion des classes 'active' est maintenant dans showPage
-        }
-
-        // Clic sur le bouton du panier
-        if (target.closest('#home-cart-button')) {
-            renderCart();
-            showPage('page-cart');
-        }
-
-        // Clic sur "Commander"
-        if (target.closest('#checkout-button')) {
-            renderConfirmation();
-        }
-
-        // Clic sur "Modifier"
-        if (target.closest('#confirmation-modify-order')) {
-            showPage('page-cart');
-        }
-
-        // Clic sur un produit DANS un Pack
-        if (target.closest('.pack-item-btn')) {
-            const btn = target.closest('.pack-item-btn');
-            const targetId = btn.dataset.targetId;
-            
-            // On charge la page du produit ciblé
-            renderProductPage(targetId);
-            return;
-        }
-          // Clic sur "Confirmer la commande" (VERSION WHATSAPP DIRECT)
-    if (target.closest('#confirm-order-button')) {
-
-        // 1. TON NUMÉRO WHATSAPP (Format international sans le +)
-        const myPhoneNumber = '33759412821'; 
-        
-        // 2. On prépare le message
-        let message = formatOrderMessage();
-        
-        // 3. On encode le message pour qu'il passe dans une URL
-        const encodedMessage = encodeURIComponent(message);
-        
-        // 4. On crée le lien magique WhatsApp
-        const whatsappUrl = `https://wa.me/${myPhoneNumber}?text=${encodedMessage}`;
-
-        // 5. On ouvre WhatsApp
-        tg.openLink(whatsappUrl);
+        selectedVariant,
+      );
     }
 
-    });
-
-    // --- INITIALISATION DE L'APP ---
-    function init() {
-        setTimeout(() => {
-            populateFilters();
-            renderHomePage(); // Affiche les catégories au début
-            updateCartCount();
-            showPage('page-home');
-        }, 1500);
+    // Clic sur les boutons de quantité
+    if (target.closest(".quantity-btn")) {
+      const btn = target.closest(".quantity-btn");
+      updateQuantity(btn.dataset.id, btn.dataset.action);
     }
 
-    init();
+    // Clic sur le bouton "fermer"
+    if (target.closest(".close-button")) {
+      showPage("page-home");
+      // La gestion des classes 'active' est maintenant dans showPage
+    }
+
+    // Clic sur "Continuer les achats"
+    if (target.closest("#cart-continue-shopping")) {
+      showPage("page-home");
+      // La gestion des classes 'active' est maintenant dans showPage
+    }
+
+    // Clic sur les boutons "retour" (des pages produits, panier...)
+    if (target.closest(".back-button")) {
+      showPage("page-home");
+      // La gestion des classes 'active' est maintenant dans showPage
+    }
+
+    // Clic sur le bouton du panier
+    if (target.closest("#home-cart-button")) {
+      renderCart();
+      showPage("page-cart");
+    }
+
+    // Clic sur "Commander"
+    if (target.closest("#checkout-button")) {
+      renderConfirmation();
+    }
+
+    // Clic sur "Modifier"
+    if (target.closest("#confirmation-modify-order")) {
+      showPage("page-cart");
+    }
+
+    // Clic sur un produit DANS un Pack
+    if (target.closest(".pack-item-btn")) {
+      const btn = target.closest(".pack-item-btn");
+      const targetId = btn.dataset.targetId;
+
+      // On charge la page du produit ciblé
+      renderProductPage(targetId);
+      return;
+    }
+    // Clic sur "Confirmer la commande" (VERSION WHATSAPP DIRECT)
+    if (target.closest("#confirm-order-button")) {
+      // 1. TON NUMÉRO WHATSAPP (Format international sans le +)
+      const myPhoneNumber = "33759412821";
+
+      // 2. On prépare le message
+      let message = formatOrderMessage();
+
+      // 3. On encode le message pour qu'il passe dans une URL
+      const encodedMessage = encodeURIComponent(message);
+
+      // 4. On crée le lien magique WhatsApp
+      const whatsappUrl = `https://wa.me/${myPhoneNumber}?text=${encodedMessage}`;
+
+      // 5. On ouvre WhatsApp
+      tg.openLink(whatsappUrl);
+    }
+  });
+
+  // --- INITIALISATION DE L'APP ---
+  function init() {
+    setTimeout(() => {
+      populateFilters();
+      renderHomePage(); // Affiche les catégories au début
+      updateCartCount();
+      showPage("page-home");
+    }, 1500);
+  }
+
+  init();
 });
