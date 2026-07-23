@@ -1160,7 +1160,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         { weight: '50g', price: 350.00 },
                     ]
                 },  */
-        {
+        /* {
           id: "Pech sherbet 🍨",
           flag: "🇺🇸",
           name: "Pech sherbet 🍨",
@@ -1178,7 +1178,7 @@ document.addEventListener("DOMContentLoaded", function () {
             { weight: "25g", price: 200.0 },
             { weight: "50g", price: 350.0 },
           ],
-        },
+        }, */
         {
           id: "GlueBerry 🧴",
           flag: "🇺🇸",
