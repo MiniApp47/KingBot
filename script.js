@@ -2155,8 +2155,9 @@ document.addEventListener("DOMContentLoaded", function () {
               name: "❼❼❼",
               farm: "🌾 No Farm 🌾",
               promoEligible: true,
+              clickable: false,
               type: "Weed",
-              image: "Product777.png",
+              image: "Rupture.png",
               video: "Video777.mp4",
               description: "94% de pureter ",
               tarifs: [
