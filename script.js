@@ -1226,7 +1226,7 @@ document.addEventListener("DOMContentLoaded", function () {
       image: "CategFrozen.png", // Ton image de catégorie Weed
 
       products: [
-        {
+       /*  {
           id: "L'Etoile ✨",
           flag: "🇺🇸",
           name: "L'Etoile ✨",
@@ -1244,7 +1244,7 @@ document.addEventListener("DOMContentLoaded", function () {
             { weight: "50G", price: 350.0 },
             { weight: "100G", price: 680.0 },
           ],
-        },
+        }, */
         /* {
                     id: '🫒❄️🔥 OLIVE 🔥❄️🫒',
                     flag: '🇲🇦',
@@ -1665,7 +1665,7 @@ document.addEventListener("DOMContentLoaded", function () {
             { weight: "100G", price: 420.0 },
           ],
         },
-        {
+        /* {
           id: "Snickers 🧸",
           flag: "🇲🇦",
           name: "Snickers 🧸",
@@ -1682,7 +1682,7 @@ document.addEventListener("DOMContentLoaded", function () {
             { weight: "50G", price: 230.0 },
             { weight: "100G", price: 420.0 },
           ],
-        },
+        }, */
         /*  {
                     id: 'LEMON SORBET ❄️',
                     flag: '🇲🇦',
